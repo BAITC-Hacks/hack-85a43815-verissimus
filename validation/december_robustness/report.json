@@ -1,0 +1,248 @@
+{
+  "protocol": {
+    "scope": "backward-in-time robustness check of a method chosen on January; not a prospective independent test",
+    "frozen_at": "2026-09-23T12:14:55.484897+00:00",
+    "training_start_dates": "2025-12-01 through 2025-12-16; 48h except December16 uses24h",
+    "training_target_end_cutoff": "2025-12-16T18:00:00+00:00",
+    "evaluation_start_dates": "2025-12-17 through 2025-12-23; each48h",
+    "method": "Separate per turbine and decision lead band1-24/25-48; clip(a*raw+b,0,1)",
+    "objective": "sum((y-a*x-b)^2)+24*((a-1)^2+b^2)",
+    "constraints": "slope a in[0,2]; recompute intercept analytically if slope hits boundary",
+    "fixed_policy": "No new candidates or hyperparameter selection. Fit coefficients only from December training rows, freeze before evaluation. January coefficients are disabled.",
+    "comparators": [
+      "raw_power",
+      "ridge_affine",
+      "persistence",
+      "train_mean"
+    ],
+    "power_unit": "normalized",
+    "timezone_assumption": "Asia/Almaty",
+    "known_limitations": [
+      "Method selection previously used January results; this earlier-time check tests transfer across periods",
+      "Overlapping48h issue windows are not independent observations",
+      "Unknown SCADA timezone and zero-latency assumptions remain",
+      "No February measured targets are used"
+    ],
+    "budget_seconds": 1150,
+    "engine_model_version": "normalized-power-curve-v2",
+    "engine_file_sha256": "066fd96dd7b72908e84b9f944ae0e09cf284946249c1567f5bb3861553136ce2"
+  },
+  "frozen_calibration": {
+    "frozen_at": "2026-09-23T12:22:02.449394+00:00",
+    "available_at": "2025-12-16T18:00:00+00:00",
+    "parameters": [
+      {
+        "turbine": "turbine_1",
+        "lead_band": "1-24",
+        "slope": 0.8374203997119946,
+        "intercept": -0.028333079528256894,
+        "training_rows": 379,
+        "fit_start": "2025-11-30T19:00:00+00:00",
+        "fit_end": "2025-12-16T17:00:00+00:00"
+      },
+      {
+        "turbine": "turbine_1",
+        "lead_band": "25-48",
+        "slope": 0.8212975953867444,
+        "intercept": -0.028394708030863625,
+        "training_rows": 355,
+        "fit_start": "2025-12-01T19:00:00+00:00",
+        "fit_end": "2025-12-16T17:00:00+00:00"
+      },
+      {
+        "turbine": "turbine_2",
+        "lead_band": "1-24",
+        "slope": 0.8284817792433476,
+        "intercept": -0.024333899083699408,
+        "training_rows": 373,
+        "fit_start": "2025-11-30T19:00:00+00:00",
+        "fit_end": "2025-12-16T17:00:00+00:00"
+      },
+      {
+        "turbine": "turbine_2",
+        "lead_band": "25-48",
+        "slope": 0.8095425335906471,
+        "intercept": -0.025036493137334987,
+        "training_rows": 349,
+        "fit_start": "2025-12-01T19:00:00+00:00",
+        "fit_end": "2025-12-16T17:00:00+00:00"
+      }
+    ],
+    "training_predictions_sha256": "8621bd250783c4c761174c89745cae13d1c7af80e50484731b352d182043b057"
+  },
+  "metrics": [
+    {
+      "turbine": "turbine_1",
+      "lead_band": "1-24",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "raw_power": {
+          "mae": 0.2402432050345848,
+          "rmse": 0.3506289674831887,
+          "bias": 0.2103003672574876
+        },
+        "ridge_affine": {
+          "mae": 0.20678272104829887,
+          "rmse": 0.27527315927175433,
+          "bias": 0.08725960334261153
+        },
+        "persistence": {
+          "mae": 0.33422619047619045,
+          "rmse": 0.4447971938432094,
+          "bias": 0.046349206349206355
+        },
+        "train_mean": {
+          "mae": 0.3306837197451532,
+          "rmse": 0.3731129473375734,
+          "bias": -0.014239120825870352
+        }
+      }
+    },
+    {
+      "turbine": "turbine_1",
+      "lead_band": "25-48",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "raw_power": {
+          "mae": 0.2399507769219269,
+          "rmse": 0.3376687824658747,
+          "bias": 0.1349588048073783
+        },
+        "ridge_affine": {
+          "mae": 0.23045983671574474,
+          "rmse": 0.28544437730641664,
+          "bias": 0.008584810252459638
+        },
+        "persistence": {
+          "mae": 0.4997123015873016,
+          "rmse": 0.5704003252844936,
+          "bias": 0.002331349206349207
+        },
+        "train_mean": {
+          "mae": 0.31675732452425764,
+          "rmse": 0.364634378438281,
+          "bias": -0.0582569779687275
+        }
+      }
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "1-24",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "raw_power": {
+          "mae": 0.22766748081446078,
+          "rmse": 0.3360457242322857,
+          "bias": 0.19791617760239294
+        },
+        "ridge_affine": {
+          "mae": 0.19774510931447936,
+          "rmse": 0.2635466295758703,
+          "bias": 0.07529355553676001
+        },
+        "persistence": {
+          "mae": 0.32907738095238087,
+          "rmse": 0.44123588230784083,
+          "bias": 0.04778769841269841
+        },
+        "train_mean": {
+          "mae": 0.32853982934245485,
+          "rmse": 0.3711459340618566,
+          "bias": -0.019750433919872308
+        }
+      }
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "25-48",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "raw_power": {
+          "mae": 0.23509456838536189,
+          "rmse": 0.32954307407051836,
+          "bias": 0.11950455318740527
+        },
+        "ridge_affine": {
+          "mae": 0.2302775153966829,
+          "rmse": 0.28305695996451713,
+          "bias": -0.007964157936867286
+        },
+        "persistence": {
+          "mae": 0.5005059523809523,
+          "rmse": 0.5720084503991547,
+          "bias": 0.001934523809523792
+        },
+        "train_mean": {
+          "mae": 0.3166282936569954,
+          "rmse": 0.36549619805312655,
+          "bias": -0.06560360852304692
+        }
+      }
+    }
+  ],
+  "pooled": {
+    "forecast_rows": 672,
+    "scored_rows": 672,
+    "coverage": 1.0,
+    "methods": {
+      "raw_power": {
+        "mae": 0.2357390077890836,
+        "rmse": 0.3385580622038714,
+        "bias": 0.165669975713666
+      },
+      "ridge_affine": {
+        "mae": 0.21631629561880147,
+        "rmse": 0.27696203408430176,
+        "bias": 0.04079345279874098
+      },
+      "persistence": {
+        "mae": 0.4158804563492064,
+        "rmse": 0.5111467122802099,
+        "bias": 0.02460069444444443
+      },
+      "train_mean": {
+        "mae": 0.3231522918172153,
+        "rmse": 0.36861506906661473,
+        "bias": -0.03946253530937928
+      }
+    }
+  },
+  "training_coverage": [
+    {
+      "turbine": "turbine_1",
+      "lead_band": "1-24",
+      "forecast_rows": 383,
+      "paired_rows": 379
+    },
+    {
+      "turbine": "turbine_1",
+      "lead_band": "25-48",
+      "forecast_rows": 359,
+      "paired_rows": 355
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "1-24",
+      "forecast_rows": 383,
+      "paired_rows": 373
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "25-48",
+      "forecast_rows": 359,
+      "paired_rows": 349
+    }
+  ],
+  "evaluation_predictions_sha256": "366596980025836d8df7b3da870ceb1984aa16db089ec6c705cbf6b92c3cf9d0",
+  "protocol_sha256": "8f8ebf0c296fe2e7b7e7e175b6ddb5241f6307350016a4f65fad4797bf0ead8f",
+  "production_changed": false,
+  "elapsed_seconds": 634.2970000000023
+}

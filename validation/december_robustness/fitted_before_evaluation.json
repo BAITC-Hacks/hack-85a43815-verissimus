@@ -1,0 +1,43 @@
+{
+  "frozen_at": "2026-09-23T12:22:02.449394+00:00",
+  "available_at": "2025-12-16T18:00:00+00:00",
+  "parameters": [
+    {
+      "turbine": "turbine_1",
+      "lead_band": "1-24",
+      "slope": 0.8374203997119946,
+      "intercept": -0.028333079528256894,
+      "training_rows": 379,
+      "fit_start": "2025-11-30T19:00:00+00:00",
+      "fit_end": "2025-12-16T17:00:00+00:00"
+    },
+    {
+      "turbine": "turbine_1",
+      "lead_band": "25-48",
+      "slope": 0.8212975953867444,
+      "intercept": -0.028394708030863625,
+      "training_rows": 355,
+      "fit_start": "2025-12-01T19:00:00+00:00",
+      "fit_end": "2025-12-16T17:00:00+00:00"
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "1-24",
+      "slope": 0.8284817792433476,
+      "intercept": -0.024333899083699408,
+      "training_rows": 373,
+      "fit_start": "2025-11-30T19:00:00+00:00",
+      "fit_end": "2025-12-16T17:00:00+00:00"
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "25-48",
+      "slope": 0.8095425335906471,
+      "intercept": -0.025036493137334987,
+      "training_rows": 349,
+      "fit_start": "2025-12-01T19:00:00+00:00",
+      "fit_end": "2025-12-16T17:00:00+00:00"
+    }
+  ],
+  "training_predictions_sha256": "8621bd250783c4c761174c89745cae13d1c7af80e50484731b352d182043b057"
+}

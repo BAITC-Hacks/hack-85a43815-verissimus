@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": [
+    "fixed protocol checksum",
+    "frozen coefficients",
+    "December-only fit target availability",
+    "raw model training cutoffs",
+    "all weather source availability",
+    "January calibration disabled",
+    "all672 evaluation slots",
+    "all coefficient fits and corrected predictions",
+    "all reported MAE/RMSE/bias and coverage"
+  ],
+  "run_count": 46,
+  "evaluation_rows": 672
+}

@@ -1,0 +1,2881 @@
+{
+  "status": "success",
+  "forecast_id": "9a37811960d49f146946f683",
+  "turbine": "turbine_1",
+  "issue_time": "2025-12-10T18:00:00+00:00",
+  "forecast_start": "2025-12-10T19:00:00+00:00",
+  "period": "2025-12-10T19:00:00+00:00 — 2025-12-12T18:00:00+00:00",
+  "horizon_hours": 48,
+  "power_unit": "normalized",
+  "timezone_assumption": "Asia/Almaty",
+  "assumptions": [
+    "Часовой пояс SCADA не подтверждён организаторами.",
+    "Метки SCADA приняты за начало десятиминутного интервала.",
+    "Задержка получения завершённого часа SCADA принята нулевой.",
+    "Шкала мощности [0, 1]; перевод в МВт неизвестен.",
+    "Сеточный ветер GFS 100 м используется без калибровки к датчику турбины."
+  ],
+  "weather": {
+    "provider": "NOAA NODD public S3 archive",
+    "model": "GFS 0.25 degree operational forecast",
+    "run_time": "2025-12-10T12:00:00+00:00",
+    "issue_time": "2025-12-10T18:00:00+00:00",
+    "available_at": "2025-12-10T16:00:12+00:00",
+    "availability_evidence": "Maximum HTTP Last-Modified of original GRIB objects and inventories; archive evidence, not an independent first-publication log",
+    "selection_policy": "Single cycle at least six hours before issue_time; every source Last-Modified <= issue_time",
+    "wind_height_m": 100,
+    "temperature_height_m": 2,
+    "requested_coordinates": {
+      "latitude": 43.64515,
+      "longitude": 78.535604
+    },
+    "grid_cell": {
+      "latitude": 43.75,
+      "longitude": 78.5
+    },
+    "spatial_method": "nearest point on the regular 0.25 degree GFS grid",
+    "units": {
+      "wind_speed": "m/s",
+      "temperature": "degC"
+    },
+    "sources": [
+      {
+        "valid_time": "2025-12-10T19:00:00+00:00",
+        "lead_hours": 7,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f007.idx",
+        "last_modified": "2025-12-10T15:32:45+00:00",
+        "etag": "\"d5bead8cd7ca14f5cf6c4dd510a71149\"",
+        "sha256": "acab722546775b450f0e661fd62272cfcc8b40c9707864600053dc738957072f",
+        "byte_count": 40471,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-10T19:00:00+00:00",
+        "lead_hours": 7,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f007",
+        "last_modified": "2025-12-10T15:32:18+00:00",
+        "etag": "\"ea8fdac21f7157a41e828acce953a2a8\"",
+        "sha256": "d771d0b3fc195908d45f9969b258d7107989e3134da436018b9988e8246c4137",
+        "byte_count": 886951,
+        "field": "temperature",
+        "byte_range": [
+          413236129,
+          414123079
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T19:00:00+00:00",
+        "lead_hours": 7,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f007",
+        "last_modified": "2025-12-10T15:32:18+00:00",
+        "etag": "\"ea8fdac21f7157a41e828acce953a2a8\"",
+        "sha256": "7f2d44bc1d92d5d41e6e05050d629528816e8301b7c41d4b2e83710036973cde",
+        "byte_count": 977955,
+        "field": "u100",
+        "byte_range": [
+          492760093,
+          493738047
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T19:00:00+00:00",
+        "lead_hours": 7,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f007",
+        "last_modified": "2025-12-10T15:32:18+00:00",
+        "etag": "\"ea8fdac21f7157a41e828acce953a2a8\"",
+        "sha256": "18710a1cb98dad47a648a6d555fae59cb8eb3c77965925e5b6b901fe5ef784da",
+        "byte_count": 966424,
+        "field": "v100",
+        "byte_range": [
+          493738048,
+          494704471
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T20:00:00+00:00",
+        "lead_hours": 8,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f008.idx",
+        "last_modified": "2025-12-10T15:33:22+00:00",
+        "etag": "\"f4378c268b64c9ccf64c7a155a147405\"",
+        "sha256": "da52216cef3dc59f5fb0cb7d5f61ce49fa7447d8214906b2fbb9407f979609c9",
+        "byte_count": 40472,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-10T20:00:00+00:00",
+        "lead_hours": 8,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f008",
+        "last_modified": "2025-12-10T15:32:55+00:00",
+        "etag": "\"0371d381bbf6bc4eaa066e30c1402a18\"",
+        "sha256": "c4cb2f761339f23b96c361907ebf3f2bca88128afecfbb81cc389f5a15f7ee33",
+        "byte_count": 885912,
+        "field": "temperature",
+        "byte_range": [
+          416994984,
+          417880895
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T20:00:00+00:00",
+        "lead_hours": 8,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f008",
+        "last_modified": "2025-12-10T15:32:55+00:00",
+        "etag": "\"0371d381bbf6bc4eaa066e30c1402a18\"",
+        "sha256": "767b0da8777996b10ffec8f969e8bd353052d96d8b60be3cf70fa9391f10a018",
+        "byte_count": 977612,
+        "field": "u100",
+        "byte_range": [
+          497631125,
+          498608736
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T20:00:00+00:00",
+        "lead_hours": 8,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f008",
+        "last_modified": "2025-12-10T15:32:55+00:00",
+        "etag": "\"0371d381bbf6bc4eaa066e30c1402a18\"",
+        "sha256": "cfbb068964586daf0fed7bf268540e9251b0fe44706726fae0e741ccf027eff1",
+        "byte_count": 965702,
+        "field": "v100",
+        "byte_range": [
+          498608737,
+          499574438
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T21:00:00+00:00",
+        "lead_hours": 9,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f009.idx",
+        "last_modified": "2025-12-10T15:33:32+00:00",
+        "etag": "\"5a8d659c552c2e540b13e1ad9184ca9e\"",
+        "sha256": "d0056bc7dd35dac84adc7dbf131ccecc2fd6968fea3d92c3c3e4636dd0a99455",
+        "byte_count": 40470,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-10T21:00:00+00:00",
+        "lead_hours": 9,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f009",
+        "last_modified": "2025-12-10T15:33:08+00:00",
+        "etag": "\"8da14d1e2720f6d2f50bbb4ae62c753f\"",
+        "sha256": "fdae775872c214072bed4c21c5423d8fc9f928bbdea49b6cb53e2a43d1c44e4c",
+        "byte_count": 884761,
+        "field": "temperature",
+        "byte_range": [
+          416193523,
+          417078283
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T21:00:00+00:00",
+        "lead_hours": 9,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f009",
+        "last_modified": "2025-12-10T15:33:08+00:00",
+        "etag": "\"8da14d1e2720f6d2f50bbb4ae62c753f\"",
+        "sha256": "7839884153b981e57af09a05c8467ea3941dd816dce692981850f54c881d27bf",
+        "byte_count": 977220,
+        "field": "u100",
+        "byte_range": [
+          498130053,
+          499107272
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T21:00:00+00:00",
+        "lead_hours": 9,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f009",
+        "last_modified": "2025-12-10T15:33:08+00:00",
+        "etag": "\"8da14d1e2720f6d2f50bbb4ae62c753f\"",
+        "sha256": "9a9713226eb589ce236bc2ac8f43d597edf16c7c0f1133a0e86a36a615954880",
+        "byte_count": 965428,
+        "field": "v100",
+        "byte_range": [
+          499107273,
+          500072700
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T22:00:00+00:00",
+        "lead_hours": 10,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f010.idx",
+        "last_modified": "2025-12-10T15:33:40+00:00",
+        "etag": "\"7dd46344164468aeb62fbe5c30aaa75c\"",
+        "sha256": "6d34701e935e5afb622c136e5cdd7dcd24c149ce390b5106000fffb6375b20cb",
+        "byte_count": 41214,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-10T22:00:00+00:00",
+        "lead_hours": 10,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f010",
+        "last_modified": "2025-12-10T15:33:13+00:00",
+        "etag": "\"7c0f651c80907a87f2730bca86c729d0\"",
+        "sha256": "21204a259ddd392373d72de5d205c4dee1db24d57c3936995b3e8703a1667aa9",
+        "byte_count": 883899,
+        "field": "temperature",
+        "byte_range": [
+          417828392,
+          418712290
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T22:00:00+00:00",
+        "lead_hours": 10,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f010",
+        "last_modified": "2025-12-10T15:33:13+00:00",
+        "etag": "\"7c0f651c80907a87f2730bca86c729d0\"",
+        "sha256": "2ed85d716872f176032610a57b53635ed918d1caca491a98e27bb2ea5954667e",
+        "byte_count": 976627,
+        "field": "u100",
+        "byte_range": [
+          500082177,
+          501058803
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T22:00:00+00:00",
+        "lead_hours": 10,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f010",
+        "last_modified": "2025-12-10T15:33:13+00:00",
+        "etag": "\"7c0f651c80907a87f2730bca86c729d0\"",
+        "sha256": "3965f77e3d7b8f1adf986f3d853913d4c5bf8b625cbb99f17b3ca171ac148bb7",
+        "byte_count": 964723,
+        "field": "v100",
+        "byte_range": [
+          501058804,
+          502023526
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T23:00:00+00:00",
+        "lead_hours": 11,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f011.idx",
+        "last_modified": "2025-12-10T15:48:37+00:00",
+        "etag": "\"712c0c36dde128ea297804f6c8437dc5\"",
+        "sha256": "08c7ad76b03034bb95da3c1e2f30d888f51e23e2501ef563141afcb2406f45da",
+        "byte_count": 41214,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-10T23:00:00+00:00",
+        "lead_hours": 11,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f011",
+        "last_modified": "2025-12-10T15:48:13+00:00",
+        "etag": "\"ae0989b2a29619e5394c4c0db18488e8\"",
+        "sha256": "d04f7e0e1e4cf91217b64a06884fad674e187395d249e2e6fadf6813fd53dc02",
+        "byte_count": 883590,
+        "field": "temperature",
+        "byte_range": [
+          417638541,
+          418522130
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T23:00:00+00:00",
+        "lead_hours": 11,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f011",
+        "last_modified": "2025-12-10T15:48:13+00:00",
+        "etag": "\"ae0989b2a29619e5394c4c0db18488e8\"",
+        "sha256": "bf5964497af7b7afefe3d0686bd569fa73bd35a3487474f194b035482261e164",
+        "byte_count": 975332,
+        "field": "u100",
+        "byte_range": [
+          500507209,
+          501482540
+        ]
+      },
+      {
+        "valid_time": "2025-12-10T23:00:00+00:00",
+        "lead_hours": 11,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f011",
+        "last_modified": "2025-12-10T15:48:13+00:00",
+        "etag": "\"ae0989b2a29619e5394c4c0db18488e8\"",
+        "sha256": "41142c844ff523729810b2e8b4bdfd37f0a441dc1387dc4d75250c8357db14a4",
+        "byte_count": 964543,
+        "field": "v100",
+        "byte_range": [
+          501482541,
+          502447083
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T00:00:00+00:00",
+        "lead_hours": 12,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f012.idx",
+        "last_modified": "2025-12-10T15:34:37+00:00",
+        "etag": "\"8f6929997d4f37e8ecabcc9e6ce85c25\"",
+        "sha256": "c581e307ddd2bb86a24ab88ed3b5d4036bac03a0c0f98bfd92d48104514d2b31",
+        "byte_count": 41214,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T00:00:00+00:00",
+        "lead_hours": 12,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f012",
+        "last_modified": "2025-12-10T15:34:14+00:00",
+        "etag": "\"f2d64577ce13524843af6a5281f630c4\"",
+        "sha256": "ce52d960d8f2ee69d2002a9e28f8e2d2d9623285329e1d6d8c6871e3378222bf",
+        "byte_count": 883089,
+        "field": "temperature",
+        "byte_range": [
+          417577143,
+          418460231
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T00:00:00+00:00",
+        "lead_hours": 12,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f012",
+        "last_modified": "2025-12-10T15:34:14+00:00",
+        "etag": "\"f2d64577ce13524843af6a5281f630c4\"",
+        "sha256": "97a3e98ef008350dda291085e4aa7c101afb1a0cc6b0956402052ebaa95609fa",
+        "byte_count": 973975,
+        "field": "u100",
+        "byte_range": [
+          500621620,
+          501595594
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T00:00:00+00:00",
+        "lead_hours": 12,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f012",
+        "last_modified": "2025-12-10T15:34:14+00:00",
+        "etag": "\"f2d64577ce13524843af6a5281f630c4\"",
+        "sha256": "aef6695a56efe446b685add9a53af843047d62cb685811c4188281664d13c30b",
+        "byte_count": 963543,
+        "field": "v100",
+        "byte_range": [
+          501595595,
+          502559137
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T01:00:00+00:00",
+        "lead_hours": 13,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f013.idx",
+        "last_modified": "2025-12-10T15:34:43+00:00",
+        "etag": "\"9518d1e4d2e57f201a18f9a810d21b09\"",
+        "sha256": "78b84f01fa83ad34d97235535eadb645ecf0aed2ee992bc14c12f366e7aaa312",
+        "byte_count": 41255,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T01:00:00+00:00",
+        "lead_hours": 13,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f013",
+        "last_modified": "2025-12-10T15:34:16+00:00",
+        "etag": "\"c4dacb01491fef69e9f8be627d5d7ccc\"",
+        "sha256": "d6388e462b281d72fe426d9e51247255054af56f6c7a0df09082095d77036a8d",
+        "byte_count": 882719,
+        "field": "temperature",
+        "byte_range": [
+          418220588,
+          419103306
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T01:00:00+00:00",
+        "lead_hours": 13,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f013",
+        "last_modified": "2025-12-10T15:34:16+00:00",
+        "etag": "\"c4dacb01491fef69e9f8be627d5d7ccc\"",
+        "sha256": "3f4183c0469b2319276167c9c30a9af29d06ce8cb0e18a55a9096e7433e44058",
+        "byte_count": 973335,
+        "field": "u100",
+        "byte_range": [
+          497882974,
+          498856308
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T01:00:00+00:00",
+        "lead_hours": 13,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f013",
+        "last_modified": "2025-12-10T15:34:16+00:00",
+        "etag": "\"c4dacb01491fef69e9f8be627d5d7ccc\"",
+        "sha256": "840ec9e06b00f1716cf64e0d0a0e15e422a35d3380ca5082367546b549206195",
+        "byte_count": 963183,
+        "field": "v100",
+        "byte_range": [
+          498856309,
+          499819491
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T02:00:00+00:00",
+        "lead_hours": 14,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f014.idx",
+        "last_modified": "2025-12-10T15:35:30+00:00",
+        "etag": "\"708cb4ac68eb3f8d287e61616e551224\"",
+        "sha256": "65d14d5d2596d01391b66f4db50f8af0f6b0dd8436dd3b666c5796b382a5aa37",
+        "byte_count": 41257,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T02:00:00+00:00",
+        "lead_hours": 14,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f014",
+        "last_modified": "2025-12-10T15:34:32+00:00",
+        "etag": "\"5e0dbd1d515a2b3c10c8b2f273b96fcf\"",
+        "sha256": "37ea8bba39fbed89dede290d25c45d28abd087a8c8b26d607f2367d5774a00b8",
+        "byte_count": 877807,
+        "field": "temperature",
+        "byte_range": [
+          419436765,
+          420314571
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T02:00:00+00:00",
+        "lead_hours": 14,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f014",
+        "last_modified": "2025-12-10T15:34:32+00:00",
+        "etag": "\"5e0dbd1d515a2b3c10c8b2f273b96fcf\"",
+        "sha256": "1e11b64c53e4bc454b9b7a33fac150aceae193746341e1eb9ccd943d0d83db04",
+        "byte_count": 972263,
+        "field": "u100",
+        "byte_range": [
+          499435605,
+          500407867
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T02:00:00+00:00",
+        "lead_hours": 14,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f014",
+        "last_modified": "2025-12-10T15:34:32+00:00",
+        "etag": "\"5e0dbd1d515a2b3c10c8b2f273b96fcf\"",
+        "sha256": "b791fee1d9eedb5c0fedd245c0c75e8e08bad08558b5352b514d34ddd9dceae5",
+        "byte_count": 962053,
+        "field": "v100",
+        "byte_range": [
+          500407868,
+          501369920
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T03:00:00+00:00",
+        "lead_hours": 15,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f015.idx",
+        "last_modified": "2025-12-10T15:35:03+00:00",
+        "etag": "\"b1ed4c2125c7919934d1990c89f9b40b\"",
+        "sha256": "c55c6649607b2be7702509222bafc6f7fa096e971a1ae78b94e288086ed49cde",
+        "byte_count": 41255,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T03:00:00+00:00",
+        "lead_hours": 15,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f015",
+        "last_modified": "2025-12-10T15:34:38+00:00",
+        "etag": "\"a56a0c3baefbc040b0a43d6c307a8cd4\"",
+        "sha256": "dc7cac68d151eb3fbc4b8564fb8174dcc0b69024d5aaabdd20fcb0efca9e94fb",
+        "byte_count": 876510,
+        "field": "temperature",
+        "byte_range": [
+          417889028,
+          418765537
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T03:00:00+00:00",
+        "lead_hours": 15,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f015",
+        "last_modified": "2025-12-10T15:34:38+00:00",
+        "etag": "\"a56a0c3baefbc040b0a43d6c307a8cd4\"",
+        "sha256": "665a89f6cbe39b037c20d3669a5111d660d20e568c98b55ecbdedbdb0ab659b1",
+        "byte_count": 971802,
+        "field": "u100",
+        "byte_range": [
+          498383682,
+          499355483
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T03:00:00+00:00",
+        "lead_hours": 15,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f015",
+        "last_modified": "2025-12-10T15:34:38+00:00",
+        "etag": "\"a56a0c3baefbc040b0a43d6c307a8cd4\"",
+        "sha256": "530177b08ea1ec5c85d98553776b635b4595f8d3291e730d5913106e5747af56",
+        "byte_count": 961259,
+        "field": "v100",
+        "byte_range": [
+          499355484,
+          500316742
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T04:00:00+00:00",
+        "lead_hours": 16,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f016.idx",
+        "last_modified": "2025-12-10T15:50:11+00:00",
+        "etag": "\"5c1bb3dfe65aa4a5c7e60646f025f41e\"",
+        "sha256": "6df3efaab7bfcf335f8a28b1f5c20d1c676504e920053706fc843d1fdd9e206d",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T04:00:00+00:00",
+        "lead_hours": 16,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f016",
+        "last_modified": "2025-12-10T15:49:37+00:00",
+        "etag": "\"9a947ef72fa27dcc7d3a3dec8f7e16bf\"",
+        "sha256": "32990f6e891616531b4d4b887f1efa4137572c65f712871e24408daa9417e759",
+        "byte_count": 875716,
+        "field": "temperature",
+        "byte_range": [
+          415817178,
+          416692893
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T04:00:00+00:00",
+        "lead_hours": 16,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f016",
+        "last_modified": "2025-12-10T15:49:37+00:00",
+        "etag": "\"9a947ef72fa27dcc7d3a3dec8f7e16bf\"",
+        "sha256": "ad63213e8b2f072c6f34f2fdb41ab3276edc7f2da46c11d8194014302d09c1d6",
+        "byte_count": 971751,
+        "field": "u100",
+        "byte_range": [
+          497278592,
+          498250342
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T04:00:00+00:00",
+        "lead_hours": 16,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f016",
+        "last_modified": "2025-12-10T15:49:37+00:00",
+        "etag": "\"9a947ef72fa27dcc7d3a3dec8f7e16bf\"",
+        "sha256": "c8ddaa3f228e19770bcfb6550bc96ef9d4316323676575bd6153f38538f80bd5",
+        "byte_count": 960904,
+        "field": "v100",
+        "byte_range": [
+          498250343,
+          499211246
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T05:00:00+00:00",
+        "lead_hours": 17,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f017.idx",
+        "last_modified": "2025-12-10T15:35:44+00:00",
+        "etag": "\"65e5012bc1d3ea3306e93a3bc149b6f1\"",
+        "sha256": "5d099ae248edfd7482f78634ec80d4d2ba7ac012b1983720afe77e11eccd0b61",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T05:00:00+00:00",
+        "lead_hours": 17,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f017",
+        "last_modified": "2025-12-10T15:35:18+00:00",
+        "etag": "\"ab08725ebd4fb5151cb76f3604bb097f\"",
+        "sha256": "190d9958e22e4f47419c2a8d3278a768766493137c4593918dd575ea4846069a",
+        "byte_count": 879337,
+        "field": "temperature",
+        "byte_range": [
+          415801465,
+          416680801
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T05:00:00+00:00",
+        "lead_hours": 17,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f017",
+        "last_modified": "2025-12-10T15:35:18+00:00",
+        "etag": "\"ab08725ebd4fb5151cb76f3604bb097f\"",
+        "sha256": "a1c89d3ffb4064c50cfeafa655d98271111347fc56ea966517a60bec08b566fd",
+        "byte_count": 971813,
+        "field": "u100",
+        "byte_range": [
+          498124237,
+          499096049
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T05:00:00+00:00",
+        "lead_hours": 17,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f017",
+        "last_modified": "2025-12-10T15:35:18+00:00",
+        "etag": "\"ab08725ebd4fb5151cb76f3604bb097f\"",
+        "sha256": "39b8ffc35ba7187ff8a92f5d3c5367f0c4d66cd2bbbb73b24e63cc15545c2ce6",
+        "byte_count": 960176,
+        "field": "v100",
+        "byte_range": [
+          499096050,
+          500056225
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T06:00:00+00:00",
+        "lead_hours": 18,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f018.idx",
+        "last_modified": "2025-12-10T15:50:36+00:00",
+        "etag": "\"e5bd2084418ccd96b2df85efb17f30a9\"",
+        "sha256": "502b3473199f4204a4544d74600717422d74d9ebdee8bbc8875887a817982e89",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T06:00:00+00:00",
+        "lead_hours": 18,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f018",
+        "last_modified": "2025-12-10T15:50:07+00:00",
+        "etag": "\"89f1059870ca823f2f014ac745c4c916\"",
+        "sha256": "de60c28e90dad3ab7d364708ddd5e8d8150cc0cf33768ecab314e304b831300c",
+        "byte_count": 875685,
+        "field": "temperature",
+        "byte_range": [
+          413193544,
+          414069228
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T06:00:00+00:00",
+        "lead_hours": 18,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f018",
+        "last_modified": "2025-12-10T15:50:07+00:00",
+        "etag": "\"89f1059870ca823f2f014ac745c4c916\"",
+        "sha256": "ce69ff9e4d44ccb2d9e64ec104629d338775b4f9b0dff640208660dd6db2ce1e",
+        "byte_count": 972171,
+        "field": "u100",
+        "byte_range": [
+          495740028,
+          496712198
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T06:00:00+00:00",
+        "lead_hours": 18,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f018",
+        "last_modified": "2025-12-10T15:50:07+00:00",
+        "etag": "\"89f1059870ca823f2f014ac745c4c916\"",
+        "sha256": "8498a28915a5672415f474e1d4e56e140d875ba110fbe63eacbb55594d4b1cb0",
+        "byte_count": 960744,
+        "field": "v100",
+        "byte_range": [
+          496712199,
+          497672942
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T07:00:00+00:00",
+        "lead_hours": 19,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f019.idx",
+        "last_modified": "2025-12-10T15:36:23+00:00",
+        "etag": "\"1a1d192112e2c530fc4169cdd851fb4d\"",
+        "sha256": "236606acb3c05ef2574556a0f91cb11b3ba2f2cf75fedadb1e570161e13507ab",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T07:00:00+00:00",
+        "lead_hours": 19,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f019",
+        "last_modified": "2025-12-10T15:35:51+00:00",
+        "etag": "\"ef587e917703587671ca9127a5dbfc69\"",
+        "sha256": "398f6a10eb78b36ff5d49489ce58fd297a065b37d6c767d80795da08025a9d12",
+        "byte_count": 875250,
+        "field": "temperature",
+        "byte_range": [
+          416266945,
+          417142194
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T07:00:00+00:00",
+        "lead_hours": 19,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f019",
+        "last_modified": "2025-12-10T15:35:51+00:00",
+        "etag": "\"ef587e917703587671ca9127a5dbfc69\"",
+        "sha256": "dcbfc74f4f049bb51cb86666d6f963e9fe7c36e63d1cdc102fe78b192d162624",
+        "byte_count": 971900,
+        "field": "u100",
+        "byte_range": [
+          496408110,
+          497380009
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T07:00:00+00:00",
+        "lead_hours": 19,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f019",
+        "last_modified": "2025-12-10T15:35:51+00:00",
+        "etag": "\"ef587e917703587671ca9127a5dbfc69\"",
+        "sha256": "d2847661e027cf79e73538cfcef8f608e0bd8ea462dd227e06b84b72393f6fc5",
+        "byte_count": 960316,
+        "field": "v100",
+        "byte_range": [
+          497380010,
+          498340325
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T08:00:00+00:00",
+        "lead_hours": 20,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f020.idx",
+        "last_modified": "2025-12-10T15:50:53+00:00",
+        "etag": "\"3f09037ca5fdbc6a6e1182b6b2e0d99f\"",
+        "sha256": "bc82f6eac5754bf01749382955a405d4bacff7b9075c3eeaef1db51803c1bb11",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T08:00:00+00:00",
+        "lead_hours": 20,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f020",
+        "last_modified": "2025-12-10T15:50:23+00:00",
+        "etag": "\"347bebf34827920acf8d4c3717f237c2\"",
+        "sha256": "c701cc87940e2755dda870bc0d3503002d3fa8fd62a53a7b65503b5807fd0a98",
+        "byte_count": 876322,
+        "field": "temperature",
+        "byte_range": [
+          415609552,
+          416485873
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T08:00:00+00:00",
+        "lead_hours": 20,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f020",
+        "last_modified": "2025-12-10T15:50:23+00:00",
+        "etag": "\"347bebf34827920acf8d4c3717f237c2\"",
+        "sha256": "fb7460c4422be685bcbc23d38f44197548cccd1d248c907c40b8613dd3f7f793",
+        "byte_count": 971968,
+        "field": "u100",
+        "byte_range": [
+          496854913,
+          497826880
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T08:00:00+00:00",
+        "lead_hours": 20,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f020",
+        "last_modified": "2025-12-10T15:50:23+00:00",
+        "etag": "\"347bebf34827920acf8d4c3717f237c2\"",
+        "sha256": "a4ba1f3de87b1b83df94d9126e254453b32fba81b0837df6bee18f04be0ab893",
+        "byte_count": 960140,
+        "field": "v100",
+        "byte_range": [
+          497826881,
+          498787020
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T09:00:00+00:00",
+        "lead_hours": 21,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f021.idx",
+        "last_modified": "2025-12-10T15:51:53+00:00",
+        "etag": "\"7a8521265345b7d42cb182d82a0356e5\"",
+        "sha256": "a65edb03bab74b9e4ec7caf50d06183a6ded37ff7cfda4f72bf05723de134b97",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T09:00:00+00:00",
+        "lead_hours": 21,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f021",
+        "last_modified": "2025-12-10T15:50:57+00:00",
+        "etag": "\"565e2f0bbedb87b5e2f6f79a35e7a58c\"",
+        "sha256": "c8fb9ec14aeac9479b81c95c3b13420318aafd4bcab9e12ff1caf2496d42b0d5",
+        "byte_count": 877454,
+        "field": "temperature",
+        "byte_range": [
+          415708346,
+          416585799
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T09:00:00+00:00",
+        "lead_hours": 21,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f021",
+        "last_modified": "2025-12-10T15:50:57+00:00",
+        "etag": "\"565e2f0bbedb87b5e2f6f79a35e7a58c\"",
+        "sha256": "f0c83675fd7c4d725eaaa0f232f44ee5a41c6853f821b0ba69373cc742691948",
+        "byte_count": 971568,
+        "field": "u100",
+        "byte_range": [
+          497533318,
+          498504885
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T09:00:00+00:00",
+        "lead_hours": 21,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f021",
+        "last_modified": "2025-12-10T15:50:57+00:00",
+        "etag": "\"565e2f0bbedb87b5e2f6f79a35e7a58c\"",
+        "sha256": "094b878301e8083432777476f6d6020ba6ae0588e9e82b70399a60668b3d2b08",
+        "byte_count": 960027,
+        "field": "v100",
+        "byte_range": [
+          498504886,
+          499464912
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T10:00:00+00:00",
+        "lead_hours": 22,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f022.idx",
+        "last_modified": "2025-12-10T15:37:11+00:00",
+        "etag": "\"767516568ddc0c8bef90d83ec38e22aa\"",
+        "sha256": "a1ece0fd52d7727425a44afeb04b2266d75ac1da69d5aefd09d41e29fcc40f6f",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T10:00:00+00:00",
+        "lead_hours": 22,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f022",
+        "last_modified": "2025-12-10T15:36:45+00:00",
+        "etag": "\"f46c5b332c3f14ef11c6f9aeac429977\"",
+        "sha256": "5f913a45f0f2ea438ec0a99d9a32fb0a9f0211041bb62ab99ba8340713f4ddf6",
+        "byte_count": 878011,
+        "field": "temperature",
+        "byte_range": [
+          414931278,
+          415809288
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T10:00:00+00:00",
+        "lead_hours": 22,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f022",
+        "last_modified": "2025-12-10T15:36:45+00:00",
+        "etag": "\"f46c5b332c3f14ef11c6f9aeac429977\"",
+        "sha256": "280f73248af84d4db2805564416eb6bc96bf73ac8851c81878bcc0fba8e3ecff",
+        "byte_count": 971592,
+        "field": "u100",
+        "byte_range": [
+          497469550,
+          498441141
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T10:00:00+00:00",
+        "lead_hours": 22,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f022",
+        "last_modified": "2025-12-10T15:36:45+00:00",
+        "etag": "\"f46c5b332c3f14ef11c6f9aeac429977\"",
+        "sha256": "59934b13638da1a1b2e790a55120058c7a6839a8556bbd764f14dea16e869e21",
+        "byte_count": 960114,
+        "field": "v100",
+        "byte_range": [
+          498441142,
+          499401255
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T11:00:00+00:00",
+        "lead_hours": 23,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f023.idx",
+        "last_modified": "2025-12-10T15:37:09+00:00",
+        "etag": "\"3d284d13a28b679228bd31d79d3fa7a9\"",
+        "sha256": "c03147e75135da213d7ff0c2aeb8c1c34b7460e087d15c8d150499c483a9189e",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T11:00:00+00:00",
+        "lead_hours": 23,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f023",
+        "last_modified": "2025-12-10T15:36:40+00:00",
+        "etag": "\"af8e20df484d4b9df36899a922064a76\"",
+        "sha256": "7d537d4634fe130f3cf2775b5f8d0a836fb0e68b1c44ab840c017319fecaa265",
+        "byte_count": 879986,
+        "field": "temperature",
+        "byte_range": [
+          416862110,
+          417742095
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T11:00:00+00:00",
+        "lead_hours": 23,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f023",
+        "last_modified": "2025-12-10T15:36:40+00:00",
+        "etag": "\"af8e20df484d4b9df36899a922064a76\"",
+        "sha256": "b8aab3f34699cfa1cd5718004d32218bdc47379ba5769f01408e79aef7c0b40f",
+        "byte_count": 972167,
+        "field": "u100",
+        "byte_range": [
+          499841613,
+          500813779
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T11:00:00+00:00",
+        "lead_hours": 23,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f023",
+        "last_modified": "2025-12-10T15:36:40+00:00",
+        "etag": "\"af8e20df484d4b9df36899a922064a76\"",
+        "sha256": "b03eb1db7a7980b7df4d0e12069b2c0e8e18edfaf3b135ffda0db5fbe05fbde4",
+        "byte_count": 959283,
+        "field": "v100",
+        "byte_range": [
+          500813780,
+          501773062
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T12:00:00+00:00",
+        "lead_hours": 24,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f024.idx",
+        "last_modified": "2025-12-10T15:52:25+00:00",
+        "etag": "\"6fcb90601c9c4ee88228514af2dd7370\"",
+        "sha256": "be2eef473a3849a63f278346d7866ca3b4385910a871c7bebb33a301cc89f63f",
+        "byte_count": 41249,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T12:00:00+00:00",
+        "lead_hours": 24,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f024",
+        "last_modified": "2025-12-10T15:51:55+00:00",
+        "etag": "\"fb9d921b56edbadae5f174ff7c68da0d\"",
+        "sha256": "0d3a12389614df87af5ce053e08213485571594e7ae334c742cd59c7eecf8525",
+        "byte_count": 881507,
+        "field": "temperature",
+        "byte_range": [
+          416324950,
+          417206456
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T12:00:00+00:00",
+        "lead_hours": 24,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f024",
+        "last_modified": "2025-12-10T15:51:55+00:00",
+        "etag": "\"fb9d921b56edbadae5f174ff7c68da0d\"",
+        "sha256": "b0239ebef7cc71b55c8baad0a42546b7c6bb93fb95235e93a622e8569ef25f24",
+        "byte_count": 972702,
+        "field": "u100",
+        "byte_range": [
+          499408930,
+          500381631
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T12:00:00+00:00",
+        "lead_hours": 24,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f024",
+        "last_modified": "2025-12-10T15:51:55+00:00",
+        "etag": "\"fb9d921b56edbadae5f174ff7c68da0d\"",
+        "sha256": "35e9f5f5445afeccb2049fed32e2940b8709b7d6882db62cb6c827710b890498",
+        "byte_count": 959495,
+        "field": "v100",
+        "byte_range": [
+          500381632,
+          501341126
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T13:00:00+00:00",
+        "lead_hours": 25,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f025.idx",
+        "last_modified": "2025-12-10T15:37:40+00:00",
+        "etag": "\"94cdf7d2fff05afe42454e7205ffae10\"",
+        "sha256": "dbaad586a898fb80814bb05b303b5c909e7de2c88dd48d36159398286aac6808",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T13:00:00+00:00",
+        "lead_hours": 25,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f025",
+        "last_modified": "2025-12-10T15:37:17+00:00",
+        "etag": "\"0ab71d0aad647d6e9225bd39074a4051\"",
+        "sha256": "dae67ff89437e9c96a21e7a815234dc90e854742292690521449d1e9dce9b595",
+        "byte_count": 882257,
+        "field": "temperature",
+        "byte_range": [
+          415574120,
+          416456376
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T13:00:00+00:00",
+        "lead_hours": 25,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f025",
+        "last_modified": "2025-12-10T15:37:17+00:00",
+        "etag": "\"0ab71d0aad647d6e9225bd39074a4051\"",
+        "sha256": "f5294e225a5fa72c269871bcc6cb0b239fa556b17ed0a0b98df4a98625b36c77",
+        "byte_count": 973302,
+        "field": "u100",
+        "byte_range": [
+          495841767,
+          496815068
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T13:00:00+00:00",
+        "lead_hours": 25,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f025",
+        "last_modified": "2025-12-10T15:37:17+00:00",
+        "etag": "\"0ab71d0aad647d6e9225bd39074a4051\"",
+        "sha256": "152eed5c789b8524b4d373e2530014c03b5f53fbd1c5da2151288af2a26a9d30",
+        "byte_count": 959366,
+        "field": "v100",
+        "byte_range": [
+          496815069,
+          497774434
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T14:00:00+00:00",
+        "lead_hours": 26,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f026.idx",
+        "last_modified": "2025-12-10T15:38:28+00:00",
+        "etag": "\"008a14da9c014a7730157de0fff6702b\"",
+        "sha256": "b5dae4df2d9e40453513d525115fff7e5fd40585a6f27f8c0ea9dd6d7a003ee5",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T14:00:00+00:00",
+        "lead_hours": 26,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f026",
+        "last_modified": "2025-12-10T15:38:03+00:00",
+        "etag": "\"7db05358afdd57a2db5e50d2b75209fe\"",
+        "sha256": "1ac4e5cc42da1899ebd7c6d3d153ae230cc9da227c2ad6cb6489abd86a2e2092",
+        "byte_count": 886557,
+        "field": "temperature",
+        "byte_range": [
+          416387834,
+          417274390
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T14:00:00+00:00",
+        "lead_hours": 26,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f026",
+        "last_modified": "2025-12-10T15:38:03+00:00",
+        "etag": "\"7db05358afdd57a2db5e50d2b75209fe\"",
+        "sha256": "6c0e5dee7168ab2478cedf12a3417a0b84639420be01bcfce705f1f8346f66f4",
+        "byte_count": 974101,
+        "field": "u100",
+        "byte_range": [
+          497471649,
+          498445749
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T14:00:00+00:00",
+        "lead_hours": 26,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f026",
+        "last_modified": "2025-12-10T15:38:03+00:00",
+        "etag": "\"7db05358afdd57a2db5e50d2b75209fe\"",
+        "sha256": "9e2c2770a7bc66d2afda2e6862229008e5c43610805b2b68f086d3c350fe67c0",
+        "byte_count": 960914,
+        "field": "v100",
+        "byte_range": [
+          498445750,
+          499406663
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T15:00:00+00:00",
+        "lead_hours": 27,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f027.idx",
+        "last_modified": "2025-12-10T15:53:39+00:00",
+        "etag": "\"e77fd4febe10010d3704f80b3a4ae525\"",
+        "sha256": "8186fa75f3e480cb440a0abdb750b01e28a6e70baf35ea8dcea48c6cec401835",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T15:00:00+00:00",
+        "lead_hours": 27,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f027",
+        "last_modified": "2025-12-10T15:53:08+00:00",
+        "etag": "\"e4b8a2aaad76e5633a770d340ac107b5\"",
+        "sha256": "d0eee4900cd0e63e2346dd4925718bf91946f1c3d1da25bbfcb81b9c390aab50",
+        "byte_count": 886427,
+        "field": "temperature",
+        "byte_range": [
+          415803118,
+          416689544
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T15:00:00+00:00",
+        "lead_hours": 27,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f027",
+        "last_modified": "2025-12-10T15:53:08+00:00",
+        "etag": "\"e4b8a2aaad76e5633a770d340ac107b5\"",
+        "sha256": "e793187808cccf04ecd1bd9a6f455b0dd4323ede562a0d953da65d8655e9fd2d",
+        "byte_count": 975788,
+        "field": "u100",
+        "byte_range": [
+          497384607,
+          498360394
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T15:00:00+00:00",
+        "lead_hours": 27,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f027",
+        "last_modified": "2025-12-10T15:53:08+00:00",
+        "etag": "\"e4b8a2aaad76e5633a770d340ac107b5\"",
+        "sha256": "66987be21e49451adcdc71e1da5ade4512aa45a71fc9c892eeb09f07ee9742db",
+        "byte_count": 962292,
+        "field": "v100",
+        "byte_range": [
+          498360395,
+          499322686
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T16:00:00+00:00",
+        "lead_hours": 28,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f028.idx",
+        "last_modified": "2025-12-10T15:53:22+00:00",
+        "etag": "\"eed7b358b4b60f904e411563843e0d51\"",
+        "sha256": "7b188ba69162350b5b1ec8552aa271405eec04eb596ba44f3b483bbdc899be3a",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T16:00:00+00:00",
+        "lead_hours": 28,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f028",
+        "last_modified": "2025-12-10T15:52:58+00:00",
+        "etag": "\"83f86a873fe312d049d64730dc796164\"",
+        "sha256": "26d92f4ddc0376e7f0679d31cc47403763cb7f914de0246c2c483eda85b7c565",
+        "byte_count": 886551,
+        "field": "temperature",
+        "byte_range": [
+          417411248,
+          418297798
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T16:00:00+00:00",
+        "lead_hours": 28,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f028",
+        "last_modified": "2025-12-10T15:52:58+00:00",
+        "etag": "\"83f86a873fe312d049d64730dc796164\"",
+        "sha256": "92a041d84144bf257a070dadd5aa629d34c46a2d2e4893cac132327f64725323",
+        "byte_count": 976322,
+        "field": "u100",
+        "byte_range": [
+          499512147,
+          500488468
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T16:00:00+00:00",
+        "lead_hours": 28,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f028",
+        "last_modified": "2025-12-10T15:52:58+00:00",
+        "etag": "\"83f86a873fe312d049d64730dc796164\"",
+        "sha256": "7aa973f53ed6c8e93e0f63b0453c4434172fe56f0b045055f55b801cb76b7b3c",
+        "byte_count": 963281,
+        "field": "v100",
+        "byte_range": [
+          500488469,
+          501451749
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T17:00:00+00:00",
+        "lead_hours": 29,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f029.idx",
+        "last_modified": "2025-12-10T15:38:56+00:00",
+        "etag": "\"61120d7075cffb1c8bb44f689a819270\"",
+        "sha256": "0e42fb6aa098993280f1ac5e987a1248ef79039a5bf2c43e90065f538dd466d4",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T17:00:00+00:00",
+        "lead_hours": 29,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f029",
+        "last_modified": "2025-12-10T15:38:31+00:00",
+        "etag": "\"194704e9e583b005bcc52ae95873cd31\"",
+        "sha256": "b5a7617a52fe35b0234560a804681fa04da5b3bba1fbf76baebad76ac3326d58",
+        "byte_count": 883153,
+        "field": "temperature",
+        "byte_range": [
+          417616429,
+          418499581
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T17:00:00+00:00",
+        "lead_hours": 29,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f029",
+        "last_modified": "2025-12-10T15:38:31+00:00",
+        "etag": "\"194704e9e583b005bcc52ae95873cd31\"",
+        "sha256": "3cf3ad14d9ea8171fca3387b1e73276a8f707cfef6550816d2a0cc86a061dc21",
+        "byte_count": 976518,
+        "field": "u100",
+        "byte_range": [
+          500341956,
+          501318473
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T17:00:00+00:00",
+        "lead_hours": 29,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f029",
+        "last_modified": "2025-12-10T15:38:31+00:00",
+        "etag": "\"194704e9e583b005bcc52ae95873cd31\"",
+        "sha256": "2b3c700108d025e10f8fd7449f5a4cd27bffcedfa6a4baf23188b6af69d27b90",
+        "byte_count": 964552,
+        "field": "v100",
+        "byte_range": [
+          501318474,
+          502283025
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T18:00:00+00:00",
+        "lead_hours": 30,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f030.idx",
+        "last_modified": "2025-12-10T15:40:03+00:00",
+        "etag": "\"179c5c98d6ce7cbfecba44c937a3f0c7\"",
+        "sha256": "81a99c126226030086262b87cc9020dec82e3761e4d0bca9e533d52e808af1c5",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T18:00:00+00:00",
+        "lead_hours": 30,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f030",
+        "last_modified": "2025-12-10T15:39:37+00:00",
+        "etag": "\"5b2a19c7ba1c8e9bd44d235175eb4e9f\"",
+        "sha256": "eedf82efcffac94ef6c3b65d444b10de55521c52750241305f9a3b474b953108",
+        "byte_count": 887410,
+        "field": "temperature",
+        "byte_range": [
+          415075529,
+          415962938
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T18:00:00+00:00",
+        "lead_hours": 30,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f030",
+        "last_modified": "2025-12-10T15:39:37+00:00",
+        "etag": "\"5b2a19c7ba1c8e9bd44d235175eb4e9f\"",
+        "sha256": "cf116a35e629ecb889477d84a36bdbd7173a4abbb10472cd1b13ed63ada22b9b",
+        "byte_count": 976553,
+        "field": "u100",
+        "byte_range": [
+          497627290,
+          498603842
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T18:00:00+00:00",
+        "lead_hours": 30,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f030",
+        "last_modified": "2025-12-10T15:39:37+00:00",
+        "etag": "\"5b2a19c7ba1c8e9bd44d235175eb4e9f\"",
+        "sha256": "7076a62cc38659fac5eeb8883cde64f9406b33a6544ba1903e9d01d874d9a78d",
+        "byte_count": 964815,
+        "field": "v100",
+        "byte_range": [
+          498603843,
+          499568657
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T19:00:00+00:00",
+        "lead_hours": 31,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f031.idx",
+        "last_modified": "2025-12-10T15:53:55+00:00",
+        "etag": "\"0e2f98677ce0327cf3d114c92f674481\"",
+        "sha256": "eabf0db79846bc5dda68144cd25f79e0e6e969ee37eca5049cb635df97624d4f",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T19:00:00+00:00",
+        "lead_hours": 31,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f031",
+        "last_modified": "2025-12-10T15:53:29+00:00",
+        "etag": "\"b4d884895d3714e5f87aae0f4d69cb13\"",
+        "sha256": "853ac25c6477d0f9090a247f78db3b36497abafdb575db019bc1cc38f9f54d05",
+        "byte_count": 886402,
+        "field": "temperature",
+        "byte_range": [
+          416635656,
+          417522057
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T19:00:00+00:00",
+        "lead_hours": 31,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f031",
+        "last_modified": "2025-12-10T15:53:29+00:00",
+        "etag": "\"b4d884895d3714e5f87aae0f4d69cb13\"",
+        "sha256": "f9136fb4d0417d5e2e414d51d6112dd00f77b02b9b097b6c92579a341dac2375",
+        "byte_count": 975704,
+        "field": "u100",
+        "byte_range": [
+          496790173,
+          497765876
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T19:00:00+00:00",
+        "lead_hours": 31,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f031",
+        "last_modified": "2025-12-10T15:53:29+00:00",
+        "etag": "\"b4d884895d3714e5f87aae0f4d69cb13\"",
+        "sha256": "5ae38c1f0f889283cb9c1845d8b9cae7c30af1274ed8be27bd1fa6a65b0a97ff",
+        "byte_count": 964635,
+        "field": "v100",
+        "byte_range": [
+          497765877,
+          498730511
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T20:00:00+00:00",
+        "lead_hours": 32,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f032.idx",
+        "last_modified": "2025-12-10T15:39:29+00:00",
+        "etag": "\"b39e6b2a1a537801eca04df667c8aed5\"",
+        "sha256": "b294aa45a4acec6f6a0f62d9c8858d7f0a3481106c8c7fc4c56de8d31e917c87",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T20:00:00+00:00",
+        "lead_hours": 32,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f032",
+        "last_modified": "2025-12-10T15:39:01+00:00",
+        "etag": "\"1d54d4d30f1ad7d80094eef3a9cd4706\"",
+        "sha256": "c2247a6a175300d9f4b015144f00bbeda107945df5b3456517b78ca08fb3ba39",
+        "byte_count": 885712,
+        "field": "temperature",
+        "byte_range": [
+          415373929,
+          416259640
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T20:00:00+00:00",
+        "lead_hours": 32,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f032",
+        "last_modified": "2025-12-10T15:39:01+00:00",
+        "etag": "\"1d54d4d30f1ad7d80094eef3a9cd4706\"",
+        "sha256": "1b5b1a5cbc03334b61a7f77b2b03c10824dc44439bc2392b574f054980f23839",
+        "byte_count": 975813,
+        "field": "u100",
+        "byte_range": [
+          496167130,
+          497142942
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T20:00:00+00:00",
+        "lead_hours": 32,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f032",
+        "last_modified": "2025-12-10T15:39:01+00:00",
+        "etag": "\"1d54d4d30f1ad7d80094eef3a9cd4706\"",
+        "sha256": "319188487de26f293c6c9b80d2cd404a11d3c2f3d35a65f5fffa2d8cd9ab0e29",
+        "byte_count": 964499,
+        "field": "v100",
+        "byte_range": [
+          497142943,
+          498107441
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T21:00:00+00:00",
+        "lead_hours": 33,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f033.idx",
+        "last_modified": "2025-12-10T15:40:39+00:00",
+        "etag": "\"7cb00e44e58e5eec044e1628dbfd68d7\"",
+        "sha256": "10a58cc0207c7fd6b7baa980a068c1c640dc2bafd27df36bdff76de661861cdf",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T21:00:00+00:00",
+        "lead_hours": 33,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f033",
+        "last_modified": "2025-12-10T15:40:00+00:00",
+        "etag": "\"27109913b1bf6629e7aa1c17714c0fd8\"",
+        "sha256": "e9b750418e2b964678592b92f2ee51afe3ad32dd8fb952e5a245cd446430332f",
+        "byte_count": 885022,
+        "field": "temperature",
+        "byte_range": [
+          414077460,
+          414962481
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T21:00:00+00:00",
+        "lead_hours": 33,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f033",
+        "last_modified": "2025-12-10T15:40:00+00:00",
+        "etag": "\"27109913b1bf6629e7aa1c17714c0fd8\"",
+        "sha256": "3d3072090ac8876068d5c9ea6804bb1ae1296025dc06130e62b6827c2ae95f44",
+        "byte_count": 975356,
+        "field": "u100",
+        "byte_range": [
+          495149326,
+          496124681
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T21:00:00+00:00",
+        "lead_hours": 33,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f033",
+        "last_modified": "2025-12-10T15:40:00+00:00",
+        "etag": "\"27109913b1bf6629e7aa1c17714c0fd8\"",
+        "sha256": "e5cb9674bdd1d923679e59dcaf2343e90023735004228c3bf15f1b5f8a3ce0fc",
+        "byte_count": 963806,
+        "field": "v100",
+        "byte_range": [
+          496124682,
+          497088487
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T22:00:00+00:00",
+        "lead_hours": 34,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f034.idx",
+        "last_modified": "2025-12-10T15:55:15+00:00",
+        "etag": "\"c9f815e9c574ddcdf8191aa439648236\"",
+        "sha256": "a07c68780aa559b725c3a56905d41a118741479823427f622d029c27c5274517",
+        "byte_count": 41252,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T22:00:00+00:00",
+        "lead_hours": 34,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f034",
+        "last_modified": "2025-12-10T15:54:49+00:00",
+        "etag": "\"9a5a113f397eafa36ac12c303df4dd69\"",
+        "sha256": "47e83161531309e0b57d1f32fa9b0baab098ca517a4d9b93ee07610b1b07b949",
+        "byte_count": 883940,
+        "field": "temperature",
+        "byte_range": [
+          413853714,
+          414737653
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T22:00:00+00:00",
+        "lead_hours": 34,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f034",
+        "last_modified": "2025-12-10T15:54:49+00:00",
+        "etag": "\"9a5a113f397eafa36ac12c303df4dd69\"",
+        "sha256": "5de37095d9b4988a9790b2c521a29dfd732f0d9face0fa22df1b30d6b5ca9e59",
+        "byte_count": 974955,
+        "field": "u100",
+        "byte_range": [
+          495353166,
+          496328120
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T22:00:00+00:00",
+        "lead_hours": 34,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f034",
+        "last_modified": "2025-12-10T15:54:49+00:00",
+        "etag": "\"9a5a113f397eafa36ac12c303df4dd69\"",
+        "sha256": "13995e38f8fa75ae4c8814b4454db7f8066bbf1d310698aacb560a3e61cf2a60",
+        "byte_count": 963363,
+        "field": "v100",
+        "byte_range": [
+          496328121,
+          497291483
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T23:00:00+00:00",
+        "lead_hours": 35,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f035.idx",
+        "last_modified": "2025-12-10T15:40:26+00:00",
+        "etag": "\"64ff4ec5fc010e15512ee944a2e17344\"",
+        "sha256": "0f6fe3c64d174dd8d6361dae24c55e847a3afb29f1fdf497d22a97fcca23facf",
+        "byte_count": 41252,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-11T23:00:00+00:00",
+        "lead_hours": 35,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f035",
+        "last_modified": "2025-12-10T15:40:02+00:00",
+        "etag": "\"7e5f61b0fdec978fbe435db9ecf97e57\"",
+        "sha256": "cfe0147d25d61b1b0f06de74d03ec581f72e101b39e41178d331a5a6634654b6",
+        "byte_count": 884301,
+        "field": "temperature",
+        "byte_range": [
+          413913415,
+          414797715
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T23:00:00+00:00",
+        "lead_hours": 35,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f035",
+        "last_modified": "2025-12-10T15:40:02+00:00",
+        "etag": "\"7e5f61b0fdec978fbe435db9ecf97e57\"",
+        "sha256": "03a5ea3e98a9e3f1a976ca513c6c90f3caba79c6c33ba640280ea2c0b991312b",
+        "byte_count": 973776,
+        "field": "u100",
+        "byte_range": [
+          495919802,
+          496893577
+        ]
+      },
+      {
+        "valid_time": "2025-12-11T23:00:00+00:00",
+        "lead_hours": 35,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f035",
+        "last_modified": "2025-12-10T15:40:02+00:00",
+        "etag": "\"7e5f61b0fdec978fbe435db9ecf97e57\"",
+        "sha256": "409db2e1329c4e49b9d5e0662fc456d9ae3b3ad92e89b7c546cc0d4e29bc1aec",
+        "byte_count": 962764,
+        "field": "v100",
+        "byte_range": [
+          496893578,
+          497856341
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T00:00:00+00:00",
+        "lead_hours": 36,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f036.idx",
+        "last_modified": "2025-12-10T15:55:49+00:00",
+        "etag": "\"856cd2fba8261294ced4444e3d80c8fa\"",
+        "sha256": "1ba6e3c9d63525b0f41f17ceddcb82f07f3984b86e4ed57eeb4256f962d088e8",
+        "byte_count": 41252,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T00:00:00+00:00",
+        "lead_hours": 36,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f036",
+        "last_modified": "2025-12-10T15:55:25+00:00",
+        "etag": "\"ecc8f43a2796c1033abecb49da9781cc\"",
+        "sha256": "de033a6ab29192ae9de3630cf32d528152fd8bb04c0c575799794ceb12fb6a5f",
+        "byte_count": 884688,
+        "field": "temperature",
+        "byte_range": [
+          414205656,
+          415090343
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T00:00:00+00:00",
+        "lead_hours": 36,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f036",
+        "last_modified": "2025-12-10T15:55:25+00:00",
+        "etag": "\"ecc8f43a2796c1033abecb49da9781cc\"",
+        "sha256": "563245028c8e49c6e9d6d5798742c6956287ca3a8e8116f57d5c9d6d7a0ec50b",
+        "byte_count": 973856,
+        "field": "u100",
+        "byte_range": [
+          496646375,
+          497620230
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T00:00:00+00:00",
+        "lead_hours": 36,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f036",
+        "last_modified": "2025-12-10T15:55:25+00:00",
+        "etag": "\"ecc8f43a2796c1033abecb49da9781cc\"",
+        "sha256": "8725dfab579c1c4cb4188f884213552c3472945d4fdd1bed7bacaf3f9379359d",
+        "byte_count": 962216,
+        "field": "v100",
+        "byte_range": [
+          497620231,
+          498582446
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T01:00:00+00:00",
+        "lead_hours": 37,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f037.idx",
+        "last_modified": "2025-12-10T15:55:56+00:00",
+        "etag": "\"fce7450c72d1c1bc40649983d4525da2\"",
+        "sha256": "26b31a72cb6f8d6b9121273c9ba38f7219f24e4cb92d3ce2d36e0e83096dbee7",
+        "byte_count": 41252,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T01:00:00+00:00",
+        "lead_hours": 37,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f037",
+        "last_modified": "2025-12-10T15:55:24+00:00",
+        "etag": "\"65d5314119ca7ce96a399760fa735c8f\"",
+        "sha256": "13509c925f991b7216ce97a66e0765b47cb6df9f004b5910839e6509a3eb7b01",
+        "byte_count": 884367,
+        "field": "temperature",
+        "byte_range": [
+          414014802,
+          414899168
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T01:00:00+00:00",
+        "lead_hours": 37,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f037",
+        "last_modified": "2025-12-10T15:55:24+00:00",
+        "etag": "\"65d5314119ca7ce96a399760fa735c8f\"",
+        "sha256": "1e1424f1d6431e697121f3834a853d60682facb4a8b49a623de2d00db983020c",
+        "byte_count": 972488,
+        "field": "u100",
+        "byte_range": [
+          493612219,
+          494584706
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T01:00:00+00:00",
+        "lead_hours": 37,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f037",
+        "last_modified": "2025-12-10T15:55:24+00:00",
+        "etag": "\"65d5314119ca7ce96a399760fa735c8f\"",
+        "sha256": "0e8a683a1639b98e3eb67f0fc32deb5b002353d66f14742188853bf4b98bc1e2",
+        "byte_count": 962264,
+        "field": "v100",
+        "byte_range": [
+          494584707,
+          495546970
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T02:00:00+00:00",
+        "lead_hours": 38,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f038.idx",
+        "last_modified": "2025-12-10T15:42:15+00:00",
+        "etag": "\"a092ac391eb372301acace71d182928e\"",
+        "sha256": "83c6cf41c0de602b0d30d142800334efdebe514cbe3162a9e477fc7b0e98c8d5",
+        "byte_count": 41252,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T02:00:00+00:00",
+        "lead_hours": 38,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f038",
+        "last_modified": "2025-12-10T15:41:40+00:00",
+        "etag": "\"8b47ec185531c03d68674a08875f1e98\"",
+        "sha256": "ed70e56f43780d5aeb5e55426be460022cf7db3ae6510223202ac268791bcb98",
+        "byte_count": 880187,
+        "field": "temperature",
+        "byte_range": [
+          414757908,
+          415638094
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T02:00:00+00:00",
+        "lead_hours": 38,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f038",
+        "last_modified": "2025-12-10T15:41:40+00:00",
+        "etag": "\"8b47ec185531c03d68674a08875f1e98\"",
+        "sha256": "5a09f2b2d77665455fccedb06cf673f80605cc152f1cf54a16a0ea4858fc19c8",
+        "byte_count": 971933,
+        "field": "u100",
+        "byte_range": [
+          495022366,
+          495994298
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T02:00:00+00:00",
+        "lead_hours": 38,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f038",
+        "last_modified": "2025-12-10T15:41:40+00:00",
+        "etag": "\"8b47ec185531c03d68674a08875f1e98\"",
+        "sha256": "70aaccfd08d1275a866125793034120319d2a40023527f6b0cb142e9f81b6fce",
+        "byte_count": 961446,
+        "field": "v100",
+        "byte_range": [
+          495994299,
+          496955744
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T03:00:00+00:00",
+        "lead_hours": 39,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f039.idx",
+        "last_modified": "2025-12-10T15:56:24+00:00",
+        "etag": "\"64f87ceb4ae97d945e3507472e681246\"",
+        "sha256": "2741f64f0c32a531c945b487f11c5a7f014ba176fa1059fdd993ba8e5faf38fc",
+        "byte_count": 41252,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T03:00:00+00:00",
+        "lead_hours": 39,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f039",
+        "last_modified": "2025-12-10T15:56:00+00:00",
+        "etag": "\"73b06d53ce2bbecf759d59459ff6b526\"",
+        "sha256": "312798ae76ff937d2a1984ee4f8773181a5091e3c66a1fb349288511e83e5b14",
+        "byte_count": 880392,
+        "field": "temperature",
+        "byte_range": [
+          415700353,
+          416580744
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T03:00:00+00:00",
+        "lead_hours": 39,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f039",
+        "last_modified": "2025-12-10T15:56:00+00:00",
+        "etag": "\"73b06d53ce2bbecf759d59459ff6b526\"",
+        "sha256": "9b930a9b46bcbda5eba737592e7e6cbe4ba806447862f4c41060d9d5f4a54385",
+        "byte_count": 972381,
+        "field": "u100",
+        "byte_range": [
+          496111971,
+          497084351
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T03:00:00+00:00",
+        "lead_hours": 39,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f039",
+        "last_modified": "2025-12-10T15:56:00+00:00",
+        "etag": "\"73b06d53ce2bbecf759d59459ff6b526\"",
+        "sha256": "98acd74f2b57b6c5a4ce24364d4451c68ebff0c7458e14959a88ee787c9d4abf",
+        "byte_count": 961063,
+        "field": "v100",
+        "byte_range": [
+          497084352,
+          498045414
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T04:00:00+00:00",
+        "lead_hours": 40,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f040.idx",
+        "last_modified": "2025-12-10T15:42:21+00:00",
+        "etag": "\"cfe08b88d7c27383dacd870044b585e9\"",
+        "sha256": "6c4c94928dfec3f4bbced57788873cf15dfea67c05d95ec324e2cc87c3e87be9",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T04:00:00+00:00",
+        "lead_hours": 40,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f040",
+        "last_modified": "2025-12-10T15:41:56+00:00",
+        "etag": "\"318881d1c6c6aa5b6e917e30540fbe1e\"",
+        "sha256": "d882812ddf046d7c2ce48b757323b57918fea6390dccfb89accead8675157bfe",
+        "byte_count": 880159,
+        "field": "temperature",
+        "byte_range": [
+          417685644,
+          418565802
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T04:00:00+00:00",
+        "lead_hours": 40,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f040",
+        "last_modified": "2025-12-10T15:41:56+00:00",
+        "etag": "\"318881d1c6c6aa5b6e917e30540fbe1e\"",
+        "sha256": "6357968067a9c0a98424ce31d456958a96f04b02059a6f93d116450d0ff9d688",
+        "byte_count": 972854,
+        "field": "u100",
+        "byte_range": [
+          498681427,
+          499654280
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T04:00:00+00:00",
+        "lead_hours": 40,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f040",
+        "last_modified": "2025-12-10T15:41:56+00:00",
+        "etag": "\"318881d1c6c6aa5b6e917e30540fbe1e\"",
+        "sha256": "c0a4584dd9317f7f853abdf9a409eadcf87be82786754b4ba884ac360eb32a09",
+        "byte_count": 960816,
+        "field": "v100",
+        "byte_range": [
+          499654281,
+          500615096
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T05:00:00+00:00",
+        "lead_hours": 41,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f041.idx",
+        "last_modified": "2025-12-10T15:42:21+00:00",
+        "etag": "\"e19149f1762dab0a9b0a54e7ca2e5453\"",
+        "sha256": "0ae768b671256cf3dfe497544fb222120a95a1626457c1994fad1cc67026ca74",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T05:00:00+00:00",
+        "lead_hours": 41,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f041",
+        "last_modified": "2025-12-10T15:41:50+00:00",
+        "etag": "\"7958cbaa9b76bea692c1eebded5b5f3a\"",
+        "sha256": "fffa8dafc4fa158abaf3979203da2c58d66d6b051521c9f79d1c6cc0b876c33c",
+        "byte_count": 880315,
+        "field": "temperature",
+        "byte_range": [
+          417003883,
+          417884197
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T05:00:00+00:00",
+        "lead_hours": 41,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f041",
+        "last_modified": "2025-12-10T15:41:50+00:00",
+        "etag": "\"7958cbaa9b76bea692c1eebded5b5f3a\"",
+        "sha256": "81d2ba495731f33da65f0656f91153c3ba0a4525095f252bebb02b45473e0416",
+        "byte_count": 972144,
+        "field": "u100",
+        "byte_range": [
+          499024796,
+          499996939
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T05:00:00+00:00",
+        "lead_hours": 41,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f041",
+        "last_modified": "2025-12-10T15:41:50+00:00",
+        "etag": "\"7958cbaa9b76bea692c1eebded5b5f3a\"",
+        "sha256": "784920ec6d3c4075be3385ab5a058677b5e71cc222136e5fe57ff71a53722c78",
+        "byte_count": 960763,
+        "field": "v100",
+        "byte_range": [
+          499996940,
+          500957702
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T06:00:00+00:00",
+        "lead_hours": 42,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f042.idx",
+        "last_modified": "2025-12-10T15:57:59+00:00",
+        "etag": "\"a4926adb4ca2405f88ccd079cd90a758\"",
+        "sha256": "3398ccbb6a8aea9542cb9e1d226fa1b08bff223b58a94901c08f106a505c27e1",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T06:00:00+00:00",
+        "lead_hours": 42,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f042",
+        "last_modified": "2025-12-10T15:57:34+00:00",
+        "etag": "\"b589dd5e523545896ad1a2ba5316e319\"",
+        "sha256": "2ce80f88753eaeec0e7f86328765eedde35f230313d42f4bd138d44f6b3fb222",
+        "byte_count": 880725,
+        "field": "temperature",
+        "byte_range": [
+          416609734,
+          417490458
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T06:00:00+00:00",
+        "lead_hours": 42,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f042",
+        "last_modified": "2025-12-10T15:57:34+00:00",
+        "etag": "\"b589dd5e523545896ad1a2ba5316e319\"",
+        "sha256": "eea30a8a4fbda1cb6b1b436958fbcde0e693075db81afef37c5714e39b0861dd",
+        "byte_count": 972631,
+        "field": "u100",
+        "byte_range": [
+          499003498,
+          499976128
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T06:00:00+00:00",
+        "lead_hours": 42,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f042",
+        "last_modified": "2025-12-10T15:57:34+00:00",
+        "etag": "\"b589dd5e523545896ad1a2ba5316e319\"",
+        "sha256": "33fd13dc77d7516fd8bc6e444e028359cf0f68ebd77f5d4e0e0b20f72effc364",
+        "byte_count": 960925,
+        "field": "v100",
+        "byte_range": [
+          499976129,
+          500937053
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T07:00:00+00:00",
+        "lead_hours": 43,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f043.idx",
+        "last_modified": "2025-12-10T15:43:26+00:00",
+        "etag": "\"07fa92e7ff9dfcef86b1f90d39ab4729\"",
+        "sha256": "c07e3f14d366dcfc2f53c5ffcfcef92593b5f71a6d684296b53e4649ed01fdd6",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T07:00:00+00:00",
+        "lead_hours": 43,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f043",
+        "last_modified": "2025-12-10T15:43:03+00:00",
+        "etag": "\"d9ac7326865e18241e564032226fb77b\"",
+        "sha256": "0637c655a9ffe6f4961469a9a93da25c259292058bf6b0982853ee5708c96ec5",
+        "byte_count": 881162,
+        "field": "temperature",
+        "byte_range": [
+          415574828,
+          416455989
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T07:00:00+00:00",
+        "lead_hours": 43,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f043",
+        "last_modified": "2025-12-10T15:43:03+00:00",
+        "etag": "\"d9ac7326865e18241e564032226fb77b\"",
+        "sha256": "34ac2bec259e1f1647fd3c92ac001713b2519466607033d9bf2348182ec12dee",
+        "byte_count": 972881,
+        "field": "u100",
+        "byte_range": [
+          495252275,
+          496225155
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T07:00:00+00:00",
+        "lead_hours": 43,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f043",
+        "last_modified": "2025-12-10T15:43:03+00:00",
+        "etag": "\"d9ac7326865e18241e564032226fb77b\"",
+        "sha256": "294eb60b425aaf1e91ca80a24e81fda4520e23cb4468a3e7c85348b467a7e19c",
+        "byte_count": 961385,
+        "field": "v100",
+        "byte_range": [
+          496225156,
+          497186540
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T08:00:00+00:00",
+        "lead_hours": 44,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f044.idx",
+        "last_modified": "2025-12-10T15:43:00+00:00",
+        "etag": "\"07c3e2ce833f39c01c4d808139296fc1\"",
+        "sha256": "f15bb80b6175c409915f3522f0e58d467b2f01cce7777cc9c36d02694801aad9",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T08:00:00+00:00",
+        "lead_hours": 44,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f044",
+        "last_modified": "2025-12-10T15:42:36+00:00",
+        "etag": "\"7d5a812a712e51ca32617965326c1620\"",
+        "sha256": "6abfef82ccacae989546df108b7510bc51f109967bf1fe85ea8bbb67d72c924e",
+        "byte_count": 881115,
+        "field": "temperature",
+        "byte_range": [
+          414729616,
+          415610730
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T08:00:00+00:00",
+        "lead_hours": 44,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f044",
+        "last_modified": "2025-12-10T15:42:36+00:00",
+        "etag": "\"7d5a812a712e51ca32617965326c1620\"",
+        "sha256": "55c460765ff19b1c47a2b455eb785fb53f68e2d01bf9703c8971528888826f2e",
+        "byte_count": 972639,
+        "field": "u100",
+        "byte_range": [
+          495192591,
+          496165229
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T08:00:00+00:00",
+        "lead_hours": 44,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f044",
+        "last_modified": "2025-12-10T15:42:36+00:00",
+        "etag": "\"7d5a812a712e51ca32617965326c1620\"",
+        "sha256": "ae1cca67d570b9df72fef1661a3f311e00a6272eafe774706bd7e21d059ef368",
+        "byte_count": 961102,
+        "field": "v100",
+        "byte_range": [
+          496165230,
+          497126331
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T09:00:00+00:00",
+        "lead_hours": 45,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f045.idx",
+        "last_modified": "2025-12-10T15:43:54+00:00",
+        "etag": "\"0ad898ef5eea98693f576f9b8925e897\"",
+        "sha256": "0e9e7fddf0debeddfcd030297f3b0ae3c36063c3be344eb58cd4a83208b73c60",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T09:00:00+00:00",
+        "lead_hours": 45,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f045",
+        "last_modified": "2025-12-10T15:43:15+00:00",
+        "etag": "\"6330910eb83e2ac55730bab8ce41405a\"",
+        "sha256": "1221cf02028ab49cda02398f50bc26aa358fee9d0f0dd4eeac8a8702f441a3ae",
+        "byte_count": 881428,
+        "field": "temperature",
+        "byte_range": [
+          415116143,
+          415997570
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T09:00:00+00:00",
+        "lead_hours": 45,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f045",
+        "last_modified": "2025-12-10T15:43:15+00:00",
+        "etag": "\"6330910eb83e2ac55730bab8ce41405a\"",
+        "sha256": "596b3d7cf7870e06a542fdfbfe7690db438983851c4aac2b47c2d6237d63c572",
+        "byte_count": 972741,
+        "field": "u100",
+        "byte_range": [
+          496188693,
+          497161433
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T09:00:00+00:00",
+        "lead_hours": 45,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f045",
+        "last_modified": "2025-12-10T15:43:15+00:00",
+        "etag": "\"6330910eb83e2ac55730bab8ce41405a\"",
+        "sha256": "b8f11a27757e0648b300a95f89c6a03f4c56b73f59bdca5845021bdc2f342629",
+        "byte_count": 960833,
+        "field": "v100",
+        "byte_range": [
+          497161434,
+          498122266
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T10:00:00+00:00",
+        "lead_hours": 46,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f046.idx",
+        "last_modified": "2025-12-10T15:43:42+00:00",
+        "etag": "\"07ae26392a9a5e08bd2c700d7ff5dd42\"",
+        "sha256": "585073afd7c82a5aac8067aa701ba87d88b8fb8de1051eb557391be39ceda132",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T10:00:00+00:00",
+        "lead_hours": 46,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f046",
+        "last_modified": "2025-12-10T15:43:05+00:00",
+        "etag": "\"3e7848509d42c9eecf56962a6f4bc538\"",
+        "sha256": "1e3d143fc318863556e393e49b9e2a006b061d3a7e97f5a03e6ded101735ead2",
+        "byte_count": 881183,
+        "field": "temperature",
+        "byte_range": [
+          415521264,
+          416402446
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T10:00:00+00:00",
+        "lead_hours": 46,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f046",
+        "last_modified": "2025-12-10T15:43:05+00:00",
+        "etag": "\"3e7848509d42c9eecf56962a6f4bc538\"",
+        "sha256": "6644d1b837728152a53ee7ad28e3a7bcfcf8438482eed9a602169a3b5b168ebc",
+        "byte_count": 973561,
+        "field": "u100",
+        "byte_range": [
+          497062718,
+          498036278
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T10:00:00+00:00",
+        "lead_hours": 46,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f046",
+        "last_modified": "2025-12-10T15:43:05+00:00",
+        "etag": "\"3e7848509d42c9eecf56962a6f4bc538\"",
+        "sha256": "ddebb9da54ff7288f74528e708d086676594cb4e86a2961d6c7eea01a326fc47",
+        "byte_count": 964767,
+        "field": "v100",
+        "byte_range": [
+          498036279,
+          499001045
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T11:00:00+00:00",
+        "lead_hours": 47,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f047.idx",
+        "last_modified": "2025-12-10T15:44:15+00:00",
+        "etag": "\"5b9431ac294a3450a803ecc296bbdaa3\"",
+        "sha256": "9ded7c8d5ff4017a6b4c98a024a76cf78293b182ee23c9cd7bbf93f1b50db719",
+        "byte_count": 41253,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T11:00:00+00:00",
+        "lead_hours": 47,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f047",
+        "last_modified": "2025-12-10T15:43:50+00:00",
+        "etag": "\"3299e7927a420368784656848d6b62a1\"",
+        "sha256": "af9a44f3af61b044d63c48310fc0d00444811078d9a3f1ec409ba8699b2c7de8",
+        "byte_count": 881989,
+        "field": "temperature",
+        "byte_range": [
+          412310356,
+          413192344
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T11:00:00+00:00",
+        "lead_hours": 47,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f047",
+        "last_modified": "2025-12-10T15:43:50+00:00",
+        "etag": "\"3299e7927a420368784656848d6b62a1\"",
+        "sha256": "d5ace885c89f9c07641e3e3530c511260511df4e238d33e82f1ecc275c153b9f",
+        "byte_count": 974279,
+        "field": "u100",
+        "byte_range": [
+          494328378,
+          495302656
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T11:00:00+00:00",
+        "lead_hours": 47,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f047",
+        "last_modified": "2025-12-10T15:43:50+00:00",
+        "etag": "\"3299e7927a420368784656848d6b62a1\"",
+        "sha256": "ce82ab6d03746515ab2174c1e59c0fd7ef72d060ca29fc530b783400a6fe1d65",
+        "byte_count": 961443,
+        "field": "v100",
+        "byte_range": [
+          495302657,
+          496264099
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T12:00:00+00:00",
+        "lead_hours": 48,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f048.idx",
+        "last_modified": "2025-12-10T15:58:57+00:00",
+        "etag": "\"0df7671eb97b488836887a1885bc45b2\"",
+        "sha256": "41ad2cf7e2bf915349d094416198bf64bb4200034eb65205d44e2d4b1af7f795",
+        "byte_count": 41249,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T12:00:00+00:00",
+        "lead_hours": 48,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f048",
+        "last_modified": "2025-12-10T15:58:20+00:00",
+        "etag": "\"cf10022fc781e6c965f06c0f17864e10\"",
+        "sha256": "7f995ef48ece61ae6a8c1b8f7183a079e82d2bcbebfd35207acfda00e7c9b088",
+        "byte_count": 882178,
+        "field": "temperature",
+        "byte_range": [
+          415498939,
+          416381116
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T12:00:00+00:00",
+        "lead_hours": 48,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f048",
+        "last_modified": "2025-12-10T15:58:20+00:00",
+        "etag": "\"cf10022fc781e6c965f06c0f17864e10\"",
+        "sha256": "8e7d70cdb59e38c1d894762ae330ff4a7649a0b30ecbe5801bd89df90da73c2d",
+        "byte_count": 974418,
+        "field": "u100",
+        "byte_range": [
+          498331564,
+          499305981
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T12:00:00+00:00",
+        "lead_hours": 48,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f048",
+        "last_modified": "2025-12-10T15:58:20+00:00",
+        "etag": "\"cf10022fc781e6c965f06c0f17864e10\"",
+        "sha256": "e884452690507cb8a64b6300f662cc0ab67b88597cc80af07a759b12a906069c",
+        "byte_count": 961094,
+        "field": "v100",
+        "byte_range": [
+          499305982,
+          500267075
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T13:00:00+00:00",
+        "lead_hours": 49,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f049.idx",
+        "last_modified": "2025-12-10T15:44:19+00:00",
+        "etag": "\"fa5a6ad4bc236be131fc3308a0bdbc99\"",
+        "sha256": "f531f69fcb60a69a8c1e0faa0c1ebc3f595258172e3f790f3ef8979b29a6c038",
+        "byte_count": 41254,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T13:00:00+00:00",
+        "lead_hours": 49,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f049",
+        "last_modified": "2025-12-10T15:43:54+00:00",
+        "etag": "\"4357f9cc60668ea72abaee40e3312d7b\"",
+        "sha256": "359884c414c01ba37cf3e34722c5afd7eb1e925452b1e692559b91b707f70d99",
+        "byte_count": 886182,
+        "field": "temperature",
+        "byte_range": [
+          415730004,
+          416616185
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T13:00:00+00:00",
+        "lead_hours": 49,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f049",
+        "last_modified": "2025-12-10T15:43:54+00:00",
+        "etag": "\"4357f9cc60668ea72abaee40e3312d7b\"",
+        "sha256": "401995efa9429d5135c5d637c1aac667bb248dfeada27d52af06b3c7a88c3087",
+        "byte_count": 974831,
+        "field": "u100",
+        "byte_range": [
+          495668327,
+          496643157
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T13:00:00+00:00",
+        "lead_hours": 49,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f049",
+        "last_modified": "2025-12-10T15:43:54+00:00",
+        "etag": "\"4357f9cc60668ea72abaee40e3312d7b\"",
+        "sha256": "b227767485d3cfef99a4bbbfdf8adcf10054ecce905b73799b710c31add22857",
+        "byte_count": 961156,
+        "field": "v100",
+        "byte_range": [
+          496643158,
+          497604313
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T14:00:00+00:00",
+        "lead_hours": 50,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f050.idx",
+        "last_modified": "2025-12-10T15:59:15+00:00",
+        "etag": "\"6dec64b94a7f30dd0694a1fb3115b8d1\"",
+        "sha256": "52c15849a023dd208126caf1524bd97b2e47d9fee4dda9b46f6cd6bc5fbc2eb2",
+        "byte_count": 41255,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T14:00:00+00:00",
+        "lead_hours": 50,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f050",
+        "last_modified": "2025-12-10T15:58:45+00:00",
+        "etag": "\"01a4d7b4ed1bcf84d5fa0b02e81dc256\"",
+        "sha256": "da4f98da04686e52590221b36121fd9b3207bde20f38ed7c304a16e51c5b954c",
+        "byte_count": 885619,
+        "field": "temperature",
+        "byte_range": [
+          416061362,
+          416946980
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T14:00:00+00:00",
+        "lead_hours": 50,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f050",
+        "last_modified": "2025-12-10T15:58:45+00:00",
+        "etag": "\"01a4d7b4ed1bcf84d5fa0b02e81dc256\"",
+        "sha256": "da7d9063c8a8c185572583c120b66ef043e0197af9123ce67229cfac86713d3b",
+        "byte_count": 975236,
+        "field": "u100",
+        "byte_range": [
+          496674314,
+          497649549
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T14:00:00+00:00",
+        "lead_hours": 50,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f050",
+        "last_modified": "2025-12-10T15:58:45+00:00",
+        "etag": "\"01a4d7b4ed1bcf84d5fa0b02e81dc256\"",
+        "sha256": "42213124646f72bd5da9b015303f749657f5cda343b5d5f142d65052ed03411e",
+        "byte_count": 961142,
+        "field": "v100",
+        "byte_range": [
+          497649550,
+          498610691
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T15:00:00+00:00",
+        "lead_hours": 51,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f051.idx",
+        "last_modified": "2025-12-10T15:45:12+00:00",
+        "etag": "\"f717cc61585a348a934d746f02f606ff\"",
+        "sha256": "d503889fbaf48422b0e43d679d67ca832270e3e1988a86ade222efffd03a94b1",
+        "byte_count": 41255,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T15:00:00+00:00",
+        "lead_hours": 51,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f051",
+        "last_modified": "2025-12-10T15:44:39+00:00",
+        "etag": "\"aebfb1e994d8194580472624388430a7\"",
+        "sha256": "ffe621c50e32e3d54bd4e94190e043eefa75334f4318d89ec3c06ba3e15721a4",
+        "byte_count": 885964,
+        "field": "temperature",
+        "byte_range": [
+          415479662,
+          416365625
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T15:00:00+00:00",
+        "lead_hours": 51,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f051",
+        "last_modified": "2025-12-10T15:44:39+00:00",
+        "etag": "\"aebfb1e994d8194580472624388430a7\"",
+        "sha256": "771bff88d7cdc24ca4f50dc871c1b1b1fcc5c7ad5299ae8008bbe108329f2ba8",
+        "byte_count": 976143,
+        "field": "u100",
+        "byte_range": [
+          496973571,
+          497949713
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T15:00:00+00:00",
+        "lead_hours": 51,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f051",
+        "last_modified": "2025-12-10T15:44:39+00:00",
+        "etag": "\"aebfb1e994d8194580472624388430a7\"",
+        "sha256": "53718d432170db7da33aef1b86aff124da888674d75108b1369ad3f2bb139e85",
+        "byte_count": 962683,
+        "field": "v100",
+        "byte_range": [
+          497949714,
+          498912396
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T16:00:00+00:00",
+        "lead_hours": 52,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f052.idx",
+        "last_modified": "2025-12-10T15:45:08+00:00",
+        "etag": "\"5a6690a8fc874dfb6effa083cdd69dfa\"",
+        "sha256": "94021f2463d9bae904ea7bb32c79690c04d12c5288ae7220224ce8f7c56c4aee",
+        "byte_count": 41255,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T16:00:00+00:00",
+        "lead_hours": 52,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f052",
+        "last_modified": "2025-12-10T15:44:45+00:00",
+        "etag": "\"6acef28855127a62d7fe27fff36ac691\"",
+        "sha256": "18f3e9c610868fde2832feec17bbd448653f23f62f35f68ea039fcae865f0a67",
+        "byte_count": 885889,
+        "field": "temperature",
+        "byte_range": [
+          415608990,
+          416494878
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T16:00:00+00:00",
+        "lead_hours": 52,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f052",
+        "last_modified": "2025-12-10T15:44:45+00:00",
+        "etag": "\"6acef28855127a62d7fe27fff36ac691\"",
+        "sha256": "1356c734abaf2a153b66a4e2348e45c89982aac8e2c97c35f73e99148e7780fb",
+        "byte_count": 977392,
+        "field": "u100",
+        "byte_range": [
+          497995758,
+          498973149
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T16:00:00+00:00",
+        "lead_hours": 52,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f052",
+        "last_modified": "2025-12-10T15:44:45+00:00",
+        "etag": "\"6acef28855127a62d7fe27fff36ac691\"",
+        "sha256": "f350c4c19e85bf75d76495433a61ffa4a666dda06628194a868525a266e099ec",
+        "byte_count": 963634,
+        "field": "v100",
+        "byte_range": [
+          498973150,
+          499936783
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T17:00:00+00:00",
+        "lead_hours": 53,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f053.idx",
+        "last_modified": "2025-12-10T16:00:12+00:00",
+        "etag": "\"982cd24b72b0e7639276974da5b142bb\"",
+        "sha256": "c6f0417fe95195fd73f9800b2e10a3a57a9589f4d32afc4265e2e6f968659157",
+        "byte_count": 41255,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T17:00:00+00:00",
+        "lead_hours": 53,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f053",
+        "last_modified": "2025-12-10T15:59:44+00:00",
+        "etag": "\"50b8a2c5a8a0f8fac2a7894551b729bf\"",
+        "sha256": "02cbb7ddfa940c2b9927f124c5f70f2d9f80a8cbc1fb432b78940c28510ca05d",
+        "byte_count": 885782,
+        "field": "temperature",
+        "byte_range": [
+          414565691,
+          415451472
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T17:00:00+00:00",
+        "lead_hours": 53,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f053",
+        "last_modified": "2025-12-10T15:59:44+00:00",
+        "etag": "\"50b8a2c5a8a0f8fac2a7894551b729bf\"",
+        "sha256": "db7c21d0837d8a1a2e8979ec18389938ab37a371ea2e199434d1059a45cf3e5e",
+        "byte_count": 977727,
+        "field": "u100",
+        "byte_range": [
+          496679399,
+          497657125
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T17:00:00+00:00",
+        "lead_hours": 53,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f053",
+        "last_modified": "2025-12-10T15:59:44+00:00",
+        "etag": "\"50b8a2c5a8a0f8fac2a7894551b729bf\"",
+        "sha256": "97c554219c109df4c7f12df3a4547e690854781f7abafde1abc11875dc6daf59",
+        "byte_count": 964231,
+        "field": "v100",
+        "byte_range": [
+          497657126,
+          498621356
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T18:00:00+00:00",
+        "lead_hours": 54,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f054.idx",
+        "last_modified": "2025-12-10T15:45:49+00:00",
+        "etag": "\"e1b280a14667ad23ab17b1ecc1cb0405\"",
+        "sha256": "5a90fa735ef171257f964d3912c1deb32e618adc2aa62ad0e127d086ee9431cd",
+        "byte_count": 41255,
+        "field": "inventory"
+      },
+      {
+        "valid_time": "2025-12-12T18:00:00+00:00",
+        "lead_hours": 54,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f054",
+        "last_modified": "2025-12-10T15:45:25+00:00",
+        "etag": "\"a6c621f8ce78282a93369c0aa2b38c44\"",
+        "sha256": "3a3f25f3279d74d66398f5824381c2ceba7bc571535ad58934817a93cdc23bf0",
+        "byte_count": 885756,
+        "field": "temperature",
+        "byte_range": [
+          413350232,
+          414235987
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T18:00:00+00:00",
+        "lead_hours": 54,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f054",
+        "last_modified": "2025-12-10T15:45:25+00:00",
+        "etag": "\"a6c621f8ce78282a93369c0aa2b38c44\"",
+        "sha256": "92f8973da788af22b0817d1dc29aa820af047c0de09c7e44d4f566a770d8bcda",
+        "byte_count": 977841,
+        "field": "u100",
+        "byte_range": [
+          495830494,
+          496808334
+        ]
+      },
+      {
+        "valid_time": "2025-12-12T18:00:00+00:00",
+        "lead_hours": 54,
+        "url": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20251210/12/atmos/gfs.t12z.pgrb2.0p25.f054",
+        "last_modified": "2025-12-10T15:45:25+00:00",
+        "etag": "\"a6c621f8ce78282a93369c0aa2b38c44\"",
+        "sha256": "d631d4bb52159c52eadb999b8a04e2954cf920e7167959de06a10152461cde56",
+        "byte_count": 964410,
+        "field": "v100",
+        "byte_range": [
+          496808335,
+          497772744
+        ]
+      }
+    ],
+    "input_sha256": "48616f586d96c210b9e1dd8bf9dc9d7e06293c3a366f6df1dda1ce9b20d6c8cd",
+    "cache_version": 1,
+    "cache_policy": "Extracted grid-cell values and source hashes; refresh bypasses cache",
+    "retrieved_at": "2026-09-23T12:19:50.729220+00:00"
+  },
+  "validation_metrics": {
+    "scope": "observed_weather_power_curve",
+    "description": "Мощность при измеренной погоде; не качество прогноза на 24–48 часов",
+    "Validation_R2": 0.9705747508402515,
+    "Validation_MAE": 0.023682855551743747,
+    "Validation_RMSE": 0.05630720707819346,
+    "validation_start": "2025-06-03T09:00:00+00:00",
+    "validation_end": "2025-12-10T17:00:00+00:00",
+    "validation_hours": 4485,
+    "power_unit": "normalized",
+    "train_mean_baseline_mae": 0.29991130775562375
+  },
+  "model": {
+    "version": "normalized-power-curve-v2",
+    "training_start": "2023-03-10T18:00:00+00:00",
+    "training_end": "2025-12-10T17:00:00+00:00",
+    "training_available_at": "2025-12-10T18:00:00+00:00",
+    "training_hours": 22421,
+    "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+    "calibration": {
+      "applied": false,
+      "status": "not_configured",
+      "reason": "No frozen calibration artifact is installed"
+    }
+  },
+  "data_quality": {
+    "raw_rows": 142360,
+    "invalid_timestamp_rows": 0,
+    "ambiguous_or_nonexistent_clock_rows_removed": 6,
+    "invalid_value_rows_removed": 0,
+    "empty_hours": 1631,
+    "incomplete_nonempty_hours_removed": 96,
+    "complete_hours": 23666,
+    "samples_required_per_hour": 6,
+    "timestamp_convention_assumption": "10-minute interval start; hour available at its end",
+    "timezone_assumption": "Asia/Almaty"
+  },
+  "summary": {
+    "avg_predicted_power": 0.8898673893287578,
+    "max_predicted_power": 0.9891109099727872,
+    "min_predicted_power": 0.015930712897087397,
+    "low_generation_hours": 2,
+    "normalized_power_hours": 42.71363468778037,
+    "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
+  },
+  "forecast_sample": [
+    {
+      "time": "2025-12-10T19:00:00+00:00",
+      "wind_speed": 11.38578866032409,
+      "temperature": -9.084335937499986,
+      "predicted_power": 0.9878004061381287
+    },
+    {
+      "time": "2025-12-10T20:00:00+00:00",
+      "wind_speed": 9.5747405792696,
+      "temperature": -9.527695312499986,
+      "predicted_power": 0.807418967063046
+    },
+    {
+      "time": "2025-12-10T21:00:00+00:00",
+      "wind_speed": 8.325314893146214,
+      "temperature": -9.397929687499982,
+      "predicted_power": 0.6010817870856934
+    },
+    {
+      "time": "2025-12-10T22:00:00+00:00",
+      "wind_speed": 6.351926614856992,
+      "temperature": -9.391757812499975,
+      "predicted_power": 0.2434241435331876
+    },
+    {
+      "time": "2025-12-10T23:00:00+00:00",
+      "wind_speed": 3.7876004633476197,
+      "temperature": -9.900527343749957,
+      "predicted_power": 0.024485151613758024
+    },
+    {
+      "time": "2025-12-11T00:00:00+00:00",
+      "wind_speed": 2.809660820583476,
+      "temperature": -9.703710937499977,
+      "predicted_power": 0.015930712897087397
+    },
+    {
+      "time": "2025-12-11T01:00:00+00:00",
+      "wind_speed": 6.069842793335971,
+      "temperature": -9.611894531249959,
+      "predicted_power": 0.19305375262525581
+    },
+    {
+      "time": "2025-12-11T02:00:00+00:00",
+      "wind_speed": 9.324043946480563,
+      "temperature": -9.258867187499959,
+      "predicted_power": 0.7600534386071105
+    },
+    {
+      "time": "2025-12-11T03:00:00+00:00",
+      "wind_speed": 12.741248949925756,
+      "temperature": -8.485429687499959,
+      "predicted_power": 0.9854071730942867
+    },
+    {
+      "time": "2025-12-11T04:00:00+00:00",
+      "wind_speed": 14.82266224872072,
+      "temperature": -7.67414062499995,
+      "predicted_power": 0.9871523077608391
+    },
+    {
+      "time": "2025-12-11T05:00:00+00:00",
+      "wind_speed": 17.045990013391375,
+      "temperature": -6.733085937499993,
+      "predicted_power": 0.9837544373997789
+    },
+    {
+      "time": "2025-12-11T06:00:00+00:00",
+      "wind_speed": 17.690530123864235,
+      "temperature": -5.587011718749977,
+      "predicted_power": 0.9833516721819021
+    },
+    {
+      "time": "2025-12-11T07:00:00+00:00",
+      "wind_speed": 18.532808864958827,
+      "temperature": -4.512792968749977,
+      "predicted_power": 0.9785401671483068
+    },
+    {
+      "time": "2025-12-11T08:00:00+00:00",
+      "wind_speed": 18.369196415697434,
+      "temperature": -3.6841210937499795,
+      "predicted_power": 0.9742495034145435
+    },
+    {
+      "time": "2025-12-11T09:00:00+00:00",
+      "wind_speed": 18.156727282752055,
+      "temperature": -3.384433593749975,
+      "predicted_power": 0.9767658602027107
+    },
+    {
+      "time": "2025-12-11T10:00:00+00:00",
+      "wind_speed": 18.238794999361883,
+      "temperature": -3.5947460937499613,
+      "predicted_power": 0.982512814468179
+    },
+    {
+      "time": "2025-12-11T11:00:00+00:00",
+      "wind_speed": 18.072552778631092,
+      "temperature": -4.422128906249952,
+      "predicted_power": 0.9891109099727872
+    },
+    {
+      "time": "2025-12-11T12:00:00+00:00",
+      "wind_speed": 17.930746597869465,
+      "temperature": -4.942851562499982,
+      "predicted_power": 0.9891109099727872
+    },
+    {
+      "time": "2025-12-11T13:00:00+00:00",
+      "wind_speed": 17.694058067748497,
+      "temperature": -5.538144531249998,
+      "predicted_power": 0.9891109099727872
+    },
+    {
+      "time": "2025-12-11T14:00:00+00:00",
+      "wind_speed": 18.29454404183207,
+      "temperature": -6.008964843749993,
+      "predicted_power": 0.9889445690024439
+    },
+    {
+      "time": "2025-12-11T15:00:00+00:00",
+      "wind_speed": 18.033510607353204,
+      "temperature": -6.326054687499948,
+      "predicted_power": 0.9889445690024439
+    },
+    {
+      "time": "2025-12-11T16:00:00+00:00",
+      "wind_speed": 18.354127738324664,
+      "temperature": -6.406621093749948,
+      "predicted_power": 0.975979396866637
+    },
+    {
+      "time": "2025-12-11T17:00:00+00:00",
+      "wind_speed": 18.618929657331662,
+      "temperature": -6.514453124999989,
+      "predicted_power": 0.9777221506849588
+    },
+    {
+      "time": "2025-12-11T18:00:00+00:00",
+      "wind_speed": 18.528141942075194,
+      "temperature": -6.5063867187499795,
+      "predicted_power": 0.9777221506849588
+    },
+    {
+      "time": "2025-12-11T19:00:00+00:00",
+      "wind_speed": 18.558282037401764,
+      "temperature": -6.391249999999957,
+      "predicted_power": 0.9679994486006623
+    },
+    {
+      "time": "2025-12-11T20:00:00+00:00",
+      "wind_speed": 18.560529484957158,
+      "temperature": -6.1630859375,
+      "predicted_power": 0.9672625440166475
+    },
+    {
+      "time": "2025-12-11T21:00:00+00:00",
+      "wind_speed": 19.722735716707003,
+      "temperature": -6.109667968749989,
+      "predicted_power": 0.9638247470645254
+    },
+    {
+      "time": "2025-12-11T22:00:00+00:00",
+      "wind_speed": 19.95888447807346,
+      "temperature": -5.857519531249977,
+      "predicted_power": 0.9648118148123791
+    },
+    {
+      "time": "2025-12-11T23:00:00+00:00",
+      "wind_speed": 19.910003578293278,
+      "temperature": -6.110332031249982,
+      "predicted_power": 0.9844254008062999
+    },
+    {
+      "time": "2025-12-12T00:00:00+00:00",
+      "wind_speed": 19.54943830686061,
+      "temperature": -6.210781249999968,
+      "predicted_power": 0.9844254008062999
+    },
+    {
+      "time": "2025-12-12T01:00:00+00:00",
+      "wind_speed": 19.539956467455927,
+      "temperature": -6.178945312499991,
+      "predicted_power": 0.9839723478460065
+    },
+    {
+      "time": "2025-12-12T02:00:00+00:00",
+      "wind_speed": 18.669827155860624,
+      "temperature": -6.234785156249984,
+      "predicted_power": 0.9839723478460065
+    },
+    {
+      "time": "2025-12-12T03:00:00+00:00",
+      "wind_speed": 17.15151434237814,
+      "temperature": -5.603007812499982,
+      "predicted_power": 0.9853123364464516
+    },
+    {
+      "time": "2025-12-12T04:00:00+00:00",
+      "wind_speed": 16.884884846754158,
+      "temperature": -4.28445312499997,
+      "predicted_power": 0.987365851238233
+    },
+    {
+      "time": "2025-12-12T05:00:00+00:00",
+      "wind_speed": 16.551833925460368,
+      "temperature": -2.7242382812499955,
+      "predicted_power": 0.9785004109093927
+    },
+    {
+      "time": "2025-12-12T06:00:00+00:00",
+      "wind_speed": 16.20227303555997,
+      "temperature": -1.2648437499999545,
+      "predicted_power": 0.9674870562189168
+    },
+    {
+      "time": "2025-12-12T07:00:00+00:00",
+      "wind_speed": 16.36442484261335,
+      "temperature": 0.3501171875000182,
+      "predicted_power": 0.9711447043670447
+    },
+    {
+      "time": "2025-12-12T08:00:00+00:00",
+      "wind_speed": 15.28202802909578,
+      "temperature": 1.3459179687500296,
+      "predicted_power": 0.978374129589115
+    },
+    {
+      "time": "2025-12-12T09:00:00+00:00",
+      "wind_speed": 15.030287364922678,
+      "temperature": 1.6931835937500068,
+      "predicted_power": 0.9808904863772822
+    },
+    {
+      "time": "2025-12-12T10:00:00+00:00",
+      "wind_speed": 14.773599673995191,
+      "temperature": 1.299726562500041,
+      "predicted_power": 0.9866374406427504
+    },
+    {
+      "time": "2025-12-12T11:00:00+00:00",
+      "wind_speed": 14.761391329572492,
+      "temperature": -0.09197265624999318,
+      "predicted_power": 0.9451304686884116
+    },
+    {
+      "time": "2025-12-12T12:00:00+00:00",
+      "wind_speed": 14.239906214640827,
+      "temperature": -0.7618359374999955,
+      "predicted_power": 0.9330554865248554
+    },
+    {
+      "time": "2025-12-12T13:00:00+00:00",
+      "wind_speed": 13.97860263019949,
+      "temperature": -1.2134374999999977,
+      "predicted_power": 0.96648282430853
+    },
+    {
+      "time": "2025-12-12T14:00:00+00:00",
+      "wind_speed": 13.54897128629658,
+      "temperature": -1.5745898437499477,
+      "predicted_power": 0.9827144658636159
+    },
+    {
+      "time": "2025-12-12T15:00:00+00:00",
+      "wind_speed": 13.789280489506183,
+      "temperature": -1.7285351562499613,
+      "predicted_power": 0.9827144658636159
+    },
+    {
+      "time": "2025-12-12T16:00:00+00:00",
+      "wind_speed": 13.767388994853876,
+      "temperature": -1.782148437499984,
+      "predicted_power": 0.9766814893137695
+    },
+    {
+      "time": "2025-12-12T17:00:00+00:00",
+      "wind_speed": 14.268847061233554,
+      "temperature": -1.5466406249999523,
+      "predicted_power": 0.9644105791179692
+    },
+    {
+      "time": "2025-12-12T18:00:00+00:00",
+      "wind_speed": 14.277149758347386,
+      "temperature": -1.66583984374995,
+      "predicted_power": 0.9644105791179692
+    }
+  ],
+  "previous_forecast_id": null,
+  "changed_from_previous": false
+}

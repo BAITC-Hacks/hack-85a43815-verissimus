@@ -1,0 +1,28 @@
+{
+  "scope": "backward-in-time robustness check of a method chosen on January; not a prospective independent test",
+  "frozen_at": "2026-09-23T12:14:55.484897+00:00",
+  "training_start_dates": "2025-12-01 through 2025-12-16; 48h except December16 uses24h",
+  "training_target_end_cutoff": "2025-12-16T18:00:00+00:00",
+  "evaluation_start_dates": "2025-12-17 through 2025-12-23; each48h",
+  "method": "Separate per turbine and decision lead band1-24/25-48; clip(a*raw+b,0,1)",
+  "objective": "sum((y-a*x-b)^2)+24*((a-1)^2+b^2)",
+  "constraints": "slope a in[0,2]; recompute intercept analytically if slope hits boundary",
+  "fixed_policy": "No new candidates or hyperparameter selection. Fit coefficients only from December training rows, freeze before evaluation. January coefficients are disabled.",
+  "comparators": [
+    "raw_power",
+    "ridge_affine",
+    "persistence",
+    "train_mean"
+  ],
+  "power_unit": "normalized",
+  "timezone_assumption": "Asia/Almaty",
+  "known_limitations": [
+    "Method selection previously used January results; this earlier-time check tests transfer across periods",
+    "Overlapping48h issue windows are not independent observations",
+    "Unknown SCADA timezone and zero-latency assumptions remain",
+    "No February measured targets are used"
+  ],
+  "budget_seconds": 1150,
+  "engine_model_version": "normalized-power-curve-v2",
+  "engine_file_sha256": "066fd96dd7b72908e84b9f944ae0e09cf284946249c1567f5bb3861553136ce2"
+}
