@@ -55,6 +55,21 @@ def response(message):
     return SimpleNamespace(choices=[SimpleNamespace(message=message)])
 
 
+def calibration_report():
+    methods = {"raw_power": {"mae": .4, "rmse": .5, "bias": .2},
+               "ridge_affine": {"mae": .2, "rmse": .3, "bias": -.05},
+               "train_mean": {"mae": .35, "rmse": .45, "bias": .01},
+               "persistence": {"mae": .45, "rmse": .55, "bias": .03}}
+    return {"protocol": {"primary_candidate": {"name": "ridge_affine"},
+                         "training_start_dates": "2026-01-01 through 2026-01-16",
+                         "evaluation_start_dates": "2026-01-17 through 2026-01-23"},
+            "pooled": {"forecast_rows": 8, "scored_rows": 8, "methods": deepcopy(methods)},
+            "new_target_only_pooled": {"forecast_rows": 6, "scored_rows": 6, "methods": deepcopy(methods)},
+            "metrics": [{"turbine": turbine, "lead_band": band, "scored_rows": 2,
+                         "forecast_rows": 2, "methods": deepcopy(methods)}
+                        for turbine in ("turbine_1", "turbine_2") for band in ("1-24", "25-48")]}
+
+
 class DashboardTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -106,6 +121,65 @@ class DashboardTests(unittest.TestCase):
         self.assertEqual(self.ui.session_state.latest_forecast["forecast_id"], "forecast-original")
         self.assertEqual(self.ui.metric[0].value, "0.3000")
         self.assertEqual(len(self.ui.session_state.tool_trace), 2)
+
+    def test_report_download_and_checks_are_available_without_openai(self):
+        self.ui.button(key="generate_forecast").click().run()
+        self.assertFalse(self.ui.exception)
+        self.assertTrue(any(item.proto.label == "Скачать отчёт для жюри (HTML)"
+                            for item in self.ui.get("download_button")))
+        table = self.ui.table[0].value
+        training = table.loc[table["Проверка"] == "Обучение только на завершённых часах"]
+        self.assertEqual(training.iloc[0]["Результат"], "Не подтверждено")
+        self.assertTrue(any("не хватает метаданных" in item.value for item in self.ui.warning))
+        self.openai.assert_not_called()
+
+    def test_quality_panel_does_not_trust_engine_success_for_out_of_range_values(self):
+        invalid = successful_result()
+        invalid["forecast_sample"][0]["predicted_power"] = 1.2
+        self.forecast.side_effect = None
+        self.forecast.return_value = invalid
+        self.ui.button(key="generate_forecast").click().run()
+        self.assertFalse(self.ui.exception)
+        table = self.ui.table[0].value
+        bounds = table.loc[table["Проверка"] == "Мощность в исходной шкале [0, 1]"]
+        self.assertEqual(bounds.iloc[0]["Результат"], "Ошибка")
+        self.assertTrue(any("Обнаружено нарушений" in item.value for item in self.ui.error))
+
+    def test_calibration_panel_uses_saved_metrics_and_discloses_overlap(self):
+        path = Path(self.temp.name) / "validation" / "calibration" / "report.json"
+        path.parent.mkdir(parents=True)
+        path.write_text(json.dumps(calibration_report()), encoding="utf-8")
+        self.ui.button(key="generate_forecast").click().run()
+        self.assertFalse(self.ui.exception)
+        self.assertTrue(any("снижение на 50.00%" in item.value for item in self.ui.markdown))
+        self.assertTrue(any("Без этих целевых часов: 6 строк" in item.value for item in self.ui.caption))
+        table = self.ui.dataframe[1].value
+        self.assertEqual(float(table.loc[table["Метод"] == "После калибровки", "MAE"].iloc[0]), .2)
+        self.openai.assert_not_called()
+
+    def test_corrupt_calibration_report_is_not_presented_as_accuracy(self):
+        report = calibration_report()
+        report["pooled"]["methods"]["ridge_affine"]["mae"] = float("nan")
+        path = Path(self.temp.name) / "validation" / "calibration" / "report.json"
+        path.parent.mkdir(parents=True)
+        path.write_text(json.dumps(report), encoding="utf-8")
+        self.ui.button(key="generate_forecast").click().run()
+        self.assertFalse(self.ui.exception)
+        self.assertTrue(any("отчёт калибровки" in item.value for item in self.ui.warning))
+        self.assertFalse(any("Изменение MAE" in item.value for item in self.ui.markdown))
+
+    def test_applied_calibration_caption_reports_training_availability(self):
+        result = successful_result()
+        result["model"] = {"calibration": {"applied": True, "fit_start": "2025-12-31T19:00:00Z",
+            "fit_end": "2026-01-16T17:00:00Z", "available_at": "2026-01-16T18:00:00Z"}}
+        self.forecast.side_effect = None
+        self.forecast.return_value = result
+        self.ui.button(key="generate_forecast").click().run()
+        self.assertFalse(self.ui.exception)
+        captions = [item.value for item in self.ui.caption if "Применена калибровка" in item.value]
+        self.assertEqual(len(captions), 1)
+        self.assertIn("16.01.2026 23:00", captions[0])
+        self.assertIn("01.01.2026 00:00", captions[0])
 
     def test_refresh_preserves_original_issue_and_compares_versions(self):
         self.ui.button(key="generate_forecast").click().run()

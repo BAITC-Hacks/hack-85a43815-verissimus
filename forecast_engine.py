@@ -13,11 +13,13 @@ import numpy as np
 import pandas as pd
 from lightgbm import LGBMRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from power_calibration import apply_calibration
 
 ROOT = Path(__file__).resolve().parent
 SITE_TIMEZONE = os.getenv("SCADA_TIMEZONE", "Asia/Almaty")
 DATA_DIR = Path(os.getenv("ENERGYAI_DATA_DIR", str(ROOT / "data")))
 ARTIFACT_DIR = Path(os.getenv("ENERGYAI_ARTIFACT_DIR", str(ROOT / "artifacts")))
+CALIBRATION_FILE = ROOT / "models" / "power_calibration.json"
 MODEL_VERSION = "normalized-power-curve-v2"
 FEATURES = ["wind_speed", "temperature", "hour", "month", "wind_speed_cubed"]
 TURBINE_COORDS = {
@@ -216,14 +218,20 @@ def generate_agent_forecast(turbine_id, forecast_date, horizon_hours=48, issue_t
         predicted = np.clip(predicted, 0, 1)
         if not np.isfinite(predicted).all():
             raise ValueError("Модель вернула нечисловой прогноз.")
+        raw_predicted = predicted.copy()
+        predicted, calibration = apply_calibration(
+            predicted, expected, issued, turbine_id, key[0], MODEL_VERSION, SITE_TIMEZONE, CALIBRATION_FILE)
         points = [{"time": t.isoformat(), "wind_speed": float(row.wind_speed),
                    "temperature": float(row.temperature), "predicted_power": float(p)}
                   for (t, row), p in zip(weather.iterrows(), predicted)]
+        if calibration["applied"]:
+            for point, raw_power in zip(points, raw_predicted):
+                point["raw_predicted_power"] = float(raw_power)
         identity = {"turbine": turbine_id, "issue_time": issued.isoformat(), "start": start.isoformat(),
                     "horizon": horizon_hours, "training_source": key[0], "training_end": key[1],
                     "model": MODEL_VERSION, "timezone": SITE_TIMEZONE, "points": points,
                     "weather_run": provenance["run_time"], "weather_provider": provenance.get("provider"),
-                    "weather_input_sha256": provenance.get("input_sha256")}
+                    "weather_input_sha256": provenance.get("input_sha256"), "calibration": calibration}
         forecast_id = hashlib.sha256(json.dumps(identity, sort_keys=True, allow_nan=False).encode()).hexdigest()[:24]
         result = {
             "status": "success", "forecast_id": forecast_id, "turbine": turbine_id,
@@ -239,7 +247,7 @@ def generate_agent_forecast(turbine_id, forecast_date, horizon_hours=48, issue_t
             "model": {"version": MODEL_VERSION, "training_start": training.index[0].isoformat(),
                       "training_end": training.index[-1].isoformat(),
                       "training_available_at": (training.index[-1] + pd.Timedelta(hours=1)).isoformat(),
-                      "training_hours": len(training), "source_sha256": key[0]},
+                      "training_hours": len(training), "source_sha256": key[0], "calibration": calibration},
             "data_quality": data.attrs["data_quality"],
             "summary": {"avg_predicted_power": float(np.mean(predicted)),
                         "max_predicted_power": float(np.max(predicted)), "min_predicted_power": float(np.min(predicted)),

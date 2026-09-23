@@ -1,0 +1,44 @@
+{
+  "scope": "Manual live API smoke checks, not accuracy evaluation",
+  "checks": [
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 5207,
+        "completion_tokens": 317,
+        "total_tokens": 5524,
+        "requests": 2
+      },
+      "used_tools": [
+        "inspect_forecast"
+      ],
+      "actual_forecast_id": "efa5a26a408d780a388377ce",
+      "scenario": "inspect"
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 5647,
+        "completion_tokens": 316,
+        "total_tokens": 5963,
+        "requests": 2
+      },
+      "used_tools": [
+        "generate_agent_forecast"
+      ],
+      "actual_forecast_id": "2871e26c382d652f74ec0530",
+      "scenario": "forecast"
+    }
+  ],
+  "limitations": [
+    "LLM wording can omit details; structured forecast and report remain authoritative",
+    "The inspect check preceded installation of calibration; forecast check used the calibrated engine"
+  ],
+  "forecast_payload_bytes": {
+    "raw": 91242,
+    "compact": 11203,
+    "reduction_fraction": 0.8772166326910853
+  }
+}

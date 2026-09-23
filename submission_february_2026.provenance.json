@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "created_at": "2026-09-23T10:32:02.033065+00:00",
+  "created_at": "2026-09-23T11:27:36.958731+00:00",
   "csv_file": "submission_february_2026.csv",
-  "csv_sha256": "1552b9e1386737348820e6cca4579a568045c5bb41e145d2cec4d8fdf23b3e64",
+  "csv_sha256": "292f5440cc017881eed9107b24e40ae5a30c80a2ab3262622ce89cf4448d7247",
   "row_count": 1344,
   "turbines": [
     "turbine_1",
@@ -22,7 +22,7 @@
       "turbine": "turbine_1",
       "target_date": "2026-02-01",
       "status": "success",
-      "forecast_id": "53e68135fb01949b16f07c7a",
+      "forecast_id": "d96afc73e02942861fc5a0ea",
       "issue_time": "2026-01-31T18:00:00+00:00",
       "forecast_start": "2026-01-31T19:00:00+00:00",
       "period": "2026-01-31T19:00:00+00:00 — 2026-02-01T18:00:00+00:00",
@@ -1312,7 +1312,7 @@
         "input_sha256": "7212256613cfc2c9733a803773c9e6a9b361f6cfd5a7ccfb3fbb5d17a6947260",
         "cache_version": 1,
         "cache_policy": "Extracted grid-cell values and source hashes; refresh bypasses cache",
-        "retrieved_at": "2026-09-23T10:22:50.259926+00:00"
+        "retrieved_at": "2026-09-23T11:11:44.720301+00:00"
       },
       "validation_metrics": {
         "scope": "observed_weather_power_curve",
@@ -1332,7 +1332,35 @@
         "training_end": "2026-01-31T17:00:00+00:00",
         "training_available_at": "2026-01-31T18:00:00+00:00",
         "training_hours": 23665,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -1347,21 +1375,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.5819942522373583,
-        "max_predicted_power": 0.8836998296982893,
-        "min_predicted_power": 0.010360073582976978,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 13.967862053696601,
+        "avg_predicted_power": 0.28899134576514446,
+        "max_predicted_power": 0.462406011292366,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 4,
+        "normalized_power_hours": 6.935792298363467,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "edad595565ac5ae06ed07d1b",
+      "previous_forecast_id": "53e68135fb01949b16f07c7a",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-02",
       "status": "success",
-      "forecast_id": "45289404a9d79ab15a41398b",
+      "forecast_id": "a65db355aecf3ee8f3ffa1a0",
       "issue_time": "2026-02-01T18:00:00+00:00",
       "forecast_start": "2026-02-01T19:00:00+00:00",
       "period": "2026-02-01T19:00:00+00:00 — 2026-02-02T18:00:00+00:00",
@@ -2671,7 +2699,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -2686,21 +2742,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.8087189176325872,
-        "max_predicted_power": 0.9939544018741929,
-        "min_predicted_power": 0.35022947985630387,
+        "avg_predicted_power": 0.41763033477573613,
+        "max_predicted_power": 0.5282457419947865,
+        "min_predicted_power": 0.14383832309450043,
         "low_generation_hours": 0,
-        "normalized_power_hours": 19.409254023182093,
+        "normalized_power_hours": 10.023128034617667,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "faa76d022922a8bb0d7e944d",
+      "previous_forecast_id": "45289404a9d79ab15a41398b",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-03",
       "status": "success",
-      "forecast_id": "ae2d7c8f8b1bd3c1ab46fabd",
+      "forecast_id": "de03b6b0195c9633b85103a1",
       "issue_time": "2026-02-02T18:00:00+00:00",
       "forecast_start": "2026-02-02T19:00:00+00:00",
       "period": "2026-02-02T19:00:00+00:00 — 2026-02-03T18:00:00+00:00",
@@ -4010,7 +4066,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -4025,21 +4109,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.4583928832672292,
-        "max_predicted_power": 0.9735453617248379,
-        "min_predicted_power": 0.009017288049594908,
-        "low_generation_hours": 4,
-        "normalized_power_hours": 11.0014291984135,
+        "avg_predicted_power": 0.22014611378400883,
+        "max_predicted_power": 0.5160582591465959,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 7,
+        "normalized_power_hours": 5.283506730816212,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "2c78dc8c7f70e172aec72989",
+      "previous_forecast_id": "ae2d7c8f8b1bd3c1ab46fabd",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-04",
       "status": "success",
-      "forecast_id": "f1304350631baae3db8871c0",
+      "forecast_id": "b1ba5d22ba3db51903b5fb76",
       "issue_time": "2026-02-03T18:00:00+00:00",
       "forecast_start": "2026-02-03T19:00:00+00:00",
       "period": "2026-02-03T19:00:00+00:00 — 2026-02-04T18:00:00+00:00",
@@ -5349,7 +5433,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -5364,21 +5476,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.4201792158467226,
-        "max_predicted_power": 0.9824845538400804,
-        "min_predicted_power": 0.009021592629452992,
-        "low_generation_hours": 5,
-        "normalized_power_hours": 10.084301180321342,
+        "avg_predicted_power": 0.19875369306959398,
+        "max_predicted_power": 0.5213963960596462,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 11,
+        "normalized_power_hours": 4.770088633670255,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "a5f96188685004676790ec5d",
+      "previous_forecast_id": "f1304350631baae3db8871c0",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-05",
       "status": "success",
-      "forecast_id": "64494621167a5d6b79c2e953",
+      "forecast_id": "1490e0273d5258245a7eefac",
       "issue_time": "2026-02-04T18:00:00+00:00",
       "forecast_start": "2026-02-04T19:00:00+00:00",
       "period": "2026-02-04T19:00:00+00:00 — 2026-02-05T18:00:00+00:00",
@@ -6688,7 +6800,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -6703,21 +6843,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.9813018668430145,
-        "max_predicted_power": 0.9939544018741929,
-        "min_predicted_power": 0.9450801574361667,
+        "avg_predicted_power": 0.520690141508426,
+        "max_predicted_power": 0.5282457419947865,
+        "min_predicted_power": 0.49905994925550645,
         "low_generation_hours": 0,
-        "normalized_power_hours": 23.551244804232347,
+        "normalized_power_hours": 12.496563396202223,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "3be33c71c372367ddece23a7",
+      "previous_forecast_id": "64494621167a5d6b79c2e953",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-06",
       "status": "success",
-      "forecast_id": "37f594750c1536b7520d2a37",
+      "forecast_id": "844ad6b1313b1e83e2302533",
       "issue_time": "2026-02-05T18:00:00+00:00",
       "forecast_start": "2026-02-05T19:00:00+00:00",
       "period": "2026-02-05T19:00:00+00:00 — 2026-02-06T18:00:00+00:00",
@@ -8027,7 +8167,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -8042,21 +8210,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7283227966043699,
-        "max_predicted_power": 0.9938029761607212,
-        "min_predicted_power": 0.011632803658615066,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 17.47974711850488,
+        "avg_predicted_power": 0.3777123325232366,
+        "max_predicted_power": 0.5281553164641292,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 4,
+        "normalized_power_hours": 9.065095980557679,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "160047f437e72c66b8ad943c",
+      "previous_forecast_id": "37f594750c1536b7520d2a37",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-07",
       "status": "success",
-      "forecast_id": "a0ebb084ae6b04a9cf06cea2",
+      "forecast_id": "434a64b186f5a329f62bc836",
       "issue_time": "2026-02-06T18:00:00+00:00",
       "forecast_start": "2026-02-06T19:00:00+00:00",
       "period": "2026-02-06T19:00:00+00:00 — 2026-02-07T18:00:00+00:00",
@@ -9366,7 +9534,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -9381,21 +9577,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.3581793546717396,
-        "max_predicted_power": 0.9883204523608229,
-        "min_predicted_power": 0.010892609974733918,
-        "low_generation_hours": 6,
-        "normalized_power_hours": 8.596304512121751,
+        "avg_predicted_power": 0.16416830454283984,
+        "max_predicted_power": 0.5248813670629286,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 12,
+        "normalized_power_hours": 3.940039309028156,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "407122e5acadc485cb657d59",
+      "previous_forecast_id": "a0ebb084ae6b04a9cf06cea2",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-08",
       "status": "success",
-      "forecast_id": "2b645c289efeaf08cc19cba6",
+      "forecast_id": "7148175ba97a867982b0e8bc",
       "issue_time": "2026-02-07T18:00:00+00:00",
       "forecast_start": "2026-02-07T19:00:00+00:00",
       "period": "2026-02-07T19:00:00+00:00 — 2026-02-08T18:00:00+00:00",
@@ -10705,7 +10901,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -10720,21 +10944,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.6615278800997834,
-        "max_predicted_power": 0.987111665449635,
-        "min_predicted_power": 0.009336656941337762,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 15.8766691223948,
+        "avg_predicted_power": 0.33837326900175463,
+        "max_predicted_power": 0.5241595266608613,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 6,
+        "normalized_power_hours": 8.12095845604211,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "d3c17381b0d0f0d6018dfd3c",
+      "previous_forecast_id": "2b645c289efeaf08cc19cba6",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-09",
       "status": "success",
-      "forecast_id": "d6140d50fecd783e75dc0809",
+      "forecast_id": "b04e23f3ed82aec897639270",
       "issue_time": "2026-02-08T18:00:00+00:00",
       "forecast_start": "2026-02-08T19:00:00+00:00",
       "period": "2026-02-08T19:00:00+00:00 — 2026-02-09T18:00:00+00:00",
@@ -12044,7 +12268,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -12059,21 +12311,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.8037462207186037,
-        "max_predicted_power": 0.9939744901331838,
-        "min_predicted_power": 0.028783235552355395,
-        "low_generation_hours": 1,
-        "normalized_power_hours": 19.28990929724649,
+        "avg_predicted_power": 0.4166657023569518,
+        "max_predicted_power": 0.5282577379196369,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 3,
+        "normalized_power_hours": 9.999976856566843,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "638d357008c49de004397bfb",
+      "previous_forecast_id": "d6140d50fecd783e75dc0809",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-10",
       "status": "success",
-      "forecast_id": "62934e2dfb81948ac2d96602",
+      "forecast_id": "f362f4556e3079b47b1bdb89",
       "issue_time": "2026-02-09T18:00:00+00:00",
       "forecast_start": "2026-02-09T19:00:00+00:00",
       "period": "2026-02-09T19:00:00+00:00 — 2026-02-10T18:00:00+00:00",
@@ -13383,7 +13635,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -13398,21 +13678,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.3133239685036285,
-        "max_predicted_power": 0.9811768031694662,
-        "min_predicted_power": 0.009017288049594908,
-        "low_generation_hours": 11,
-        "normalized_power_hours": 7.519775244087084,
+        "avg_predicted_power": 0.14904755587315374,
+        "max_predicted_power": 0.5206154583599218,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 13,
+        "normalized_power_hours": 3.5771413409556896,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "d2fb4dae5460ed2792ba66f7",
+      "previous_forecast_id": "62934e2dfb81948ac2d96602",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-11",
       "status": "success",
-      "forecast_id": "e5fad98d106a59804022514a",
+      "forecast_id": "01f0fa7ecc4ab2afe6e15b55",
       "issue_time": "2026-02-10T18:00:00+00:00",
       "forecast_start": "2026-02-10T19:00:00+00:00",
       "period": "2026-02-10T19:00:00+00:00 — 2026-02-11T18:00:00+00:00",
@@ -14722,7 +15002,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -14737,21 +15045,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.6579669958491975,
-        "max_predicted_power": 0.9908561951079967,
-        "min_predicted_power": 0.014784657900855484,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 15.79120790038074,
+        "avg_predicted_power": 0.3351661648309137,
+        "max_predicted_power": 0.5263956137405013,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 6,
+        "normalized_power_hours": 8.04398795594193,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "a6e9bb753f6cf35fd34c87fc",
+      "previous_forecast_id": "e5fad98d106a59804022514a",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-12",
       "status": "success",
-      "forecast_id": "7f0824c985f87fe244ebe851",
+      "forecast_id": "0a3263f46ed993ccf110c211",
       "issue_time": "2026-02-11T18:00:00+00:00",
       "forecast_start": "2026-02-11T19:00:00+00:00",
       "period": "2026-02-11T19:00:00+00:00 — 2026-02-12T18:00:00+00:00",
@@ -16061,7 +16369,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -16076,21 +16412,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.21667892380918594,
-        "max_predicted_power": 0.8627699284635658,
-        "min_predicted_power": 0.010213423935051537,
-        "low_generation_hours": 7,
-        "normalized_power_hours": 5.200294171420462,
+        "avg_predicted_power": 0.08120493185780296,
+        "max_predicted_power": 0.44990749051697443,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 15,
+        "normalized_power_hours": 1.948918364587271,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "979bb3224d99e244db343737",
+      "previous_forecast_id": "7f0824c985f87fe244ebe851",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-13",
       "status": "success",
-      "forecast_id": "49cdfd9eb0097e601cb7b626",
+      "forecast_id": "88dbf9fb307518c7bba09386",
       "issue_time": "2026-02-12T18:00:00+00:00",
       "forecast_start": "2026-02-12T19:00:00+00:00",
       "period": "2026-02-12T19:00:00+00:00 — 2026-02-13T18:00:00+00:00",
@@ -17400,7 +17736,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -17415,21 +17779,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.11022781383454351,
-        "max_predicted_power": 0.8058293137620895,
-        "min_predicted_power": 0.00782482731794722,
-        "low_generation_hours": 18,
-        "normalized_power_hours": 2.6454675320290444,
+        "avg_predicted_power": 0.04551777629554388,
+        "max_predicted_power": 0.41590477603548986,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 20,
+        "normalized_power_hours": 1.092426631093053,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "093abf01deb8288884f489a2",
+      "previous_forecast_id": "49cdfd9eb0097e601cb7b626",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-14",
       "status": "success",
-      "forecast_id": "4e7ae511378c939bd8167f5a",
+      "forecast_id": "e3e3467ea723e712e3d2902c",
       "issue_time": "2026-02-13T18:00:00+00:00",
       "forecast_start": "2026-02-13T19:00:00+00:00",
       "period": "2026-02-13T19:00:00+00:00 — 2026-02-14T18:00:00+00:00",
@@ -18739,7 +19103,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -18754,21 +19146,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.3835383555000143,
-        "max_predicted_power": 0.9861327640679839,
-        "min_predicted_power": 0.011848283159732046,
-        "low_generation_hours": 7,
-        "normalized_power_hours": 9.204920532000344,
+        "avg_predicted_power": 0.18235132673102603,
+        "max_predicted_power": 0.523574964931763,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 10,
+        "normalized_power_hours": 4.376431841544624,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "62ed6141af03326c29066ca4",
+      "previous_forecast_id": "4e7ae511378c939bd8167f5a",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-15",
       "status": "success",
-      "forecast_id": "6a2250e087fc6717a6f567cf",
+      "forecast_id": "6000cf32110cc593c9644def",
       "issue_time": "2026-02-14T18:00:00+00:00",
       "forecast_start": "2026-02-14T19:00:00+00:00",
       "period": "2026-02-14T19:00:00+00:00 — 2026-02-15T18:00:00+00:00",
@@ -20078,7 +20470,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -20093,21 +20513,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7405251324258092,
-        "max_predicted_power": 0.9913895645103313,
-        "min_predicted_power": 0.011602197113171495,
-        "low_generation_hours": 4,
-        "normalized_power_hours": 17.77260317821942,
+        "avg_predicted_power": 0.38623347763049515,
+        "max_predicted_power": 0.5267141211467845,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 5,
+        "normalized_power_hours": 9.269603463131883,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "1148c7ab9a34b1b7cefabd4e",
+      "previous_forecast_id": "6a2250e087fc6717a6f567cf",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-16",
       "status": "success",
-      "forecast_id": "543073383e8e60c6b1c25cf7",
+      "forecast_id": "f6f525d094258b1df9067217",
       "issue_time": "2026-02-15T18:00:00+00:00",
       "forecast_start": "2026-02-15T19:00:00+00:00",
       "period": "2026-02-15T19:00:00+00:00 — 2026-02-16T18:00:00+00:00",
@@ -21417,7 +21837,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -21432,21 +21880,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7774635071871835,
-        "max_predicted_power": 0.9862270355166671,
-        "min_predicted_power": 0.3258071136849998,
+        "avg_predicted_power": 0.39896582258266494,
+        "max_predicted_power": 0.5236312601644391,
+        "min_predicted_power": 0.12925423846108344,
         "low_generation_hours": 0,
-        "normalized_power_hours": 18.659124172492405,
+        "normalized_power_hours": 9.575179741983959,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "43ecd562c4240fdd6c893096",
+      "previous_forecast_id": "543073383e8e60c6b1c25cf7",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-17",
       "status": "success",
-      "forecast_id": "f95c55d3cd5f6d8a5ed6775d",
+      "forecast_id": "dd7db4cec5b32449233bcad4",
       "issue_time": "2026-02-16T18:00:00+00:00",
       "forecast_start": "2026-02-16T19:00:00+00:00",
       "period": "2026-02-16T19:00:00+00:00 — 2026-02-17T18:00:00+00:00",
@@ -22756,7 +23204,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -22771,21 +23247,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.5672894926082199,
-        "max_predicted_power": 0.9910277090804593,
-        "min_predicted_power": 0.04457081489615735,
-        "low_generation_hours": 2,
-        "normalized_power_hours": 13.614947822597278,
+        "avg_predicted_power": 0.27667777897179874,
+        "max_predicted_power": 0.526498035196009,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 7,
+        "normalized_power_hours": 6.640266695323169,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "e7e6a1fa4e04db6dac1aca27",
+      "previous_forecast_id": "f95c55d3cd5f6d8a5ed6775d",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-18",
       "status": "success",
-      "forecast_id": "c74ff931062076e36acbe6ac",
+      "forecast_id": "ab3ff437db8f430fb1d53b9b",
       "issue_time": "2026-02-17T18:00:00+00:00",
       "forecast_start": "2026-02-17T19:00:00+00:00",
       "period": "2026-02-17T19:00:00+00:00 — 2026-02-18T18:00:00+00:00",
@@ -24095,7 +24571,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -24110,21 +24614,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.9828529040089263,
-        "max_predicted_power": 0.9925867419836878,
-        "min_predicted_power": 0.9631034672638851,
+        "avg_predicted_power": 0.5216163604152497,
+        "max_predicted_power": 0.5274290288453336,
+        "min_predicted_power": 0.509822766996344,
         "low_generation_hours": 0,
-        "normalized_power_hours": 23.588469696214233,
+        "normalized_power_hours": 12.518792649965993,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "5d42cf935295fc35392d01ab",
+      "previous_forecast_id": "c74ff931062076e36acbe6ac",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-19",
       "status": "success",
-      "forecast_id": "fbf186c6a115543931d14336",
+      "forecast_id": "120d2843a402fa334d0225cf",
       "issue_time": "2026-02-18T18:00:00+00:00",
       "forecast_start": "2026-02-18T19:00:00+00:00",
       "period": "2026-02-18T19:00:00+00:00 — 2026-02-19T18:00:00+00:00",
@@ -25434,7 +25938,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -25449,21 +25981,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.6041423690821263,
-        "max_predicted_power": 0.9818570163607071,
-        "min_predicted_power": 0.07943575648272083,
-        "low_generation_hours": 0,
-        "normalized_power_hours": 14.499416857971031,
+        "avg_predicted_power": 0.29620974522485066,
+        "max_predicted_power": 0.5210216551502017,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 3,
+        "normalized_power_hours": 7.109033885396416,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "804330f2fe4275a1eeb60fae",
+      "previous_forecast_id": "fbf186c6a115543931d14336",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-20",
       "status": "success",
-      "forecast_id": "9eec99d68a0409f5a1f0c0d8",
+      "forecast_id": "0a1b429e91c6dbd732f4a3d1",
       "issue_time": "2026-02-19T18:00:00+00:00",
       "forecast_start": "2026-02-19T19:00:00+00:00",
       "period": "2026-02-19T19:00:00+00:00 — 2026-02-20T18:00:00+00:00",
@@ -26773,7 +27305,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -26788,21 +27348,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.4779538369878498,
-        "max_predicted_power": 0.9851414876901423,
-        "min_predicted_power": 0.013848234870208068,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 11.470892087708396,
+        "avg_predicted_power": 0.22778390905932136,
+        "max_predicted_power": 0.5229830133375504,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 6,
+        "normalized_power_hours": 5.466813817423713,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "429bbf81c4006695e68ed88a",
+      "previous_forecast_id": "9eec99d68a0409f5a1f0c0d8",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-21",
       "status": "success",
-      "forecast_id": "aa5fafb3ae7992b92f1f33a9",
+      "forecast_id": "f287411a217b3f7a1d77a3a7",
       "issue_time": "2026-02-20T18:00:00+00:00",
       "forecast_start": "2026-02-20T19:00:00+00:00",
       "period": "2026-02-20T19:00:00+00:00 — 2026-02-21T18:00:00+00:00",
@@ -28112,7 +28672,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -28127,21 +28715,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7937052450492351,
-        "max_predicted_power": 0.9952887129964014,
-        "min_predicted_power": 0.037071943576714936,
-        "low_generation_hours": 1,
-        "normalized_power_hours": 19.048925881181642,
+        "avg_predicted_power": 0.41046338605774296,
+        "max_predicted_power": 0.529042540560376,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 3,
+        "normalized_power_hours": 9.851121265385832,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "7d9bbf558a036a7e46e72460",
+      "previous_forecast_id": "aa5fafb3ae7992b92f1f33a9",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-22",
       "status": "success",
-      "forecast_id": "d7a9ab8e188820f4638970ea",
+      "forecast_id": "48f6a3ff5b696bd8fcf91789",
       "issue_time": "2026-02-21T18:00:00+00:00",
       "forecast_start": "2026-02-21T19:00:00+00:00",
       "period": "2026-02-21T19:00:00+00:00 — 2026-02-22T18:00:00+00:00",
@@ -29451,7 +30039,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -29466,21 +30082,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.5974574745467778,
-        "max_predicted_power": 0.9921971675597374,
-        "min_predicted_power": 0.011772426561210747,
-        "low_generation_hours": 7,
-        "normalized_power_hours": 14.338979389122667,
+        "avg_predicted_power": 0.30786053336369607,
+        "max_predicted_power": 0.5271963901923032,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 8,
+        "normalized_power_hours": 7.388652800728705,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "1f4a768be3148f20d8188ab9",
+      "previous_forecast_id": "d7a9ab8e188820f4638970ea",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-23",
       "status": "success",
-      "forecast_id": "9795c3907faca7212cdab7bb",
+      "forecast_id": "ba3bcc469f58a5946c10b5f3",
       "issue_time": "2026-02-22T18:00:00+00:00",
       "forecast_start": "2026-02-22T19:00:00+00:00",
       "period": "2026-02-22T19:00:00+00:00 — 2026-02-23T18:00:00+00:00",
@@ -30790,7 +31406,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -30805,21 +31449,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.411360864478122,
-        "max_predicted_power": 0.9807654088187194,
-        "min_predicted_power": 0.010076343383317162,
-        "low_generation_hours": 7,
-        "normalized_power_hours": 9.872660747474928,
+        "avg_predicted_power": 0.19665288569570757,
+        "max_predicted_power": 0.5203697896975605,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 13,
+        "normalized_power_hours": 4.719669256696982,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "927cbc747d99575a00f9994c",
+      "previous_forecast_id": "9795c3907faca7212cdab7bb",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-24",
       "status": "success",
-      "forecast_id": "80bf056d77684d891f5b5905",
+      "forecast_id": "bb75e63526c1e30947eac209",
       "issue_time": "2026-02-23T18:00:00+00:00",
       "forecast_start": "2026-02-23T19:00:00+00:00",
       "period": "2026-02-23T19:00:00+00:00 — 2026-02-24T18:00:00+00:00",
@@ -32129,7 +32773,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -32144,21 +32816,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.609815308383216,
-        "max_predicted_power": 0.9779181242049643,
-        "min_predicted_power": 0.01638146605676279,
-        "low_generation_hours": 2,
-        "normalized_power_hours": 14.635567401197182,
+        "avg_predicted_power": 0.30393638078150315,
+        "max_predicted_power": 0.5186695023670388,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 3,
+        "normalized_power_hours": 7.294473138756076,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "a6d00130b8d0dbcccff364ec",
+      "previous_forecast_id": "80bf056d77684d891f5b5905",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-25",
       "status": "success",
-      "forecast_id": "e3e2c0af350d804395496d22",
+      "forecast_id": "7d10697e10eb51c7e65196d8",
       "issue_time": "2026-02-24T18:00:00+00:00",
       "forecast_start": "2026-02-24T19:00:00+00:00",
       "period": "2026-02-24T19:00:00+00:00 — 2026-02-25T18:00:00+00:00",
@@ -33468,7 +34140,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -33483,21 +34183,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.20893474298866396,
-        "max_predicted_power": 0.982533140433728,
-        "min_predicted_power": 0.01095726211901617,
-        "low_generation_hours": 9,
-        "normalized_power_hours": 5.014433831727935,
+        "avg_predicted_power": 0.08445639480940677,
+        "max_predicted_power": 0.5214254100785515,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 18,
+        "normalized_power_hours": 2.0269534754257625,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "215c03a6550c03b32f0d15ae",
+      "previous_forecast_id": "e3e2c0af350d804395496d22",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-26",
       "status": "success",
-      "forecast_id": "6b109ac3c0a372c715db6479",
+      "forecast_id": "93346591d2fcae25d00767a3",
       "issue_time": "2026-02-25T18:00:00+00:00",
       "forecast_start": "2026-02-25T19:00:00+00:00",
       "period": "2026-02-25T19:00:00+00:00 — 2026-02-26T18:00:00+00:00",
@@ -34807,7 +35507,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -34822,21 +35550,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7105718120446918,
-        "max_predicted_power": 0.9885346543820742,
-        "min_predicted_power": 0.010414424515131646,
-        "low_generation_hours": 1,
-        "normalized_power_hours": 17.053723489072603,
+        "avg_predicted_power": 0.361510358131552,
+        "max_predicted_power": 0.5250092801563885,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 2,
+        "normalized_power_hours": 8.676248595157249,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "8b489cffc4d1d870dbe13c45",
+      "previous_forecast_id": "6b109ac3c0a372c715db6479",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-27",
       "status": "success",
-      "forecast_id": "61dfd04e7640ea6b1a103bce",
+      "forecast_id": "03752e98919168d02e84f88a",
       "issue_time": "2026-02-26T18:00:00+00:00",
       "forecast_start": "2026-02-26T19:00:00+00:00",
       "period": "2026-02-26T19:00:00+00:00 — 2026-02-27T18:00:00+00:00",
@@ -36146,7 +36874,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -36161,21 +36917,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7093326008618629,
-        "max_predicted_power": 0.9879053251851981,
-        "min_predicted_power": 0.21138848123346973,
+        "avg_predicted_power": 0.35828070235187504,
+        "max_predicted_power": 0.5246334693031262,
+        "min_predicted_power": 0.060927893355602336,
         "low_generation_hours": 0,
-        "normalized_power_hours": 17.02398242068471,
+        "normalized_power_hours": 8.598736856445,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "bd0dfcbdb470baae308e3672",
+      "previous_forecast_id": "61dfd04e7640ea6b1a103bce",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_1",
       "target_date": "2026-02-28",
       "status": "success",
-      "forecast_id": "f535276424806c3ae410f779",
+      "forecast_id": "99e2b718a8923b6f33f5139f",
       "issue_time": "2026-02-27T18:00:00+00:00",
       "forecast_start": "2026-02-27T19:00:00+00:00",
       "period": "2026-02-27T19:00:00+00:00 — 2026-02-28T18:00:00+00:00",
@@ -37485,7 +38241,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 23666,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 142360,
@@ -37500,21 +38284,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.9645752754662339,
-        "max_predicted_power": 0.9913415053795138,
-        "min_predicted_power": 0.8110450454215965,
+        "avg_predicted_power": 0.5107016734559658,
+        "max_predicted_power": 0.5266854221081109,
+        "min_predicted_power": 0.4190194075750341,
         "low_generation_hours": 0,
-        "normalized_power_hours": 23.149806611189614,
+        "normalized_power_hours": 12.256840162943181,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "28b728f1154b6f5d2707b3f7",
+      "previous_forecast_id": "f535276424806c3ae410f779",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-01",
       "status": "success",
-      "forecast_id": "a553caa0d037f947ab561b43",
+      "forecast_id": "24013e78d0f3edcac7997560",
       "issue_time": "2026-01-31T18:00:00+00:00",
       "forecast_start": "2026-01-31T19:00:00+00:00",
       "period": "2026-01-31T19:00:00+00:00 — 2026-02-01T18:00:00+00:00",
@@ -38804,7 +39588,7 @@
         "input_sha256": "7212256613cfc2c9733a803773c9e6a9b361f6cfd5a7ccfb3fbb5d17a6947260",
         "cache_version": 1,
         "cache_policy": "Extracted grid-cell values and source hashes; refresh bypasses cache",
-        "retrieved_at": "2026-09-23T10:22:50.259926+00:00"
+        "retrieved_at": "2026-09-23T11:11:44.720301+00:00"
       },
       "validation_metrics": {
         "scope": "observed_weather_power_curve",
@@ -38824,7 +39608,35 @@
         "training_end": "2026-01-31T17:00:00+00:00",
         "training_available_at": "2026-01-31T18:00:00+00:00",
         "training_hours": 24783,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -38839,21 +39651,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.5350345743509398,
-        "max_predicted_power": 0.8364056451118813,
-        "min_predicted_power": 0.009722687065607331,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 12.840829784422555,
+        "avg_predicted_power": 0.2650188217249079,
+        "max_predicted_power": 0.4387985927491401,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 4,
+        "normalized_power_hours": 6.360451721397791,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "e7bfa022202fef0a9aed7d6b",
+      "previous_forecast_id": "a553caa0d037f947ab561b43",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-02",
       "status": "success",
-      "forecast_id": "66a161d19dffeb00f3e71920",
+      "forecast_id": "35b0f196b4d3eb2552beeefc",
       "issue_time": "2026-02-01T18:00:00+00:00",
       "forecast_start": "2026-02-01T19:00:00+00:00",
       "period": "2026-02-01T19:00:00+00:00 — 2026-02-02T18:00:00+00:00",
@@ -40163,7 +40975,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -40178,21 +41018,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7800652291381573,
-        "max_predicted_power": 0.971150489897908,
-        "min_predicted_power": 0.31939596004090975,
+        "avg_predicted_power": 0.4051209226908732,
+        "max_predicted_power": 0.5193427695417392,
+        "min_predicted_power": 0.12975434290069857,
         "low_generation_hours": 0,
-        "normalized_power_hours": 18.721565499315776,
+        "normalized_power_hours": 9.722902144580956,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "9525b56e909326b744ef90c8",
+      "previous_forecast_id": "66a161d19dffeb00f3e71920",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-03",
       "status": "success",
-      "forecast_id": "a06120855c1ff7c0edf33c84",
+      "forecast_id": "31dbb5d84392b1405eeff59d",
       "issue_time": "2026-02-02T18:00:00+00:00",
       "forecast_start": "2026-02-02T19:00:00+00:00",
       "period": "2026-02-02T19:00:00+00:00 — 2026-02-03T18:00:00+00:00",
@@ -41502,7 +42342,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -41517,21 +42385,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.4261593972818703,
-        "max_predicted_power": 0.9431898804096887,
-        "min_predicted_power": 0.008872037106175417,
-        "low_generation_hours": 4,
-        "normalized_power_hours": 10.227825534764888,
+        "avg_predicted_power": 0.20463806992559416,
+        "max_predicted_power": 0.5026292227086547,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 8,
+        "normalized_power_hours": 4.91131367821426,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "3f5561354c70743510eab562",
+      "previous_forecast_id": "a06120855c1ff7c0edf33c84",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-04",
       "status": "success",
-      "forecast_id": "92abbc0051419f2aa4b07c10",
+      "forecast_id": "da992aa04c44fc1e660b9c4b",
       "issue_time": "2026-02-03T18:00:00+00:00",
       "forecast_start": "2026-02-03T19:00:00+00:00",
       "period": "2026-02-03T19:00:00+00:00 — 2026-02-04T18:00:00+00:00",
@@ -42841,7 +43709,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -42856,21 +43752,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.3938003952610047,
-        "max_predicted_power": 0.977105336616325,
-        "min_predicted_power": 0.009145967279492554,
-        "low_generation_hours": 6,
-        "normalized_power_hours": 9.451209486264112,
+        "avg_predicted_power": 0.1877287018381737,
+        "max_predicted_power": 0.522902298870098,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 11,
+        "normalized_power_hours": 4.505488844116169,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "78c090c01947b23b0dfd4bbd",
+      "previous_forecast_id": "92abbc0051419f2aa4b07c10",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-05",
       "status": "success",
-      "forecast_id": "8642cb4a0c45ff25ff3a4bc2",
+      "forecast_id": "bf3c8a06ac20e7d6b8840530",
       "issue_time": "2026-02-04T18:00:00+00:00",
       "forecast_start": "2026-02-04T19:00:00+00:00",
       "period": "2026-02-04T19:00:00+00:00 — 2026-02-05T18:00:00+00:00",
@@ -44180,7 +45076,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -44195,21 +45119,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.969112826891417,
-        "max_predicted_power": 0.9763706240746138,
-        "min_predicted_power": 0.9479955285007013,
+        "avg_predicted_power": 0.5181247497377224,
+        "max_predicted_power": 0.5224631220173932,
+        "min_predicted_power": 0.5055018147552016,
         "low_generation_hours": 0,
-        "normalized_power_hours": 23.258707845394007,
+        "normalized_power_hours": 12.434993993705337,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "1e12f78621e9e39da63ce6ff",
+      "previous_forecast_id": "8642cb4a0c45ff25ff3a4bc2",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-06",
       "status": "success",
-      "forecast_id": "f0f6aba01459cefdba70fc01",
+      "forecast_id": "36ba6ed8f899157cb62a7924",
       "issue_time": "2026-02-05T18:00:00+00:00",
       "forecast_start": "2026-02-05T19:00:00+00:00",
       "period": "2026-02-05T19:00:00+00:00 — 2026-02-06T18:00:00+00:00",
@@ -45519,7 +46443,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -45534,21 +46486,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7008599741483398,
-        "max_predicted_power": 0.97745198030392,
-        "min_predicted_power": 0.010213598302973368,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 16.820639379560156,
+        "avg_predicted_power": 0.36560850329088596,
+        "max_predicted_power": 0.523109506281276,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 4,
+        "normalized_power_hours": 8.774604078981262,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "3250892410fa9a02e021f1bb",
+      "previous_forecast_id": "f0f6aba01459cefdba70fc01",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-07",
       "status": "success",
-      "forecast_id": "c2ae8bffded3926d574f9c68",
+      "forecast_id": "48167640202df2ea608d6443",
       "issue_time": "2026-02-06T18:00:00+00:00",
       "forecast_start": "2026-02-06T19:00:00+00:00",
       "period": "2026-02-06T19:00:00+00:00 — 2026-02-07T18:00:00+00:00",
@@ -46858,7 +47810,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -46873,21 +47853,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.33572524288433403,
-        "max_predicted_power": 0.9743606772369593,
-        "min_predicted_power": 0.010741252859987532,
-        "low_generation_hours": 6,
-        "normalized_power_hours": 8.057405829224017,
+        "avg_predicted_power": 0.1549579117639466,
+        "max_predicted_power": 0.5212616696450011,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 12,
+        "normalized_power_hours": 3.7189898823347187,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "68d41caf2407b5e2f949d4de",
+      "previous_forecast_id": "c2ae8bffded3926d574f9c68",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-08",
       "status": "success",
-      "forecast_id": "9c49c1fad86f5ddd25541d3f",
+      "forecast_id": "098043b4b615cdec2ae6b5ab",
       "issue_time": "2026-02-07T18:00:00+00:00",
       "forecast_start": "2026-02-07T19:00:00+00:00",
       "period": "2026-02-07T19:00:00+00:00 — 2026-02-08T18:00:00+00:00",
@@ -48197,7 +49177,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -48212,21 +49220,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.6267873269288103,
-        "max_predicted_power": 0.9691780161504924,
-        "min_predicted_power": 0.008568720326241971,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 15.042895846291447,
+        "avg_predicted_power": 0.3218499910714973,
+        "max_predicted_power": 0.5181637168330223,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 6,
+        "normalized_power_hours": 7.724399785715935,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "3a843e7e25da27d8ce4a7ee8",
+      "previous_forecast_id": "9c49c1fad86f5ddd25541d3f",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-09",
       "status": "success",
-      "forecast_id": "eebe70c1b56c9ae509493eeb",
+      "forecast_id": "14ff81f564d12131ac6de4cb",
       "issue_time": "2026-02-08T18:00:00+00:00",
       "forecast_start": "2026-02-08T19:00:00+00:00",
       "period": "2026-02-08T19:00:00+00:00 — 2026-02-09T18:00:00+00:00",
@@ -49536,7 +50544,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -49551,21 +50587,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7863321338120537,
-        "max_predicted_power": 0.9722508022772863,
-        "min_predicted_power": 0.02703305943525331,
-        "low_generation_hours": 1,
-        "normalized_power_hours": 18.87197121148929,
+        "avg_predicted_power": 0.41074225853873036,
+        "max_predicted_power": 0.5200004849070466,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 3,
+        "normalized_power_hours": 9.857814204929529,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "5c02395fd58c87ec6dd1c00d",
+      "previous_forecast_id": "eebe70c1b56c9ae509493eeb",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-10",
       "status": "success",
-      "forecast_id": "e050c76f5cf39757065963b5",
+      "forecast_id": "cef7ff347e39004e505acac7",
       "issue_time": "2026-02-09T18:00:00+00:00",
       "forecast_start": "2026-02-09T19:00:00+00:00",
       "period": "2026-02-09T19:00:00+00:00 — 2026-02-10T18:00:00+00:00",
@@ -50875,7 +51911,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -50890,21 +51954,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.2920746014263585,
-        "max_predicted_power": 0.9786706638805487,
-        "min_predicted_power": 0.00843694061135726,
-        "low_generation_hours": 11,
-        "normalized_power_hours": 7.009790434232604,
+        "avg_predicted_power": 0.13896470011410275,
+        "max_predicted_power": 0.523837978421387,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 13,
+        "normalized_power_hours": 3.335152802738466,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "2d40cb63a7c6700af5cadf2f",
+      "previous_forecast_id": "e050c76f5cf39757065963b5",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-11",
       "status": "success",
-      "forecast_id": "79c86ec1a671f8d96106b4f2",
+      "forecast_id": "f7c768b37cc6e6b8cce9e5bf",
       "issue_time": "2026-02-10T18:00:00+00:00",
       "forecast_start": "2026-02-10T19:00:00+00:00",
       "period": "2026-02-10T19:00:00+00:00 — 2026-02-11T18:00:00+00:00",
@@ -52214,7 +53278,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -52229,21 +53321,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.635752344723364,
-        "max_predicted_power": 0.9756184876805787,
-        "min_predicted_power": 0.014104876243942134,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 15.258056273360735,
+        "avg_predicted_power": 0.32607718892578635,
+        "max_predicted_power": 0.5220135299993125,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 6,
+        "normalized_power_hours": 7.825852534218873,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "cbf16cfffe369b6036f486e5",
+      "previous_forecast_id": "79c86ec1a671f8d96106b4f2",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-12",
       "status": "success",
-      "forecast_id": "107ac056b0c5e79722f1623a",
+      "forecast_id": "9645c2d80f154732d097bd58",
       "issue_time": "2026-02-11T18:00:00+00:00",
       "forecast_start": "2026-02-11T19:00:00+00:00",
       "period": "2026-02-11T19:00:00+00:00 — 2026-02-12T18:00:00+00:00",
@@ -53553,7 +54645,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -53568,21 +54688,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.19750785116141556,
-        "max_predicted_power": 0.8263064766471867,
-        "min_predicted_power": 0.008912207484134616,
-        "low_generation_hours": 7,
-        "normalized_power_hours": 4.740188427873973,
+        "avg_predicted_power": 0.0741370916134615,
+        "max_predicted_power": 0.4327617813848885,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 16,
+        "normalized_power_hours": 1.7792901987230763,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "9019e5f2fa1f097dce439ee8",
+      "previous_forecast_id": "107ac056b0c5e79722f1623a",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-13",
       "status": "success",
-      "forecast_id": "68c330422f752c7495561732",
+      "forecast_id": "efb739b81e0a6f27379ad8e9",
       "issue_time": "2026-02-12T18:00:00+00:00",
       "forecast_start": "2026-02-12T19:00:00+00:00",
       "period": "2026-02-12T19:00:00+00:00 — 2026-02-13T18:00:00+00:00",
@@ -54892,7 +56012,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -54907,21 +56055,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.10288068210281169,
-        "max_predicted_power": 0.7685469891385868,
-        "min_predicted_power": 0.0067604552525681585,
-        "low_generation_hours": 19,
-        "normalized_power_hours": 2.4691363704674805,
+        "avg_predicted_power": 0.04290556560669905,
+        "max_predicted_power": 0.39823585662145716,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 20,
+        "normalized_power_hours": 1.0297335745607772,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "8ea63f5875cfa105fee6f1a5",
+      "previous_forecast_id": "68c330422f752c7495561732",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-14",
       "status": "success",
-      "forecast_id": "7f8098cbbe9050594469f580",
+      "forecast_id": "dbf309ddfda30e126a543d70",
       "issue_time": "2026-02-13T18:00:00+00:00",
       "forecast_start": "2026-02-13T19:00:00+00:00",
       "period": "2026-02-13T19:00:00+00:00 — 2026-02-14T18:00:00+00:00",
@@ -56231,7 +57379,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -56246,21 +57422,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.36176715587148767,
-        "max_predicted_power": 0.9710553943448083,
-        "min_predicted_power": 0.011869344883368858,
-        "low_generation_hours": 7,
-        "normalized_power_hours": 8.682411740915704,
+        "avg_predicted_power": 0.17279276498484952,
+        "max_predicted_power": 0.5192859258602373,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 10,
+        "normalized_power_hours": 4.1470263596363885,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "7ae26bedd750e9743b78674e",
+      "previous_forecast_id": "7f8098cbbe9050594469f580",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-15",
       "status": "success",
-      "forecast_id": "c533f8f0785628eb1bf6cb34",
+      "forecast_id": "926fb617e6aad804113fafab",
       "issue_time": "2026-02-14T18:00:00+00:00",
       "forecast_start": "2026-02-14T19:00:00+00:00",
       "period": "2026-02-14T19:00:00+00:00 — 2026-02-15T18:00:00+00:00",
@@ -57570,7 +58746,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -57585,21 +58789,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7148240299811294,
-        "max_predicted_power": 0.97745198030392,
-        "min_predicted_power": 0.011158918250241866,
-        "low_generation_hours": 4,
-        "normalized_power_hours": 17.155776719547106,
+        "avg_predicted_power": 0.37488881551464454,
+        "max_predicted_power": 0.523109506281276,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 5,
+        "normalized_power_hours": 8.997331572351468,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "3482ba4c9f8a8f1de1efe4cf",
+      "previous_forecast_id": "c533f8f0785628eb1bf6cb34",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-16",
       "status": "success",
-      "forecast_id": "2784a26f8ef7b3c6196704f5",
+      "forecast_id": "670e807422862f91902d48ee",
       "issue_time": "2026-02-15T18:00:00+00:00",
       "forecast_start": "2026-02-15T19:00:00+00:00",
       "period": "2026-02-15T19:00:00+00:00 — 2026-02-16T18:00:00+00:00",
@@ -58909,7 +60113,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -58924,21 +60156,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.738798167701754,
-        "max_predicted_power": 0.9747899293975031,
-        "min_predicted_power": 0.2724748206900185,
+        "avg_predicted_power": 0.38045340017954515,
+        "max_predicted_power": 0.5215182565442056,
+        "min_predicted_power": 0.10170707660869513,
         "low_generation_hours": 0,
-        "normalized_power_hours": 17.731156024842097,
+        "normalized_power_hours": 9.130881604309083,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "d56527624d1ad0c41ed03c23",
+      "previous_forecast_id": "2784a26f8ef7b3c6196704f5",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-17",
       "status": "success",
-      "forecast_id": "b89b36734e1b749fb3ec17de",
+      "forecast_id": "0f9dea7eb06ff2455fd30881",
       "issue_time": "2026-02-16T18:00:00+00:00",
       "forecast_start": "2026-02-16T19:00:00+00:00",
       "period": "2026-02-16T19:00:00+00:00 — 2026-02-17T18:00:00+00:00",
@@ -60248,7 +61480,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -60263,21 +61523,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.5376967314719691,
-        "max_predicted_power": 0.9750111633673557,
-        "min_predicted_power": 0.03796062921978997,
-        "low_generation_hours": 2,
-        "normalized_power_hours": 12.904721555327257,
+        "avg_predicted_power": 0.26337250592471756,
+        "max_predicted_power": 0.5216504998816679,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 7,
+        "normalized_power_hours": 6.320940142193222,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "2add47451d9956f70f477c1a",
+      "previous_forecast_id": "b89b36734e1b749fb3ec17de",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-18",
       "status": "success",
-      "forecast_id": "57f8dc137618ea49a282a285",
+      "forecast_id": "2860645dc883967a0c3c45df",
       "issue_time": "2026-02-17T18:00:00+00:00",
       "forecast_start": "2026-02-17T19:00:00+00:00",
       "period": "2026-02-17T19:00:00+00:00 — 2026-02-18T18:00:00+00:00",
@@ -61587,7 +62847,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -61602,21 +62890,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.9604027767612092,
-        "max_predicted_power": 0.9710553943448083,
-        "min_predicted_power": 0.9361087083838991,
+        "avg_predicted_power": 0.5129182884539983,
+        "max_predicted_power": 0.5192859258602373,
+        "min_predicted_power": 0.4983964287012127,
         "low_generation_hours": 0,
-        "normalized_power_hours": 23.04966664226902,
+        "normalized_power_hours": 12.310038922895961,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "9cd455277556c6dda1a3924d",
+      "previous_forecast_id": "57f8dc137618ea49a282a285",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-19",
       "status": "success",
-      "forecast_id": "ef08c689ae74ef48b6228752",
+      "forecast_id": "4767c21ce4006e621130fdc2",
       "issue_time": "2026-02-18T18:00:00+00:00",
       "forecast_start": "2026-02-18T19:00:00+00:00",
       "period": "2026-02-18T19:00:00+00:00 — 2026-02-19T18:00:00+00:00",
@@ -62926,7 +64214,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -62941,21 +64257,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.5634280965300249,
-        "max_predicted_power": 0.962999503557426,
-        "min_predicted_power": 0.06175711482483322,
-        "low_generation_hours": 0,
-        "normalized_power_hours": 13.522274316720598,
+        "avg_predicted_power": 0.27663578195329747,
+        "max_predicted_power": 0.5144704904880628,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 3,
+        "normalized_power_hours": 6.63925876687914,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "4441dd3d44b70b3b1c4ab610",
+      "previous_forecast_id": "ef08c689ae74ef48b6228752",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-20",
       "status": "success",
-      "forecast_id": "f7971f2308a42cf687f88c4b",
+      "forecast_id": "078d46e5b041e514bc22b9d5",
       "issue_time": "2026-02-19T18:00:00+00:00",
       "forecast_start": "2026-02-19T19:00:00+00:00",
       "period": "2026-02-19T19:00:00+00:00 — 2026-02-20T18:00:00+00:00",
@@ -64265,7 +65581,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -64280,21 +65624,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.44971808592797125,
-        "max_predicted_power": 0.9672562782295069,
-        "min_predicted_power": 0.01378657882733721,
-        "low_generation_hours": 3,
-        "normalized_power_hours": 10.79323406227131,
+        "avg_predicted_power": 0.21468823067767895,
+        "max_predicted_power": 0.5170149916324205,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 6,
+        "normalized_power_hours": 5.152517536264295,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "0568729f853f8f1bc6dd715f",
+      "previous_forecast_id": "f7971f2308a42cf687f88c4b",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-21",
       "status": "success",
-      "forecast_id": "285f3ea308d3eeb1d2145714",
+      "forecast_id": "326a0519c2b55324d90113d0",
       "issue_time": "2026-02-20T18:00:00+00:00",
       "forecast_start": "2026-02-20T19:00:00+00:00",
       "period": "2026-02-20T19:00:00+00:00 — 2026-02-21T18:00:00+00:00",
@@ -65604,7 +66948,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -65619,21 +66991,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.7630695716297486,
-        "max_predicted_power": 0.9707984819916731,
-        "min_predicted_power": 0.03228298491620156,
-        "low_generation_hours": 1,
-        "normalized_power_hours": 18.313669719113967,
+        "avg_predicted_power": 0.39670622834662445,
+        "max_predicted_power": 0.519132355651121,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 3,
+        "normalized_power_hours": 9.520949480318986,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "81e4fdbd6b0a470218555005",
+      "previous_forecast_id": "285f3ea308d3eeb1d2145714",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-22",
       "status": "success",
-      "forecast_id": "f36020685655a64911928ac1",
+      "forecast_id": "46140e081a1c7309ceef4f2b",
       "issue_time": "2026-02-21T18:00:00+00:00",
       "forecast_start": "2026-02-21T19:00:00+00:00",
       "period": "2026-02-21T19:00:00+00:00 — 2026-02-22T18:00:00+00:00",
@@ -66943,7 +68315,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -66958,21 +68358,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.5711941441151861,
-        "max_predicted_power": 0.967753925983034,
-        "min_predicted_power": 0.011778325814732744,
-        "low_generation_hours": 7,
-        "normalized_power_hours": 13.708659458764465,
+        "avg_predicted_power": 0.29596188329642065,
+        "max_predicted_power": 0.5173124622236269,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 8,
+        "normalized_power_hours": 7.103085199114095,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "f922c79823fb1867742d3c84",
+      "previous_forecast_id": "f36020685655a64911928ac1",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-23",
       "status": "success",
-      "forecast_id": "8530530a8ddef0d8fe525062",
+      "forecast_id": "6034737b975e18677b0dde1f",
       "issue_time": "2026-02-22T18:00:00+00:00",
       "forecast_start": "2026-02-22T19:00:00+00:00",
       "period": "2026-02-22T19:00:00+00:00 — 2026-02-23T18:00:00+00:00",
@@ -68282,7 +69682,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -68297,21 +69725,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.3818246169477169,
-        "max_predicted_power": 0.9760357652853802,
-        "min_predicted_power": 0.00990372994071231,
-        "low_generation_hours": 7,
-        "normalized_power_hours": 9.163790806745206,
+        "avg_predicted_power": 0.18236452610676449,
+        "max_predicted_power": 0.5222629590682026,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 13,
+        "normalized_power_hours": 4.376748626562348,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "b04811042904398992690a5a",
+      "previous_forecast_id": "8530530a8ddef0d8fe525062",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-24",
       "status": "success",
-      "forecast_id": "d58b6e4be84cb5e08c23f068",
+      "forecast_id": "44713d74c207abb15552022c",
       "issue_time": "2026-02-23T18:00:00+00:00",
       "forecast_start": "2026-02-23T19:00:00+00:00",
       "period": "2026-02-23T19:00:00+00:00 — 2026-02-24T18:00:00+00:00",
@@ -69621,7 +71049,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -69636,21 +71092,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.579936839570165,
-        "max_predicted_power": 0.9638490875192544,
-        "min_predicted_power": 0.014422213773844842,
-        "low_generation_hours": 2,
-        "normalized_power_hours": 13.918484149683959,
+        "avg_predicted_power": 0.29031609284729465,
+        "max_predicted_power": 0.5149783321122104,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 4,
+        "normalized_power_hours": 6.967586228335072,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "4987acab6c222f97c6490d2a",
+      "previous_forecast_id": "d58b6e4be84cb5e08c23f068",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-25",
       "status": "success",
-      "forecast_id": "62e549f4b7f93340ce425dbf",
+      "forecast_id": "f58f6f516fceaccde6a8de2d",
       "issue_time": "2026-02-24T18:00:00+00:00",
       "forecast_start": "2026-02-24T19:00:00+00:00",
       "period": "2026-02-24T19:00:00+00:00 — 2026-02-25T18:00:00+00:00",
@@ -70960,7 +72416,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -70975,21 +72459,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.19428191695728367,
-        "max_predicted_power": 0.97745198030392,
-        "min_predicted_power": 0.010714669331873412,
-        "low_generation_hours": 9,
-        "normalized_power_hours": 4.662766006974808,
+        "avg_predicted_power": 0.07918100633344204,
+        "max_predicted_power": 0.523109506281276,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 18,
+        "normalized_power_hours": 1.9003441520026088,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "6400b0714b49fcbcb8ba63ce",
+      "previous_forecast_id": "62e549f4b7f93340ce425dbf",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-26",
       "status": "success",
-      "forecast_id": "a333947b1701cbcb3c7cfdd7",
+      "forecast_id": "b0dc037bf197ed461bf97820",
       "issue_time": "2026-02-25T18:00:00+00:00",
       "forecast_start": "2026-02-25T19:00:00+00:00",
       "period": "2026-02-25T19:00:00+00:00 — 2026-02-26T18:00:00+00:00",
@@ -72299,7 +73783,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -72314,21 +73826,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.6764493336175237,
-        "max_predicted_power": 0.9745944231715988,
-        "min_predicted_power": 0.009857020333618278,
-        "low_generation_hours": 1,
-        "normalized_power_hours": 16.23478400682057,
+        "avg_predicted_power": 0.34569689639966333,
+        "max_predicted_power": 0.5214013920508123,
+        "min_predicted_power": 0.0,
+        "low_generation_hours": 2,
+        "normalized_power_hours": 8.29672551359192,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "8ebcdc1b4585d563043f07da",
+      "previous_forecast_id": "a333947b1701cbcb3c7cfdd7",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-27",
       "status": "success",
-      "forecast_id": "d70021ed514fb12d97b8de27",
+      "forecast_id": "f2c3b239120ad90c21bc2bf3",
       "issue_time": "2026-02-26T18:00:00+00:00",
       "forecast_start": "2026-02-26T19:00:00+00:00",
       "period": "2026-02-26T19:00:00+00:00 — 2026-02-27T18:00:00+00:00",
@@ -73638,7 +75150,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -73653,21 +75193,21 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.6782894038778461,
-        "max_predicted_power": 0.9765660887635955,
-        "min_predicted_power": 0.1879780555043866,
+        "avg_predicted_power": 0.3442840864022816,
+        "max_predicted_power": 0.5225799616819536,
+        "min_predicted_power": 0.05119885564987716,
         "low_generation_hours": 0,
-        "normalized_power_hours": 16.278945693068305,
+        "normalized_power_hours": 8.262818073654758,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "f36e9baf7bf4ae9fcfa542f0",
+      "previous_forecast_id": "d70021ed514fb12d97b8de27",
       "changed_from_previous": true
     },
     {
       "turbine": "turbine_2",
       "target_date": "2026-02-28",
       "status": "success",
-      "forecast_id": "50b95f817ffd50ef75e84e28",
+      "forecast_id": "b8b452f7180c0ea027862550",
       "issue_time": "2026-02-27T18:00:00+00:00",
       "forecast_start": "2026-02-27T19:00:00+00:00",
       "period": "2026-02-27T19:00:00+00:00 — 2026-02-28T18:00:00+00:00",
@@ -74977,7 +76517,35 @@
         "training_end": "2026-01-31T18:00:00+00:00",
         "training_available_at": "2026-01-31T19:00:00+00:00",
         "training_hours": 24784,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "data_quality": {
         "raw_rows": 149499,
@@ -74992,14 +76560,14 @@
         "timezone_assumption": "Asia/Almaty"
       },
       "summary": {
-        "avg_predicted_power": 0.9353820530124439,
-        "max_predicted_power": 0.9738135713240867,
-        "min_predicted_power": 0.7771471348588307,
+        "avg_predicted_power": 0.49796206804868665,
+        "max_predicted_power": 0.5209346352754067,
+        "min_predicted_power": 0.4033766221804916,
         "low_generation_hours": 0,
-        "normalized_power_hours": 22.449169272298654,
+        "normalized_power_hours": 11.951089633168479,
         "analysis": "Низкая прогнозная мощность не доказывает метеорологический штиль."
       },
-      "previous_forecast_id": "3a61cc7b774d78486db26958",
+      "previous_forecast_id": "50b95f817ffd50ef75e84e28",
       "changed_from_previous": true
     }
   ]

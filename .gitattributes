@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Audit hashes refer to exact bytes; Git must not rewrite these files.
+*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
+*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
+*.png binary

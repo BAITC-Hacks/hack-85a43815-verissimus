@@ -1,0 +1,286 @@
+{
+  "protocol": {
+    "frozen_at_utc": "2026-09-23T11:13:00Z",
+    "purpose": "Test a fixed, low-parameter correction for NWP-to-SCADA domain shift before changing production.",
+    "base_commit": "5ca281d",
+    "training_start_dates": "2026-01-01 through 2026-01-16, 48 hours except January 16 uses 24 hours",
+    "training_target_availability_cutoff": "2026-01-16T23:00:00+05:00; retain target hours only when their end is no later than this timestamp",
+    "evaluation_start_dates": "2026-01-17 through 2026-01-23, each 48 hours; parameters remain frozen",
+    "evaluation_caveat": "January 24 target hours overlap the previously inspected January 24-30 issue-date evaluation; separately report a January 17-23 target-only slice to expose this overlap.",
+    "training_and_scoring": "For every base forecast, original engine uses only completed SCADA hours available at issue time and NOAA operational archive weather available then. Train separate corrections per turbine and lead band 1-24 / 25-48. All metrics compare paired available target rows.",
+    "primary_candidate": {
+      "name": "ridge_affine",
+      "formula": "clip(a * raw_power + b, 0, 1)",
+      "objective": "sum((y-a*x-b)^2) + 24*((a-1)^2+b^2)",
+      "constraints": "a in [0,2]; if clipped recompute b=sum(y-a*x)/(n+24)",
+      "selection": "Always primary; do not select whichever candidate looks best on evaluation."
+    },
+    "secondary_candidate": {
+      "name": "ridge_bias",
+      "formula": "clip(raw_power + b, 0, 1)",
+      "fit": "b=sum(y-raw_power)/(n+48)",
+      "role": "Reference sensitivity check; not eligible for automatic promotion"
+    },
+    "baselines": [
+      "raw_power",
+      "latest complete measurement persistence",
+      "mean of available training measurements"
+    ],
+    "promotion_rule": "Primary pooled MAE improves at least 5%, pooled RMSE does not worsen, and no turbine/lead-band MAE worsens by more than 3%. Also review coverage and bias; this is still a short evaluation, not February accuracy.",
+    "test_tuning": "No tuning of dates, features, penalties, bounds or candidate choice after seeing evaluation metrics."
+  },
+  "parameters": [
+    {
+      "turbine": "turbine_1",
+      "lead_band": "1-24",
+      "a": 0.5971610011544705,
+      "b": -0.06530506373029943,
+      "bias": -0.2578227843397921,
+      "fit_rows": 383,
+      "fit_target_start": "2025-12-31T19:00:00+00:00",
+      "fit_target_end": "2026-01-16T17:00:00+00:00",
+      "fit_available_at": "2026-01-16T18:00:00+00:00"
+    },
+    {
+      "turbine": "turbine_1",
+      "lead_band": "25-48",
+      "a": 0.5707580671180975,
+      "b": -0.06482310979521724,
+      "bias": -0.2756640539062807,
+      "fit_rows": 359,
+      "fit_target_start": "2026-01-01T19:00:00+00:00",
+      "fit_target_end": "2026-01-16T17:00:00+00:00",
+      "fit_available_at": "2026-01-16T18:00:00+00:00"
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "1-24",
+      "a": 0.5977533086367968,
+      "b": -0.06116564897898135,
+      "bias": -0.24811026550975526,
+      "fit_rows": 383,
+      "fit_target_start": "2025-12-31T19:00:00+00:00",
+      "fit_target_end": "2026-01-16T17:00:00+00:00",
+      "fit_available_at": "2026-01-16T18:00:00+00:00"
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "25-48",
+      "a": 0.5723157172549438,
+      "b": -0.061890794244057475,
+      "bias": -0.266344835976394,
+      "fit_rows": 359,
+      "fit_target_start": "2026-01-01T19:00:00+00:00",
+      "fit_target_end": "2026-01-16T17:00:00+00:00",
+      "fit_available_at": "2026-01-16T18:00:00+00:00"
+    }
+  ],
+  "metrics": [
+    {
+      "turbine": "turbine_1",
+      "lead_band": "1-24",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "raw_power": {
+          "mae": 0.3086386538360315,
+          "rmse": 0.4228348806789115,
+          "bias": 0.28983268587167693
+        },
+        "ridge_affine": {
+          "mae": 0.19629710812496087,
+          "rmse": 0.2555187444199797,
+          "bias": -0.01684243695485171
+        },
+        "ridge_bias": {
+          "mae": 0.21473008039509567,
+          "rmse": 0.2833703559666699,
+          "bias": 0.08438455591200908
+        },
+        "persistence": {
+          "mae": 0.3250694444444444,
+          "rmse": 0.462211854327021,
+          "bias": 0.01592261904761904
+        },
+        "train_mean": {
+          "mae": 0.27810662807354564,
+          "rmse": 0.3301553699562355,
+          "bias": 0.03530072119154831
+        }
+      }
+    },
+    {
+      "turbine": "turbine_1",
+      "lead_band": "25-48",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "raw_power": {
+          "mae": 0.33240574159445985,
+          "rmse": 0.4488661787595903,
+          "bias": 0.2653059158344706
+        },
+        "ridge_affine": {
+          "mae": 0.24391655161731762,
+          "rmse": 0.31073536557799153,
+          "bias": -0.0649075200221467
+        },
+        "ridge_bias": {
+          "mae": 0.2503955444352439,
+          "rmse": 0.3168932936840076,
+          "bias": 0.04529317859328654
+        },
+        "persistence": {
+          "mae": 0.4224503968253968,
+          "rmse": 0.5249986614999314,
+          "bias": -0.026815476190476185
+        },
+        "train_mean": {
+          "mae": 0.3014191950025025,
+          "rmse": 0.3579636654810726,
+          "bias": -0.007437374046546932
+        }
+      }
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "1-24",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "raw_power": {
+          "mae": 0.30459471028757507,
+          "rmse": 0.41983845810379555,
+          "bias": 0.27987894603712204
+        },
+        "ridge_affine": {
+          "mae": 0.19937694297692166,
+          "rmse": 0.2609798212353613,
+          "bias": -0.016408042475770372
+        },
+        "ridge_bias": {
+          "mae": 0.2198169107200619,
+          "rmse": 0.29022739701921585,
+          "bias": 0.08275300735765352
+        },
+        "persistence": {
+          "mae": 0.330109126984127,
+          "rmse": 0.4733552874687291,
+          "bias": 0.019117063492063487
+        },
+        "train_mean": {
+          "mae": 0.2824291877767033,
+          "rmse": 0.33201721292874087,
+          "bias": 0.036029471489588204
+        }
+      }
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "25-48",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "raw_power": {
+          "mae": 0.3427547985343406,
+          "rmse": 0.4581953418041004,
+          "bias": 0.26967504461963665
+        },
+        "ridge_affine": {
+          "mae": 0.24445972947192027,
+          "rmse": 0.3126882150664793,
+          "bias": -0.0508075879097222
+        },
+        "ridge_bias": {
+          "mae": 0.25913093808137694,
+          "rmse": 0.32789237022766443,
+          "bias": 0.058082384867034084
+        },
+        "persistence": {
+          "mae": 0.4397023809523809,
+          "rmse": 0.546581669253572,
+          "bias": -0.011150793650793639
+        },
+        "train_mean": {
+          "mae": 0.3005813507652807,
+          "rmse": 0.3542870963558323,
+          "bias": 0.005761614346731074
+        }
+      }
+    }
+  ],
+  "pooled": {
+    "forecast_rows": 672,
+    "scored_rows": 672,
+    "coverage": 1.0,
+    "methods": {
+      "raw_power": {
+        "mae": 0.32209847606310177,
+        "rmse": 0.43774349935405515,
+        "bias": 0.2761731480907266
+      },
+      "ridge_affine": {
+        "mae": 0.22101258304778013,
+        "rmse": 0.2862388351990139,
+        "bias": -0.03724139684062274
+      },
+      "ridge_bias": {
+        "mae": 0.2360183684079446,
+        "rmse": 0.30514974465688205,
+        "bias": 0.06762828168249581
+      },
+      "persistence": {
+        "mae": 0.37933283730158723,
+        "rmse": 0.5030109696109438,
+        "bias": -0.000731646825396826
+      },
+      "train_mean": {
+        "mae": 0.290634090404508,
+        "rmse": 0.34383692735103355,
+        "bias": 0.017413608245330173
+      }
+    }
+  },
+  "new_target_only_pooled": {
+    "forecast_rows": 624,
+    "scored_rows": 624,
+    "coverage": 1.0,
+    "methods": {
+      "raw_power": {
+        "mae": 0.3280263751394815,
+        "rmse": 0.43874196181581926,
+        "bias": 0.2811767010146327
+      },
+      "ridge_affine": {
+        "mae": 0.20849705628448034,
+        "rmse": 0.2728116899206862,
+        "bias": -0.02538014517606712
+      },
+      "ridge_bias": {
+        "mae": 0.23057998012334993,
+        "rmse": 0.3003416279620628,
+        "bias": 0.07500623331559932
+      },
+      "persistence": {
+        "mae": 0.37859241452991454,
+        "rmse": 0.4960347441606585,
+        "bias": -0.029366987179487197
+      },
+      "train_mean": {
+        "mae": 0.27567170301964367,
+        "rmse": 0.32791044453188034,
+        "bias": 0.03624849460572877
+      }
+    }
+  },
+  "improvements": {
+    "pooled_mae_relative": 0.313835365664748,
+    "pooled_rmse_relative": 0.3461037442671455
+  },
+  "primary_passes_prefixed_promotion_rule": true,
+  "predictions_sha256": "404558359ebed950a259bea0e4f94df79eef1b1a0625b96b3d99ebcdc8917ea1"
+}

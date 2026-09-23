@@ -25,9 +25,9 @@
       "coverage": 1.0,
       "methods": {
         "predicted": {
-          "mae": 0.18897976264736127,
-          "rmse": 0.2865208879005124,
-          "bias": 0.15729189374142538
+          "mae": 0.19332502637205384,
+          "rmse": 0.2602713065088082,
+          "bias": -0.11859814465491615
         },
         "persistence": {
           "mae": 0.4107837301587301,
@@ -49,9 +49,9 @@
       "coverage": 1.0,
       "methods": {
         "predicted": {
-          "mae": 0.2911007104660199,
-          "rmse": 0.3923633765081149,
-          "bias": 0.258516901093572
+          "mae": 0.1999380873990362,
+          "rmse": 0.2632397473754487,
+          "bias": -0.06863413519905984
         },
         "persistence": {
           "mae": 0.4252182539682539,
@@ -73,9 +73,9 @@
       "coverage": 1.0,
       "methods": {
         "predicted": {
-          "mae": 0.18971422682961933,
-          "rmse": 0.29202899899098883,
-          "bias": 0.14889202330187765
+          "mae": 0.19843328172632715,
+          "rmse": 0.26799080514418055,
+          "bias": -0.1154213704343517
         },
         "persistence": {
           "mae": 0.40688492063492054,
@@ -97,9 +97,9 @@
       "coverage": 1.0,
       "methods": {
         "predicted": {
-          "mae": 0.27318558860913505,
-          "rmse": 0.37544058496464977,
-          "bias": 0.23375280337540497
+          "mae": 0.2093690958047988,
+          "rmse": 0.27406965118044774,
+          "bias": -0.08155423658268612
         },
         "persistence": {
           "mae": 0.42074404761904755,
@@ -116,7 +116,7 @@
   ],
   "runs": [
     {
-      "forecast_id": "d0c6f59a3225ca9bb35ea1b8",
+      "forecast_id": "706ca23f794f451cb30dd168",
       "turbine": "turbine_1",
       "issue_time": "2026-01-23T18:00:00+00:00",
       "model": {
@@ -125,7 +125,35 @@
         "training_end": "2026-01-23T17:00:00+00:00",
         "training_available_at": "2026-01-23T18:00:00+00:00",
         "training_hours": 23473,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -135,7 +163,7 @@
       }
     },
     {
-      "forecast_id": "ad986fd7307f28446671c0a1",
+      "forecast_id": "07453d6fe9bc1c1f9cd9cb69",
       "turbine": "turbine_1",
       "issue_time": "2026-01-24T18:00:00+00:00",
       "model": {
@@ -144,7 +172,35 @@
         "training_end": "2026-01-24T17:00:00+00:00",
         "training_available_at": "2026-01-24T18:00:00+00:00",
         "training_hours": 23497,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -154,7 +210,7 @@
       }
     },
     {
-      "forecast_id": "eeb8184ad7fa518441302499",
+      "forecast_id": "dbeceba16b34fdc33c315039",
       "turbine": "turbine_1",
       "issue_time": "2026-01-25T18:00:00+00:00",
       "model": {
@@ -163,7 +219,35 @@
         "training_end": "2026-01-25T17:00:00+00:00",
         "training_available_at": "2026-01-25T18:00:00+00:00",
         "training_hours": 23521,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -173,7 +257,7 @@
       }
     },
     {
-      "forecast_id": "9524034f471c1d3b303c96ea",
+      "forecast_id": "7b66ffc89e055f89fb74e2d1",
       "turbine": "turbine_1",
       "issue_time": "2026-01-26T18:00:00+00:00",
       "model": {
@@ -182,7 +266,35 @@
         "training_end": "2026-01-26T17:00:00+00:00",
         "training_available_at": "2026-01-26T18:00:00+00:00",
         "training_hours": 23545,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -192,7 +304,7 @@
       }
     },
     {
-      "forecast_id": "408a3f13554a47ab771fb701",
+      "forecast_id": "0c916f663332c3cde7674212",
       "turbine": "turbine_1",
       "issue_time": "2026-01-27T18:00:00+00:00",
       "model": {
@@ -201,7 +313,35 @@
         "training_end": "2026-01-27T17:00:00+00:00",
         "training_available_at": "2026-01-27T18:00:00+00:00",
         "training_hours": 23569,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -211,7 +351,7 @@
       }
     },
     {
-      "forecast_id": "d5c17961dab51e3929ca2c88",
+      "forecast_id": "c5ccc19216a19bdc8408cecf",
       "turbine": "turbine_1",
       "issue_time": "2026-01-28T18:00:00+00:00",
       "model": {
@@ -220,7 +360,35 @@
         "training_end": "2026-01-28T17:00:00+00:00",
         "training_available_at": "2026-01-28T18:00:00+00:00",
         "training_hours": 23593,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -230,7 +398,7 @@
       }
     },
     {
-      "forecast_id": "b8b821de091b61c711fa8e50",
+      "forecast_id": "d3ae1ff0d94b96abb038815e",
       "turbine": "turbine_1",
       "issue_time": "2026-01-29T18:00:00+00:00",
       "model": {
@@ -239,7 +407,35 @@
         "training_end": "2026-01-29T17:00:00+00:00",
         "training_available_at": "2026-01-29T18:00:00+00:00",
         "training_hours": 23617,
-        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5971610011544705,
+              "intercept": -0.06530506373029943,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5707580671180975,
+              "intercept": -0.06482310979521724,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -249,7 +445,7 @@
       }
     },
     {
-      "forecast_id": "2c0bce0f309a52a0ef7461ff",
+      "forecast_id": "8a60bfd2b3d6b98b894c8163",
       "turbine": "turbine_2",
       "issue_time": "2026-01-23T18:00:00+00:00",
       "model": {
@@ -258,7 +454,35 @@
         "training_end": "2026-01-23T17:00:00+00:00",
         "training_available_at": "2026-01-23T18:00:00+00:00",
         "training_hours": 24591,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -268,7 +492,7 @@
       }
     },
     {
-      "forecast_id": "0cfbf60a00ef9088441e609b",
+      "forecast_id": "186d2f96407e67abda1aac7d",
       "turbine": "turbine_2",
       "issue_time": "2026-01-24T18:00:00+00:00",
       "model": {
@@ -277,7 +501,35 @@
         "training_end": "2026-01-24T17:00:00+00:00",
         "training_available_at": "2026-01-24T18:00:00+00:00",
         "training_hours": 24615,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -287,7 +539,7 @@
       }
     },
     {
-      "forecast_id": "1f9ccd6f4fe62b5aae473975",
+      "forecast_id": "dfa40f3fd41997663627e939",
       "turbine": "turbine_2",
       "issue_time": "2026-01-25T18:00:00+00:00",
       "model": {
@@ -296,7 +548,35 @@
         "training_end": "2026-01-25T17:00:00+00:00",
         "training_available_at": "2026-01-25T18:00:00+00:00",
         "training_hours": 24639,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -306,7 +586,7 @@
       }
     },
     {
-      "forecast_id": "dd0a6b12ad5f4cf69f1f149c",
+      "forecast_id": "fe39b4b183909beb07a8128f",
       "turbine": "turbine_2",
       "issue_time": "2026-01-26T18:00:00+00:00",
       "model": {
@@ -315,7 +595,35 @@
         "training_end": "2026-01-26T17:00:00+00:00",
         "training_available_at": "2026-01-26T18:00:00+00:00",
         "training_hours": 24663,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -325,7 +633,7 @@
       }
     },
     {
-      "forecast_id": "d5a8037eee5408ae9c8a6338",
+      "forecast_id": "140bf6569780bf6b3f02bee0",
       "turbine": "turbine_2",
       "issue_time": "2026-01-27T18:00:00+00:00",
       "model": {
@@ -334,7 +642,35 @@
         "training_end": "2026-01-27T17:00:00+00:00",
         "training_available_at": "2026-01-27T18:00:00+00:00",
         "training_hours": 24687,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -344,7 +680,7 @@
       }
     },
     {
-      "forecast_id": "378fc9e456d9d9d0230d1450",
+      "forecast_id": "5a1ad6d0f44e208a9c0ddd2b",
       "turbine": "turbine_2",
       "issue_time": "2026-01-28T18:00:00+00:00",
       "model": {
@@ -353,7 +689,35 @@
         "training_end": "2026-01-28T17:00:00+00:00",
         "training_available_at": "2026-01-28T18:00:00+00:00",
         "training_hours": 24711,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -363,7 +727,7 @@
       }
     },
     {
-      "forecast_id": "c83171a806bc7ae66bf46824",
+      "forecast_id": "e757ab33412b2e22c400753e",
       "turbine": "turbine_2",
       "issue_time": "2026-01-29T18:00:00+00:00",
       "model": {
@@ -372,7 +736,35 @@
         "training_end": "2026-01-29T17:00:00+00:00",
         "training_available_at": "2026-01-29T18:00:00+00:00",
         "training_hours": 24735,
-        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5",
+        "calibration": {
+          "applied": true,
+          "status": "applied",
+          "method": "ridge_affine",
+          "version": "ridge-affine-jan2026-v1",
+          "artifact_sha256": "5dfba7120f9c2f8139e2747c9d24ca6c4f4537f48d773b4d7cee8754bffe41ae",
+          "fit_start": "2025-12-31T19:00:00+00:00",
+          "fit_end": "2026-01-16T17:00:00+00:00",
+          "available_at": "2026-01-16T18:00:00+00:00",
+          "training_rows": 742,
+          "parameters": {
+            "1-24": {
+              "slope": 0.5977533086367968,
+              "intercept": -0.06116564897898135,
+              "training_rows": 383
+            },
+            "25-48": {
+              "slope": 0.5723157172549438,
+              "intercept": -0.061890794244057475,
+              "training_rows": 359
+            }
+          },
+          "limitations": [
+            "Frozen correction fitted on a short January period",
+            "Corrects power forecast bias; does not calibrate the weather model itself",
+            "Future-period improvement is not guaranteed"
+          ]
+        }
       },
       "weather": {
         "provider": "NOAA NODD public S3 archive",
@@ -383,5 +775,5 @@
     }
   ],
   "predictions_csv": "backtest.predictions.csv",
-  "predictions_sha256": "ca4af9b8d394454d6f85e80d5d47c2e91853ddc0d760b66fd51cba386cbc9329"
+  "predictions_sha256": "1abae7a50c84002d0d2c9500b727d52ae663e21dfd28746351c8b77b342efbe7"
 }

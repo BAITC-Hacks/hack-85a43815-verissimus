@@ -32,6 +32,7 @@ class ForecastEngineTests(unittest.TestCase):
         self.train = self.start_patch(patch.object(engine, "train_wind_model", return_value=(MockModel(), {"scope": "observed_weather_power_curve"}, .01)))
         self.weather = self.start_patch(patch("weather_archive.fetch_weather", side_effect=self.fake_weather))
         self.start_patch(patch.object(engine, "ARTIFACT_DIR", self.artifacts))
+        self.start_patch(patch.object(engine, "CALIBRATION_FILE", Path(self.temporary.name) / "no-calibration.json"))
         self.start_patch(patch.object(engine, "_MODEL_CACHE", OrderedDict()))
 
     def start_patch(self, patcher):

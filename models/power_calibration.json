@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "method": "ridge_affine",
+  "version": "ridge-affine-jan2026-v1",
+  "base_model_version": "normalized-power-curve-v2",
+  "power_unit": "normalized",
+  "timezone_assumption": "Asia/Almaty",
+  "fit_start": "2025-12-31T19:00:00+00:00",
+  "fit_end": "2026-01-16T17:00:00+00:00",
+  "available_at": "2026-01-16T18:00:00+00:00",
+  "latest_target_available_at": "2026-01-16T18:00:00+00:00",
+  "latest_weather_archive_available_at": "2026-01-15T15:55:48+00:00",
+  "formula": "clip(a * raw_power + b, 0, 1)",
+  "penalty": 24.0,
+  "prior": {
+    "a": 1.0,
+    "b": 0.0
+  },
+  "constraints": {
+    "a_min": 0.0,
+    "a_max": 2.0
+  },
+  "protocol_sha256": "40f6fac101c3d7d195de69ee310b7ff9548dc3b2838707382c62c039e8c3209d",
+  "training_predictions_sha256": "8179c8c9438b619eb7eb5a679e3091281ce4eab3de2a6869eec8f977d0770804",
+  "training_source_sha256": {
+    "turbine_1": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b",
+    "turbine_2": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+  },
+  "training_forecast_ids": [
+    "62f64595a607000d57404eaf",
+    "85193cf27f7840bfc14b4695",
+    "075959a5bec04ef77c8f5bd1",
+    "99e0fab21967204f69357768",
+    "7ee3bd83018c6fee69f16ada",
+    "8e632c5304b453f84716267d",
+    "bacbf3fb7c9e7dca25e80ac0",
+    "50ed1af9e2dbea25fbab4593",
+    "0ce6a8be74246a92666d00c4",
+    "89f5de4de0b10325579b9ef2",
+    "684b1b4032340430773a8eae",
+    "c782df984ce69745f8073d62",
+    "f90d91520658816f2f85ccfa",
+    "57e4b18e6fdada7cf9b1e6cb",
+    "a98e9296eaa2295f69cb95b4",
+    "ed5b69bda877dbb258a0504b",
+    "2a73c328a6d002798550bfb1",
+    "5151808555bb05191dbe8ad3",
+    "6b0a7d157fafbdada95e33a8",
+    "ffab7b00677020670d861d16",
+    "2670a58885a475810e4a98d7",
+    "a1e1c82cb7f84102c5f6df52",
+    "0255b20e53b3a333581c4dc1",
+    "ad8e91f32ee672eccae8232e",
+    "1c6d9c888a9540140030a7cf",
+    "45f32f8fec4db857b10b363e",
+    "9feb8723561eaf49ffe96eb2",
+    "4c163661a867617a7e1b955e",
+    "5ec8d65e6846d53c73edcf87",
+    "6316cf756c6652cfaf5dc745",
+    "bfa0994226c1e520bd3305ee",
+    "e745e758db47b397eb7edab7"
+  ],
+  "training_forecasts": [
+    {
+      "forecast_id": "62f64595a607000d57404eaf",
+      "turbine": "turbine_1",
+      "issue_time": "2025-12-31T18:00:00+00:00",
+      "weather_input_sha256": "6726dfc8cf6c90e089fb272ba2df1c7385a765eb799924f8313884e5e9085634"
+    },
+    {
+      "forecast_id": "85193cf27f7840bfc14b4695",
+      "turbine": "turbine_2",
+      "issue_time": "2025-12-31T18:00:00+00:00",
+      "weather_input_sha256": "6726dfc8cf6c90e089fb272ba2df1c7385a765eb799924f8313884e5e9085634"
+    },
+    {
+      "forecast_id": "075959a5bec04ef77c8f5bd1",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-01T18:00:00+00:00",
+      "weather_input_sha256": "7de6ff247e4a74d63828fd27d01d7cc39a040aee6d71f9ffbf7ef65aa3b70a8f"
+    },
+    {
+      "forecast_id": "99e0fab21967204f69357768",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-01T18:00:00+00:00",
+      "weather_input_sha256": "7de6ff247e4a74d63828fd27d01d7cc39a040aee6d71f9ffbf7ef65aa3b70a8f"
+    },
+    {
+      "forecast_id": "7ee3bd83018c6fee69f16ada",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-02T18:00:00+00:00",
+      "weather_input_sha256": "65d3f9a1ad2a2aa4881d9cfbeb8776f7ec75accca9917de42943f5f3218b1819"
+    },
+    {
+      "forecast_id": "8e632c5304b453f84716267d",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-02T18:00:00+00:00",
+      "weather_input_sha256": "65d3f9a1ad2a2aa4881d9cfbeb8776f7ec75accca9917de42943f5f3218b1819"
+    },
+    {
+      "forecast_id": "bacbf3fb7c9e7dca25e80ac0",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-03T18:00:00+00:00",
+      "weather_input_sha256": "a39eb16e73402e9c1b808a40a31d0ddbb0f8d2542d52104ce1d9d5e7db6ec453"
+    },
+    {
+      "forecast_id": "50ed1af9e2dbea25fbab4593",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-03T18:00:00+00:00",
+      "weather_input_sha256": "a39eb16e73402e9c1b808a40a31d0ddbb0f8d2542d52104ce1d9d5e7db6ec453"
+    },
+    {
+      "forecast_id": "0ce6a8be74246a92666d00c4",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-04T18:00:00+00:00",
+      "weather_input_sha256": "9fdd9298ecd72e61f3dabf2a0c1b1bbd01d6ee00312922e527e625991585e722"
+    },
+    {
+      "forecast_id": "89f5de4de0b10325579b9ef2",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-04T18:00:00+00:00",
+      "weather_input_sha256": "9fdd9298ecd72e61f3dabf2a0c1b1bbd01d6ee00312922e527e625991585e722"
+    },
+    {
+      "forecast_id": "684b1b4032340430773a8eae",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-05T18:00:00+00:00",
+      "weather_input_sha256": "a0c5053a93c75829a2573d96a3de52e7c96130b34691d8201731f663016d16fb"
+    },
+    {
+      "forecast_id": "c782df984ce69745f8073d62",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-05T18:00:00+00:00",
+      "weather_input_sha256": "a0c5053a93c75829a2573d96a3de52e7c96130b34691d8201731f663016d16fb"
+    },
+    {
+      "forecast_id": "f90d91520658816f2f85ccfa",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-06T18:00:00+00:00",
+      "weather_input_sha256": "e449079d36eea23480e0d0ace5de12fd807267f8934ba48ed139ceca88fe4f2e"
+    },
+    {
+      "forecast_id": "57e4b18e6fdada7cf9b1e6cb",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-06T18:00:00+00:00",
+      "weather_input_sha256": "e449079d36eea23480e0d0ace5de12fd807267f8934ba48ed139ceca88fe4f2e"
+    },
+    {
+      "forecast_id": "a98e9296eaa2295f69cb95b4",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-07T18:00:00+00:00",
+      "weather_input_sha256": "96a05a5513417fba2792fe1f1b407092ed6e69c155ef4cdcd80ae3f3376dd7e1"
+    },
+    {
+      "forecast_id": "ed5b69bda877dbb258a0504b",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-07T18:00:00+00:00",
+      "weather_input_sha256": "96a05a5513417fba2792fe1f1b407092ed6e69c155ef4cdcd80ae3f3376dd7e1"
+    },
+    {
+      "forecast_id": "2a73c328a6d002798550bfb1",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-08T18:00:00+00:00",
+      "weather_input_sha256": "4d9a635923fce051945e01b690106f9796cccd54d70843c3d4941b2baf52aecc"
+    },
+    {
+      "forecast_id": "5151808555bb05191dbe8ad3",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-08T18:00:00+00:00",
+      "weather_input_sha256": "4d9a635923fce051945e01b690106f9796cccd54d70843c3d4941b2baf52aecc"
+    },
+    {
+      "forecast_id": "6b0a7d157fafbdada95e33a8",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-09T18:00:00+00:00",
+      "weather_input_sha256": "36e5a5af9d1be9f4e494d6dd6576ef569ddd27867a89d4229bd87bd7c63c1113"
+    },
+    {
+      "forecast_id": "ffab7b00677020670d861d16",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-09T18:00:00+00:00",
+      "weather_input_sha256": "36e5a5af9d1be9f4e494d6dd6576ef569ddd27867a89d4229bd87bd7c63c1113"
+    },
+    {
+      "forecast_id": "2670a58885a475810e4a98d7",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-10T18:00:00+00:00",
+      "weather_input_sha256": "4344f26755411adc5045baef5d2eae58bc684346987676da48de8386c68aff89"
+    },
+    {
+      "forecast_id": "a1e1c82cb7f84102c5f6df52",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-10T18:00:00+00:00",
+      "weather_input_sha256": "4344f26755411adc5045baef5d2eae58bc684346987676da48de8386c68aff89"
+    },
+    {
+      "forecast_id": "0255b20e53b3a333581c4dc1",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-11T18:00:00+00:00",
+      "weather_input_sha256": "b98d49d8d6057c9a9678dd42870031870b53b605d5dbdc19d1c2343b605c0b14"
+    },
+    {
+      "forecast_id": "ad8e91f32ee672eccae8232e",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-11T18:00:00+00:00",
+      "weather_input_sha256": "b98d49d8d6057c9a9678dd42870031870b53b605d5dbdc19d1c2343b605c0b14"
+    },
+    {
+      "forecast_id": "1c6d9c888a9540140030a7cf",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-12T18:00:00+00:00",
+      "weather_input_sha256": "a976f14f7e5301a92ac3f1c4ff47353648c610e8a1ab7b234cce776f745e80aa"
+    },
+    {
+      "forecast_id": "45f32f8fec4db857b10b363e",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-12T18:00:00+00:00",
+      "weather_input_sha256": "a976f14f7e5301a92ac3f1c4ff47353648c610e8a1ab7b234cce776f745e80aa"
+    },
+    {
+      "forecast_id": "9feb8723561eaf49ffe96eb2",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-13T18:00:00+00:00",
+      "weather_input_sha256": "94d064706bcbc15ef498811750d1cf3bb2f66d773d0f0514b80c366e49ac40e9"
+    },
+    {
+      "forecast_id": "4c163661a867617a7e1b955e",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-13T18:00:00+00:00",
+      "weather_input_sha256": "94d064706bcbc15ef498811750d1cf3bb2f66d773d0f0514b80c366e49ac40e9"
+    },
+    {
+      "forecast_id": "5ec8d65e6846d53c73edcf87",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-14T18:00:00+00:00",
+      "weather_input_sha256": "6a5466d2d27e0b211f683cf126fe8f162304c4f5405ba3cac5d22fbdbfd23018"
+    },
+    {
+      "forecast_id": "6316cf756c6652cfaf5dc745",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-14T18:00:00+00:00",
+      "weather_input_sha256": "6a5466d2d27e0b211f683cf126fe8f162304c4f5405ba3cac5d22fbdbfd23018"
+    },
+    {
+      "forecast_id": "bfa0994226c1e520bd3305ee",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-15T18:00:00+00:00",
+      "weather_input_sha256": "a40915fe86f69ba9f18446b16260aeb9b22246d5e13fbd4acaa37771ae75d910"
+    },
+    {
+      "forecast_id": "e745e758db47b397eb7edab7",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-15T18:00:00+00:00",
+      "weather_input_sha256": "a40915fe86f69ba9f18446b16260aeb9b22246d5e13fbd4acaa37771ae75d910"
+    }
+  ],
+  "parameters": {
+    "turbine_1": {
+      "1-24": {
+        "slope": 0.5971610011544705,
+        "intercept": -0.06530506373029943,
+        "training_rows": 383
+      },
+      "25-48": {
+        "slope": 0.5707580671180975,
+        "intercept": -0.06482310979521724,
+        "training_rows": 359
+      }
+    },
+    "turbine_2": {
+      "1-24": {
+        "slope": 0.5977533086367968,
+        "intercept": -0.06116564897898135,
+        "training_rows": 383
+      },
+      "25-48": {
+        "slope": 0.5723157172549438,
+        "intercept": -0.061890794244057475,
+        "training_rows": 359
+      }
+    }
+  },
+  "promotion_rule_passed": true,
+  "validation_report_sha256": "2d16aef312f60a9e67c3a1395f30d5af2e70a9162eb9eee17bf1460537b85218",
+  "artifact_sha256": "c531c91a358426d3db4206ffd132512f14ff5a4f781609c7890f38910c52a70f"
+}

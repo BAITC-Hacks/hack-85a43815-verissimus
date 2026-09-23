@@ -1,0 +1,387 @@
+{
+  "scope": "rolling_issued_weather_forecast",
+  "start": "2026-01-24",
+  "end": "2026-01-30",
+  "horizon_hours": 48,
+  "power_unit": "normalized",
+  "timezone_assumption": "Asia/Almaty",
+  "protocol": "Forecast each local day at previous-day23:00; fit only completed SCADA hours available then; score all methods on identical available target rows.",
+  "baselines": {
+    "persistence": "Latest complete power measurement at decision time, held constant over the horizon",
+    "train_mean": "Mean of all complete training hours available at decision time"
+  },
+  "limitations": [
+    "Short historical check, not February2026 test accuracy",
+    "No independent timezone confirmation",
+    "No NWP bias calibration; grid wind may differ from turbine sensor",
+    "Overlapping48h forecasts are separate decisions, not independent observations"
+  ],
+  "metrics": [
+    {
+      "turbine": "turbine_1",
+      "lead_band": "1-24",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "predicted": {
+          "mae": 0.18897976264736127,
+          "rmse": 0.2865208879005124,
+          "bias": 0.15729189374142538
+        },
+        "persistence": {
+          "mae": 0.4107837301587301,
+          "rmse": 0.5306625681573802,
+          "bias": 0.07858134920634917
+        },
+        "train_mean": {
+          "mae": 0.33709117560997676,
+          "rmse": 0.3763237975658808,
+          "bias": -0.02888294746832996
+        }
+      }
+    },
+    {
+      "turbine": "turbine_1",
+      "lead_band": "25-48",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "predicted": {
+          "mae": 0.2911007104660199,
+          "rmse": 0.3923633765081149,
+          "bias": 0.258516901093572
+        },
+        "persistence": {
+          "mae": 0.4252182539682539,
+          "rmse": 0.5139031315057621,
+          "bias": 0.10037698412698408
+        },
+        "train_mean": {
+          "mae": 0.31288910544503123,
+          "rmse": 0.3504908026735137,
+          "bias": -0.007087312547695039
+        }
+      }
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "1-24",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "predicted": {
+          "mae": 0.18971422682961933,
+          "rmse": 0.29202899899098883,
+          "bias": 0.14889202330187765
+        },
+        "persistence": {
+          "mae": 0.40688492063492054,
+          "rmse": 0.5246743762165264,
+          "bias": 0.09186507936507933
+        },
+        "train_mean": {
+          "mae": 0.3377800089002277,
+          "rmse": 0.3764831262433481,
+          "bias": -0.023605401600252124
+        }
+      }
+    },
+    {
+      "turbine": "turbine_2",
+      "lead_band": "25-48",
+      "forecast_rows": 168,
+      "scored_rows": 168,
+      "coverage": 1.0,
+      "methods": {
+        "predicted": {
+          "mae": 0.27318558860913505,
+          "rmse": 0.37544058496464977,
+          "bias": 0.23375280337540497
+        },
+        "persistence": {
+          "mae": 0.42074404761904755,
+          "rmse": 0.5138529213067196,
+          "bias": 0.09731150793650789
+        },
+        "train_mean": {
+          "mae": 0.3225391179870566,
+          "rmse": 0.36046569220639285,
+          "bias": -0.01815897302882354
+        }
+      }
+    }
+  ],
+  "runs": [
+    {
+      "forecast_id": "d0c6f59a3225ca9bb35ea1b8",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-23T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-23T17:00:00+00:00",
+        "training_available_at": "2026-01-23T18:00:00+00:00",
+        "training_hours": 23473,
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-23T12:00:00+00:00",
+        "available_at": "2026-01-23T16:02:22+00:00",
+        "input_sha256": "9dd874fd26d8acfa0062e2c880aaacbc0e7a0d337322e5658af04a11fc24178a"
+      }
+    },
+    {
+      "forecast_id": "ad986fd7307f28446671c0a1",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-24T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-24T17:00:00+00:00",
+        "training_available_at": "2026-01-24T18:00:00+00:00",
+        "training_hours": 23497,
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-24T12:00:00+00:00",
+        "available_at": "2026-01-24T16:00:26+00:00",
+        "input_sha256": "22bcb15d58322c810c2b7d65ac06232a33d124b383de76d4ee2b07ef70836a43"
+      }
+    },
+    {
+      "forecast_id": "eeb8184ad7fa518441302499",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-25T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-25T17:00:00+00:00",
+        "training_available_at": "2026-01-25T18:00:00+00:00",
+        "training_hours": 23521,
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-25T12:00:00+00:00",
+        "available_at": "2026-01-25T16:00:07+00:00",
+        "input_sha256": "adbfe8e6cfea24ec8457becf6dbf55af36985166a8e86f9796ac451fd7bc89e8"
+      }
+    },
+    {
+      "forecast_id": "9524034f471c1d3b303c96ea",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-26T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-26T17:00:00+00:00",
+        "training_available_at": "2026-01-26T18:00:00+00:00",
+        "training_hours": 23545,
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-26T12:00:00+00:00",
+        "available_at": "2026-01-26T15:58:32+00:00",
+        "input_sha256": "0e4027eef1ce5196488f1589b1d8ed853e3efd96b8be2fb977b47bf4ffa20bdc"
+      }
+    },
+    {
+      "forecast_id": "408a3f13554a47ab771fb701",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-27T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-27T17:00:00+00:00",
+        "training_available_at": "2026-01-27T18:00:00+00:00",
+        "training_hours": 23569,
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-27T12:00:00+00:00",
+        "available_at": "2026-01-27T15:55:50+00:00",
+        "input_sha256": "455074507bc74ae198b62c0728ca55dfe17e8d1c78bd3d9f8130c75d9833025b"
+      }
+    },
+    {
+      "forecast_id": "d5c17961dab51e3929ca2c88",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-28T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-28T17:00:00+00:00",
+        "training_available_at": "2026-01-28T18:00:00+00:00",
+        "training_hours": 23593,
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-28T12:00:00+00:00",
+        "available_at": "2026-01-28T16:00:41+00:00",
+        "input_sha256": "ac43bcd545e2ce0688c5a11a8a660b95ccd672573c8c4cfcc751db1274a84502"
+      }
+    },
+    {
+      "forecast_id": "b8b821de091b61c711fa8e50",
+      "turbine": "turbine_1",
+      "issue_time": "2026-01-29T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-29T17:00:00+00:00",
+        "training_available_at": "2026-01-29T18:00:00+00:00",
+        "training_hours": 23617,
+        "source_sha256": "c4c341582fb2dd348b7187f0128cff265fe055f469413871ebb5db50eef58b5b"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-29T12:00:00+00:00",
+        "available_at": "2026-01-29T16:00:49+00:00",
+        "input_sha256": "27d00ebee21ec703e0e3cc5beba0a5e8141fb0187b0489251d86d943995d4071"
+      }
+    },
+    {
+      "forecast_id": "2c0bce0f309a52a0ef7461ff",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-23T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-23T17:00:00+00:00",
+        "training_available_at": "2026-01-23T18:00:00+00:00",
+        "training_hours": 24591,
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-23T12:00:00+00:00",
+        "available_at": "2026-01-23T16:02:22+00:00",
+        "input_sha256": "9dd874fd26d8acfa0062e2c880aaacbc0e7a0d337322e5658af04a11fc24178a"
+      }
+    },
+    {
+      "forecast_id": "0cfbf60a00ef9088441e609b",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-24T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-24T17:00:00+00:00",
+        "training_available_at": "2026-01-24T18:00:00+00:00",
+        "training_hours": 24615,
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-24T12:00:00+00:00",
+        "available_at": "2026-01-24T16:00:26+00:00",
+        "input_sha256": "22bcb15d58322c810c2b7d65ac06232a33d124b383de76d4ee2b07ef70836a43"
+      }
+    },
+    {
+      "forecast_id": "1f9ccd6f4fe62b5aae473975",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-25T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-25T17:00:00+00:00",
+        "training_available_at": "2026-01-25T18:00:00+00:00",
+        "training_hours": 24639,
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-25T12:00:00+00:00",
+        "available_at": "2026-01-25T16:00:07+00:00",
+        "input_sha256": "adbfe8e6cfea24ec8457becf6dbf55af36985166a8e86f9796ac451fd7bc89e8"
+      }
+    },
+    {
+      "forecast_id": "dd0a6b12ad5f4cf69f1f149c",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-26T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-26T17:00:00+00:00",
+        "training_available_at": "2026-01-26T18:00:00+00:00",
+        "training_hours": 24663,
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-26T12:00:00+00:00",
+        "available_at": "2026-01-26T15:58:32+00:00",
+        "input_sha256": "0e4027eef1ce5196488f1589b1d8ed853e3efd96b8be2fb977b47bf4ffa20bdc"
+      }
+    },
+    {
+      "forecast_id": "d5a8037eee5408ae9c8a6338",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-27T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-27T17:00:00+00:00",
+        "training_available_at": "2026-01-27T18:00:00+00:00",
+        "training_hours": 24687,
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-27T12:00:00+00:00",
+        "available_at": "2026-01-27T15:55:50+00:00",
+        "input_sha256": "455074507bc74ae198b62c0728ca55dfe17e8d1c78bd3d9f8130c75d9833025b"
+      }
+    },
+    {
+      "forecast_id": "378fc9e456d9d9d0230d1450",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-28T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-28T17:00:00+00:00",
+        "training_available_at": "2026-01-28T18:00:00+00:00",
+        "training_hours": 24711,
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-28T12:00:00+00:00",
+        "available_at": "2026-01-28T16:00:41+00:00",
+        "input_sha256": "ac43bcd545e2ce0688c5a11a8a660b95ccd672573c8c4cfcc751db1274a84502"
+      }
+    },
+    {
+      "forecast_id": "c83171a806bc7ae66bf46824",
+      "turbine": "turbine_2",
+      "issue_time": "2026-01-29T18:00:00+00:00",
+      "model": {
+        "version": "normalized-power-curve-v2",
+        "training_start": "2023-03-10T18:00:00+00:00",
+        "training_end": "2026-01-29T17:00:00+00:00",
+        "training_available_at": "2026-01-29T18:00:00+00:00",
+        "training_hours": 24735,
+        "source_sha256": "820578cd18bb557cd30c2e102f3ae5a386dfc6c489a5a15743339c2b017305e5"
+      },
+      "weather": {
+        "provider": "NOAA NODD public S3 archive",
+        "run_time": "2026-01-29T12:00:00+00:00",
+        "available_at": "2026-01-29T16:00:49+00:00",
+        "input_sha256": "27d00ebee21ec703e0e3cc5beba0a5e8141fb0187b0489251d86d943995d4071"
+      }
+    }
+  ],
+  "predictions_csv": "backtest.predictions.csv",
+  "predictions_sha256": "ca4af9b8d394454d6f85e80d5d47c2e91853ddc0d760b66fd51cba386cbc9329"
+}
