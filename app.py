@@ -1,207 +1,218 @@
 import json
 import os
-import streamlit as st
-from dotenv import load_dotenv
+import dotenv
+import forecast_engine
 from openai import OpenAI
+import pandas as pd
+import plotly.graph_objects as go
+import streamlit as st
 
-load_dotenv()
+dotenv.load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
 st.set_page_config(
-    page_title="AI Dispatcher | Smart Grid", page_icon="⚡", layout="wide"
+    page_title="Agentic Wind Forecaster | Самрук-Казына",
+    page_icon="🌬️",
+    layout="wide",
 )
-
-# Симуляция телеметрии энергосети
-if "grid_state" not in st.session_state:
-    st.session_state.grid_state = {
-        "Substation-Север": {
-            "load_mw": 485,
-            "max_mw": 500,
-            "status": "CRITICAL",
-            "voltage_kv": 218,
-        },
-        "Substation-Юг": {
-            "load_mw": 140,
-            "max_mw": 400,
-            "status": "NORMAL",
-            "voltage_kv": 222,
-        },
-        "Substation-Восток": {
-            "load_mw": 200,
-            "max_mw": 350,
-            "status": "NORMAL",
-            "voltage_kv": 220,
-        },
-    }
 
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+  st.session_state.messages = []
+if "latest_forecast" not in st.session_state:
+  st.session_state.latest_forecast = None
 
-
-# --- Инструменты (Tools), вызываемые моделью ---
-def get_grid_telemetry():
-    return json.dumps(st.session_state.grid_state)
-
-
-def rebalance_load(source_substation: str, target_substation: str, mw: float):
-    grid = st.session_state.grid_state
-    if source_substation not in grid or target_substation not in grid:
-        return json.dumps({"status": "error", "message": "Подстанция не найдена"})
-
-    grid[source_substation]["load_mw"] -= mw
-    grid[target_substation]["load_mw"] += mw
-
-    for name, data in grid.items():
-        ratio = data["load_mw"] / data["max_mw"]
-        data["status"] = (
-            "CRITICAL"
-            if ratio >= 0.95
-            else ("WARNING" if ratio >= 0.85 else "NORMAL")
-        )
-
-    return json.dumps(
-        {
-            "status": "success",
-            "transferred_mw": mw,
-            "source": source_substation,
-            "target": target_substation,
-        }
-    )
-
-
-tools_schema = [
-    {
-        "type": "function",
-        "function": {
-            "name": "get_grid_telemetry",
-            "description": "Получить текущую телеметрию нагрузки и напряжения подстанций.",
-            "parameters": {"type": "object", "properties": {}, "required": []},
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "rebalance_load",
-            "description": "Перераспределить электрическую мощность (МВт) между узлами сети для устранения перегрузки.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "source_substation": {
-                        "type": "string",
-                        "description": "Имя перегруженной подстанции",
-                    },
-                    "target_substation": {
-                        "type": "string",
-                        "description": "Имя резервной подстанции",
-                    },
-                    "mw": {
-                        "type": "number",
-                        "description": "Передаваемая мощность в МВт",
-                    },
+# Описание Function Calling для OpenAI
+tools_schema = [{
+    "type": "function",
+    "function": {
+        "name": "generate_agent_forecast",
+        "description": (
+            "Автономно запрашивает архивный прогноз погоды из Open-Meteo по"
+            " координатам ветропарка (Шелек), запускает ML-модель LightGBM и"
+            " выдает почасовой прогноз выработки на 24-48 часов."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "turbine_id": {
+                    "type": "string",
+                    "enum": ["turbine_1", "turbine_2"],
+                    "description": "Идентификатор ветротурбины",
                 },
-                "required": ["source_substation", "target_substation", "mw"],
+                "forecast_date": {
+                    "type": "string",
+                    "description": (
+                        "Дата начала прогноза (ГГГГ-ММ-ДД), например 2026-02-01"
+                    ),
+                },
+                "horizon_hours": {
+                    "type": "integer",
+                    "description": "Горизонт прогнозирования в часах (24 или"
+                    " 48)",
+                    "default": 48,
+                },
             },
+            "required": ["turbine_id", "forecast_date"],
         },
     },
-]
+}]
 
-# Боковая панель SCADA-мониторинга
-st.sidebar.title("⚡ SCADA Мониторинг сети")
-for name, data in st.session_state.grid_state.items():
-    ratio = data["load_mw"] / data["max_mw"]
-    color = "red" if ratio >= 0.95 else ("orange" if ratio >= 0.85 else "green")
-    st.sidebar.markdown(f"**{name}**")
-    st.sidebar.progress(min(ratio, 1.0))
-    st.sidebar.caption(
-        f"Нагрузка: {data['load_mw']} / {data['max_mw']} МВт | Статус: :{color}[{data['status']}]"
-    )
-    st.sidebar.divider()
+# Сайдбар
+st.sidebar.title("🌬️ Диспетчер ВЭС")
+st.sidebar.markdown(
+    "**Объект:** Шелекский ветропарк\n**Координаты:** 43.643°N, 78.538°E"
+)
+st.sidebar.info("Тестовый период по ТЗ:\n01.02.2026 — 28.02.2026")
 
-# Основное окно
-st.title("🔋 Автономный AI-Диспетчер Энергосети")
+selected_turbine = st.sidebar.selectbox(
+    "Турбина по умолчанию:", ["turbine_1", "turbine_2"]
+)
+selected_date = st.sidebar.date_input(
+    "Дата старта:", pd.to_datetime("2026-02-01")
+)
+
+st.title("⚡ Автономный AI-Диспетчер ВЭС (Самрук-Казына)")
 st.caption(
-    "Демонстрация Function Calling: агент считывает данные с датчиков и автоматически распределяет нагрузки."
+    "Генерация прогнозов выработки 24–48 ч на базе Agentic AI, Open-Meteo и"
+    " LightGBM"
 )
 
+# Вывод метрик и интерактивного графика Plotly
+if st.session_state.latest_forecast:
+  res = st.session_state.latest_forecast
+  val = res.get("validation_metrics", {})
+  summ = res.get("summary", {})
+
+  col1, col2, col3, col4 = st.columns(4)
+  col1.metric("Качество модели (R²)", f"{val.get('Validation_R2', 0.0):.3f}")
+  col2.metric("Ошибка MAE", f"{val.get('Validation_MAE', 0.0):.4f}")
+  col3.metric(
+      "Средняя мощность",
+      f"{summ.get('avg_predicted_power_pu', 0.0)*100:.1f} %",
+  )
+  col4.metric(
+      "Часов штиля (<5%)",
+      f"{summ.get('calm_risk_hours', 0)} ч",
+      delta_color="inverse",
+  )
+
+  sample = res.get("forecast_sample", [])
+  if sample:
+    df_sample = pd.DataFrame(sample)
+    fig = go.Figure()
+    fig.add_trace(
+        go.Scatter(
+            x=df_sample["time"],
+            y=df_sample["predicted_power"],
+            mode="lines+markers",
+            name="Прогноз выработки (мощность)",
+            line=dict(color="#00FFCC", width=3),
+        )
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=df_sample["time"],
+            y=df_sample["wind_speed"],
+            mode="lines",
+            name="Скорость ветра, м/с (Open-Meteo)",
+            line=dict(color="#FFB300", dash="dash"),
+            yaxis="y2",
+        )
+    )
+    fig.update_layout(
+        title=(
+            f"Почасовой прогноз: {res.get('turbine')} | Горизонт:"
+            f" {res.get('horizon_hours')} часов"
+        ),
+        template="plotly_dark",
+        height=380,
+        yaxis=dict(title="Мощность (о.е. / target)"),
+        yaxis2=dict(
+            title="Скорость ветра (м/с)", overlaying="y", side="right"
+        ),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+st.divider()
+
+# История чата
 for msg in st.session_state.messages:
-    with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
+  with st.chat_message(msg["role"]):
+    st.markdown(msg["content"])
 
-user_prompt = st.chat_input(
-    "Пример: Оцени состояние энергосети и устрани аварийные нагрузки"
+# Поле запроса
+user_input = st.chat_input(
+    "Задайте задачу агенту (например: Сделай прогноз выработки для turbine_1 на"
+    " 1 февраля 2026 на 48 часов)"
 )
 
-if user_prompt:
-    st.session_state.messages.append({"role": "user", "content": user_prompt})
-    with st.chat_message("user"):
-        st.markdown(user_prompt)
+if user_input:
+  st.session_state.messages.append({"role": "user", "content": user_input})
+  with st.chat_message("user"):
+    st.markdown(user_input)
 
-    if not api_key or "sk-" not in api_key:
-        st.error(
-            "Укажите действующий OPENAI_API_KEY в файле .env (он станет доступен 23 сентября в 12:30)"
+  if not api_key:
+    st.error("Ключ OPENAI_API_KEY не найден в .env")
+    st.stop()
+
+  client = OpenAI(api_key=api_key)
+
+  system_prompt = (
+      "Ты ведущий инженер-диспетчер системного оператора энергосетей Казахстана"
+      " (KEGOC / Самрук-Энерго). "
+      "Твоя задача — формировать почасовые прогнозы выработки ВЭС, автономно"
+      " вызывать tool generate_agent_forecast, "
+      "анализировать погодные риски (штиль, провалы генерации, порывы ветра) и"
+      " выдавать структурированные рекомендации для энергосистемы."
+  )
+
+  api_msgs = [{"role": "system", "content": system_prompt}] + [
+      {"role": m["role"], "content": m["content"]}
+      for m in st.session_state.messages
+  ]
+
+  with st.chat_message("assistant"):
+    with st.status(
+        "AI-Агент анализирует запрос и запускает цикл прогнозирования...",
+        expanded=True,
+    ) as status:
+      response = client.chat.completions.create(
+          model="gpt-4o-mini",
+          messages=api_msgs,
+          tools=tools_schema,
+          tool_choice="auto",
+      )
+      msg = response.choices[0].message
+
+      while msg.tool_calls:
+        api_msgs.append(msg)
+        for tool_call in msg.tool_calls:
+          fn = tool_call.function.name
+          args = json.loads(tool_call.function.arguments)
+          st.write(f"🤖 **Вызов инструмента:** `{fn}`")
+          st.json(args)
+
+          if fn == "generate_agent_forecast":
+            res_data = forecast_engine.generate_agent_forecast(**args)
+            st.session_state.latest_forecast = res_data
+            result_str = json.dumps(res_data)
+          else:
+            result_str = json.dumps({"error": "Unknown function"})
+
+          api_msgs.append({
+              "role": "tool",
+              "tool_call_id": tool_call.id,
+              "content": result_str,
+          })
+
+        response = client.chat.completions.create(
+            model="gpt-4o-mini", messages=api_msgs, tools=tools_schema
         )
-        st.stop()
+        msg = response.choices[0].message
 
-    client = OpenAI(api_key=api_key)
+      status.update(label="Прогноз и аудит завершены!", state="complete")
 
-    api_messages = [
-        {
-            "role": "system",
-            "content": "Ты дежурный инженер-диспетчер энергосистемы. Используй функции телеметрии и балансировки для предотвращения аварий.",
-        }
-    ] + [
-        {"role": m["role"], "content": m["content"]}
-        for m in st.session_state.messages
-    ]
-
-    with st.chat_message("assistant"):
-        with st.status(
-            "AI-Агент анализирует сеть и вызывает инструменты...",
-            expanded=True,
-        ) as status:
-            response = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=api_messages,
-                tools=tools_schema,
-                tool_choice="auto",
-            )
-            response_msg = response.choices[0].message
-
-            while response_msg.tool_calls:
-                api_messages.append(response_msg)
-                for tool_call in response_msg.tool_calls:
-                    fn_name = tool_call.function.name
-                    args = json.loads(tool_call.function.arguments)
-
-                    st.write(f"⚙️ **Вызов инструмента:** `{fn_name}`")
-                    st.json(args)
-
-                    if fn_name == "get_grid_telemetry":
-                        res = get_grid_telemetry()
-                    elif fn_name == "rebalance_load":
-                        res = rebalance_load(**args)
-                    else:
-                        res = json.dumps({"error": "Unknown function"})
-
-                    api_messages.append(
-                        {
-                            "role": "tool",
-                            "tool_call_id": tool_call.id,
-                            "content": res,
-                        }
-                    )
-
-                response = client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=api_messages,
-                    tools=tools_schema,
-                )
-                response_msg = response.choices[0].message
-
-            status.update(label="Балансировка завершена!", state="complete")
-
-        st.markdown(response_msg.content)
-        st.session_state.messages.append(
-            {"role": "assistant", "content": response_msg.content}
-        )
-        st.rerun()
+    st.markdown(msg.content)
+    st.session_state.messages.append({"role": "assistant", "content": msg.content})
+    st.rerun()
