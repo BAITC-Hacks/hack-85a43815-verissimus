@@ -231,3 +231,51 @@ def generate_agent_forecast(
       },
       "forecast_sample": points,  # Полный ряд для построения красивого графика в UI
   }
+def calculate_market_penalties(
+    turbine_id: str,
+    forecast_date: str,
+    imbalance_tariff_kzt: float = 25000.0,
+    horizon_hours: int = 24,
+) -> dict:
+  """Рассчитывает прогнозируемые финансовые риски на Балансирующем рынке электроэнергии (БРЭ) Казахстана
+
+  на основе ожидаемой ошибки модели (MAE) и объемов генерации.
+  """
+  forecast_res = generate_agent_forecast(turbine_id, forecast_date, horizon_hours)
+  if forecast_res.get("status") != "success":
+    return {"status": "error", "message": "Не удалось сформировать базовый прогноз"}
+
+  summary = forecast_res.get("summary", {})
+  val_metrics = forecast_res.get("validation_metrics", {})
+
+  avg_p = summary.get("avg_predicted_power", 0.0)
+  total_mwh = avg_p * horizon_hours
+  mae = val_metrics.get("Validation_MAE", 0.045)
+
+  # Ожидаемый физический небаланс в МВт*ч
+  expected_imbalance_mwh = round(total_mwh * mae, 3)
+
+  # Финансовый риск по тарифу балансирования (в среднем 25 000 KZT / МВт*ч)
+  financial_risk_kzt = round(expected_imbalance_mwh * imbalance_tariff_kzt, 2)
+
+  # Экономический эффект внедрения AI по сравнению с базовой константной моделью (~15% ошибки)
+  naive_imbalance_mwh = total_mwh * 0.15
+  savings_kzt = round(
+      (naive_imbalance_mwh - expected_imbalance_mwh) * imbalance_tariff_kzt, 2
+  )
+
+  return {
+      "status": "success",
+      "turbine": turbine_id,
+      "forecast_date": forecast_date,
+      "horizon_hours": horizon_hours,
+      "total_expected_generation_mwh": round(total_mwh, 2),
+      "expected_imbalance_mwh": expected_imbalance_mwh,
+      "financial_risk_kzt": financial_risk_kzt,
+      "prevented_losses_kzt": savings_kzt,
+      "recommendation": (
+          "Высокий риск небаланса: рекомендуется законтрактовать резерв"
+          if expected_imbalance_mwh > 2.0
+          else "Риск в пределах допустимого диапазона (ГОСТ/КОРЭМ)"
+      ),
+  }
